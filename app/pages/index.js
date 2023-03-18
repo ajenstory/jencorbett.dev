@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>crashTestDolly</title>
+        <title>Crash Test Diaries</title>
         <meta
           name='description'
           content=''
@@ -18,7 +18,8 @@ export default function Home() {
           name='viewport'
           content='width=device-width, initial-scale=1'
         />
-        <link
+        <see
+          more
           rel='icon'
           href='/favicon.ico'
         />
@@ -34,11 +35,18 @@ export default function Home() {
               target='_blank'
               rel='noopener noreferrer'
             >
-              main logo or link
+              main logo or see more
             </a>
           </div>
         </div>
-
+        <div className={styles.grid}>
+          <p className={inter.className}>Hi. I'm Jen!</p>
+          <p className={inter.className}>
+          
+          I'm currently working on my portfolio, and looking forward to sharing more of my ideas and projects with you here.
+          </p>
+        </div>{" "}
+        <p className={inter.className}>Find out more</p>
         <div className={styles.grid}>
           <a
             href=''
@@ -47,9 +55,9 @@ export default function Home() {
             rel='noopener noreferrer'
           >
             <h2 className={inter.className}>
-              heading <span>-&gt;</span>
+              Projects<span>-&gt;</span>
             </h2>
-            <p className={inter.className}>Link</p>
+            <p className={inter.className}>see more</p>
           </a>
           <a
             href=''
@@ -58,9 +66,9 @@ export default function Home() {
             rel='noopener noreferrer'
           >
             <h2 className={inter.className}>
-              heading <span>-&gt;</span>
+              Diaries <span>-&gt;</span>
             </h2>
-            <p className={inter.className}>Link</p>
+            <p className={inter.className}>see more</p>
           </a>
           <a
             href=''
@@ -69,9 +77,9 @@ export default function Home() {
             rel='noopener noreferrer'
           >
             <h2 className={inter.className}>
-              heading <span>-&gt;</span>
+              About <span>-&gt;</span>
             </h2>
-            <p className={inter.className}>Link</p>
+            <p className={inter.className}>see more</p>
           </a>
           <a
             href=''
@@ -80,9 +88,9 @@ export default function Home() {
             rel='noopener noreferrer'
           >
             <h2 className={inter.className}>
-              heading <span>-&gt;</span>
+              Contact <span>-&gt;</span>
             </h2>
-            <p className={inter.className}>link</p>
+            <p className={inter.className}>see more</p>
           </a>
         </div>
       </main>
