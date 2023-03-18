@@ -1,5 +1,10 @@
-import '../styles/globals.css'
+import { ThemeProvider } from "next-themes";
+import "../styles/globals.css";
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const App = ({ Component, pageProps }) => {
+  <ThemeProvider>
+    return <Component {...pageProps} />;
+  </ThemeProvider>;
+};
+
+export default App;
