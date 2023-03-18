@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "xo"
   },
   "dependencies": {
     "@next/font": "13.2.4",
@@ -15,6 +16,8 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "prettier": "^2.8.4",
+    "pretty-quick": "^3.1.3",
     "xo": "^0.53.1"
   }
 }
