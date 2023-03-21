@@ -1,91 +1,61 @@
-import Head from "next/head";
-import Image from "next/image";
+
+import Link from "next/link";
 import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
-
+import Card from "../components/card";
+import Header from "../components/header";
 const inter = Inter({ subsets: ["latin"] });
-
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>crashTestDolly</title>
-        <meta
-          name='description'
-          content=''
-        />
-        <meta
-          name='viewport'
-          content='width=device-width, initial-scale=1'
-        />
-        <link
-          rel='icon'
-          href='/favicon.ico'
-        />
-      </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            <code className={styles.code}>{`"name": "crashTestDolly"`}</code>
+      <Header home />
+      <div className={styles}>
+        <h1 className={inter.className}>Hello</h1>
+        <div>
+          <p className={inter.className}>
+            Hi! I'm a developer with a digital marketing background. I'm
+            currently working on my portfolio, and can't wait to share more
+            stuff with you here soon!
           </p>
-          <div>
-            <a
-              href='https://github.com/crashtestdolly'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              main logo or link
-            </a>
-          </div>
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href=''
-            className={styles.card}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+        </div>{" "}
+      </div>
+      <div>
+        <div className={styles.card.p}></div>
+      </div>
+      <div className={styles.grid}>
+        <Card>
+          <Link href="/projects">
             <h2 className={inter.className}>
-              heading <span>-&gt;</span>
+              Projects<span>-&gt;</span>
             </h2>
-            <p className={inter.className}>Link</p>
-          </a>
-          <a
-            href=''
-            className={styles.card}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+            <p className={inter.className}>see more</p>
+          </Link>
+        </Card>
+        <Card>
+          <Link href="/posts">
             <h2 className={inter.className}>
-              heading <span>-&gt;</span>
+              Diaries <span>-&gt;</span>
             </h2>
-            <p className={inter.className}>Link</p>
-          </a>
-          <a
-            href=''
-            className={styles.card}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+            <p className={inter.className}>see more</p>
+          </Link>
+        </Card>
+        <Card>
+          <Link href="/about">
             <h2 className={inter.className}>
-              heading <span>-&gt;</span>
+              About <span>-&gt;</span>
             </h2>
-            <p className={inter.className}>Link</p>
-          </a>
-          <a
-            href=''
-            className={styles.card}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+            <p className={inter.className}>see more</p>
+          </Link>
+        </Card>
+        <Card>
+          <Link href="/contact">
             <h2 className={inter.className}>
-              heading <span>-&gt;</span>
+              Contact <span>-&gt;</span>
             </h2>
-            <p className={inter.className}>link</p>
-          </a>
-        </div>
-      </main>
+            <p className={inter.className}>see more</p>
+          </Link>
+        </Card>
+      </div>
     </>
   );
 }
