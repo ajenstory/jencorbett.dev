@@ -1,99 +1,61 @@
-import Head from "next/head";
-import Image from "next/image";
+import Link from "next/link";
 import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
+import Card from "../components/card";
 
+import Header from "../components/header";
 const inter = Inter({ subsets: ["latin"] });
-
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Crash Test Diaries</title>
-        <meta
-          name='description'
-          content=''
-        />
-        <meta
-          name='viewport'
-          content='width=device-width, initial-scale=1'
-        />
-        <see
-          more
-          rel='icon'
-          href='/favicon.ico'
-        />
-      </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            <code className={styles.code}>{`"name": "crashTestDolly"`}</code>
-          </p>
-          <div>
-            <a
-              href='https://github.com/crashtestdolly'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              main logo or see more
-            </a>
-          </div>
-        </div>
-        <div className={styles.grid}>
-          <p className={inter.className}>Hi. I'm Jen!</p>
+      <Header home />
+      <div className={styles}>
+        <h1 className={inter.className}>Hello</h1>
+        <div>
           <p className={inter.className}>
-          
-          I'm currently working on my portfolio, and looking forward to sharing more of my ideas and projects with you here.
+            Hi! I'm a developer with a digital marketing background. I'm
+            currently working on my portfolio, and can't wait to share more
+            stuff with you here soon!
           </p>
         </div>{" "}
-        <p className={inter.className}>Find out more</p>
-        <div className={styles.grid}>
-          <a
-            href=''
-            className={styles.card}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+      </div>
+      <div>
+        <div className={styles.card.p}></div>
+      </div>
+      <div className={styles.grid}>
+        <Card>
+          <Link href="/projects">
             <h2 className={inter.className}>
               Projects<span>-&gt;</span>
             </h2>
             <p className={inter.className}>see more</p>
-          </a>
-          <a
-            href=''
-            className={styles.card}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+          </Link>
+        </Card>
+        <Card>
+          <Link href="/posts">
             <h2 className={inter.className}>
               Diaries <span>-&gt;</span>
             </h2>
             <p className={inter.className}>see more</p>
-          </a>
-          <a
-            href=''
-            className={styles.card}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+          </Link>
+        </Card>
+        <Card>
+          <Link href="/about">
             <h2 className={inter.className}>
               About <span>-&gt;</span>
             </h2>
             <p className={inter.className}>see more</p>
-          </a>
-          <a
-            href=''
-            className={styles.card}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+          </Link>
+        </Card>
+        <Card>
+          <Link href="/contact">
             <h2 className={inter.className}>
               Contact <span>-&gt;</span>
             </h2>
             <p className={inter.className}>see more</p>
-          </a>
-        </div>
-      </main>
+          </Link>
+        </Card>
+      </div>
     </>
   );
 }
