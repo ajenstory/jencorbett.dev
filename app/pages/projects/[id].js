@@ -1,7 +1,10 @@
+import Link from "next/link";
 import { getAllProjectIds, getProjectData } from "../../lib/projects.js";
+import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
-import * as React from "react";
+import Header from "../../components/header";
 
+import Layout from "../../components/layout.js";
 export async function getStaticPaths() {
   const paths = getAllProjectIds();
   return {
@@ -10,24 +13,34 @@ export async function getStaticPaths() {
   };
 }
 
-export default function Project({ projectsData }) {
+export default function Project({ projectData }) {
   return (
     <div>
-      <Header />
-      <article>
-        <h1 className={utilStyles.headingXl}>{projectsData.title}</h1>
-        <Date dateString={projectsData.date} />
-        <div dangerouslySetInnerHTML={{ __html: projectsData.contentHtml }} />
-      </article>
+      <Layout>
+        <section>
+          <article>
+            <h1 className={utilStyles.headingXl}>{projectData.title}</h1>
+            <div className={utilStyles.lightText}>
+              <Date dateString={projectData.date} />
+            </div>
+            <div
+              dangerouslySetInnerHTML={{ __html: projectData.contentHtml }}
+            />
+          </article>
+          <Link className={utilStyles.center} href="/">
+            ← Back to home{" "}
+          </Link>{" "}
+        </section>
+      </Layout>
     </div>
   );
 }
 export async function getStaticProps({ params }) {
-  const projectsData = await getProjectData(params.id);
+  const projectData = await getProjectData(params.id);
   console.log(projectData);
   return {
     props: {
-      projectsData,
+      projectData,
     },
   };
 }

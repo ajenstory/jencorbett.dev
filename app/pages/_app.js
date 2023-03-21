@@ -3,8 +3,7 @@ import "../styles/globals.css";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import Layout from "../components/layout";
-import { MDXProvider } from "@mdx-js/react";
-
+// import { MDXProvider } from "@mdx-js/react";
 
 const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false);
@@ -20,19 +19,10 @@ const ThemeSwitch = () => {
   }
 
   return (
-    <select
-      value={theme}
-      onChange={(e) => setTheme(e.target.value)}
-    >
-
+    <select value={theme} onChange={(e) => setTheme(e.target.value)}>
       <option value="system">System</option>
       <option value="dark">Dark</option>
       <option value="light">Light</option>
-
-      <option value='system'>System</option>
-      <option value='dark'>Dark</option>
-      <option value='light'>Light</option>
-
     </select>
   );
 };
@@ -40,18 +30,16 @@ const ThemeSwitch = () => {
 const App = ({ Component, pageProps }) => {
   return (
     <>
+      {" "}
       <ThemeProvider>
+        {" "}
         <ThemeSwitch />
-
-        <MDXProvider>
-          <Layout main>
-            <Component {...pageProps} />
-          </Layout>
-        </MDXProvider>
+        {/* <MDXProvider> */}{" "}
+        <Layout main>
+          <Component {...pageProps} />
+          {/* </MDXProvider>{" "} */}{" "}
+        </Layout>
       </ThemeProvider>
-
-        <Component {...pageProps} />{" "}
-
     </>
   );
 };

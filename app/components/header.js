@@ -7,7 +7,7 @@ const MainLayout = ({ home }) => {
   const name = "Portfolio";
   return (
     <div>
-      <header >
+      <header>
         {home ? (
           <>
             <Image
