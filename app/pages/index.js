@@ -1,8 +1,8 @@
+
 import Link from "next/link";
 import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
 import Card from "../components/card";
-
 import Header from "../components/header";
 const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
