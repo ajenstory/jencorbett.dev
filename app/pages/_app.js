@@ -51,7 +51,6 @@ const App = ({ Component, pageProps }) => {
       </ThemeProvider>
 
         <Component {...pageProps} />{" "}
-      </ThemeProvider>{" "}
 
     </>
   );
