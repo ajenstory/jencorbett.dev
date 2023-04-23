@@ -1,4 +1,4 @@
-import styles from "../styles/Home.module.css";
+import styles from "../styles/home.module.css";
 import Link from "next/link";
 const error = "an error has occurred";
 const Layout = ({ children, main }) => {
