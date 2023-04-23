@@ -8,13 +8,16 @@ export default function PostsPage({ allPostsData }) {
   return (
     <>
       <MDXProvider>
-        <Header />
+        <Header />{" "}
         <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-          <h2>Latest posts</h2>
-          <ul>
+          <h1>Posts</h1>
+          <ul className={utilStyles.list}>
             {allPostsData.map(({ id, date, title }) => (
-              <li className={utilStyles.listItem} key={id}>
-                <Link href={`/posts/${id}`}>{title}</Link>
+              <li
+                className={utilStyles.listItem}
+                key={id}
+              >
+                <Link href={`/projects/${id}`}>{title}</Link>
                 <br />
                 <small className={utilStyles.lightText}>
                   <Date dateString={JSON.parse(JSON.stringify(date))} />
@@ -22,9 +25,12 @@ export default function PostsPage({ allPostsData }) {
               </li>
             ))}
           </ul>{" "}
-        </section>{" "}
+        </section>
       </MDXProvider>{" "}
-      <Link className={utilStyles.center} href="/">
+      <Link
+        className={utilStyles.center}
+        href="/"
+      >
         ← Back to home{" "}
       </Link>{" "}
     </>
