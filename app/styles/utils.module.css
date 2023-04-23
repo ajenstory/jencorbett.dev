@@ -29,6 +29,20 @@
   border-radius: 90px;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
+.expressjs {
+  font-family: "helvetica neue", "open sans", sans-serif;
+  padding: 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 100;
+  line-height: normal;
+  font-stretch: normal;
+  --webkit-font-smoothing: antialiased;
+}
 .colorInherit {
   color: inherit;
 }
