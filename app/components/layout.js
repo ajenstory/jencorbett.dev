@@ -1,17 +1,17 @@
 import styles from "../styles/home.module.css";
-import Link from "next/link";
-const error = "an error has occurred";
+import utilStyles from "../styles/utils.module.css";
+
+import { Inter } from "@next/font/google";
+const inter = Inter({ subsets: ["latin"] });
+
 const Layout = ({ children, main }) => {
   return (
     <div>
-      <main className={styles.main}>{children}</main>
-      {/* <div>
-        {main ? (
-          <main className={styles.main}>{children}</main>
-        ) : (
-          <main className={styles.page}>{error}</main>
-        )}
-      </div> */}
+      <main
+        className={`${inter.className} ${utilStyles} ${styles} ${styles.main}`}
+      >
+        {children}
+      </main>
     </div>
   );
 };
