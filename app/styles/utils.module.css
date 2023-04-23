@@ -36,6 +36,13 @@
 .padding1px {
   padding-top: 1px;
 }
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 4rem 0;
+}
 
 .list {
   list-style: none;

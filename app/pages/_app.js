@@ -23,7 +23,7 @@ const ThemeSwitch = () => {
       value={theme}
       onChange={(e) => setTheme(e.target.value)}
     >
-  
+
       <option value="system">System</option>
       <option value="dark">Dark</option>
       <option value="light">Light</option>
@@ -34,8 +34,11 @@ const ThemeSwitch = () => {
 const App = ({ Component, pageProps }) => {
   return (
     <>
+      {" "}
       <ThemeProvider>
+        {" "}
         <ThemeSwitch />
+
         <MDXProvider>
           <Layout main>
             <Component {...pageProps} />
