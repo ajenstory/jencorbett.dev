@@ -5,12 +5,24 @@ import utilStyles from "../styles/utils.module.css";
 const ContactPage = () => {
   return (
     <>
-      <Header />
-      <h1>Contact me</h1>
-      {/* <code>{ `"email": "crashTestDollynz@gmail.com"`}</code>
-      <code>{`"name": "crashTestDolly"`}</code>
-      <code>{`"name": "crashTestDolly"`}</code> */}
-      <Link className={utilStyles.center} href="/">
+      <Header />{" "}
+      <div className="style">
+        <section className="section">
+          <h1>Contact me</h1>
+          <ul className={`${utilStyles.list}`}>
+            <li>
+              <p>hello@jencorbett.dev</p>
+            </li>
+            <li>
+              <p>mastodon.nz/@jen</p>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <Link
+        className={utilStyles.center}
+        href="/"
+      >
         ← Back to home{" "}
       </Link>
     </>
