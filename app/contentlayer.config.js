@@ -1,0 +1,53 @@
+// contentlayer.config.js
+
+import { defineDocumentType, makeSource } from "contentlayer/source-files";
+
+export const Post = defineDocumentType(() => ({
+  name: "Post",
+  filePathPattern: `**/*.mdx`,
+  fields: {
+    title: {
+      type: "string",
+      description: "The title of the post",
+      required: true,
+    },
+    date: {
+      type: "date",
+      description: "The date of the post",
+      required: true,
+    },
+  },
+  computedFields: {
+    url: {
+      type: "string",
+      resolve: (post) => `/posts/${post._raw.flattenedPath}`,
+    },
+  },
+}));
+export const Project = defineDocumentType(() => ({
+  name: "Project",
+  filePathPattern: `**/*.mdx`,
+  fields: {
+    title: {
+      type: "string",
+      description: "The title of the project",
+      required: true,
+    },
+    date: {
+      type: "date",
+      description: "The date of the project",
+      required: true,
+    },
+  },
+  computedFields: {
+    url: {
+      type: "string",
+      resolve: (project) => `/projects/${project._raw.flattenedPath}`,
+    },
+  },
+}));
+
+export default makeSource({
+  contentDirPath: "posts",
+  documentTypes: [Post],
+});
