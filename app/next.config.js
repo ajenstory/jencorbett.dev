@@ -1,4 +1,4 @@
-import { withContentlayer } from "next-contentlayer";
+const { withContentlayer } = require("next-contentlayer");
 
 // /** @type {import('next').NextConfig} */
 
@@ -7,7 +7,6 @@ const nextConfig = {
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx", "mjs"],
   // Other Next.js config below
   reactStrictMode: true,
-  appDir: false,
 };
 
 module.exports = withContentlayer(nextConfig);
