@@ -1,33 +1,10 @@
 // contentlayer.config.js
 
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
-export const Content = defineDocumentType(() => ({
-  name: "Content",
-  filePathPattern: `content/**/*.mdx`,
-  contentType: "mdx",
-  fields: {
-    title: {
-      type: "string",
-      description: "The title of the post",
-      required: true,
-    },
-    date: {
-      type: "date",
-      description: "The date of the post",
-      required: true,
-    },
-  },
-  computedFields: {
-    url: {
-      type: "string",
-      resolve: (post) => `/content/${post._raw.flattenedPath}`,
-    },
-  },
-}));
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
-  filePathPattern: `posts/**/*.mdx`,
+  filePathPattern: `posts/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
@@ -44,13 +21,13 @@ export const Post = defineDocumentType(() => ({
   computedFields: {
     url: {
       type: "string",
-      resolve: (post) => `/posts/${post._raw.flattenedPath}`,
+      resolve: (post) => `/${post._raw.flattenedPath}`,
     },
   },
 }));
 export const Project = defineDocumentType(() => ({
   name: "Project",
-  filePathPattern: `projects/**/*.mdx`,
+  filePathPattern: `projects/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
@@ -67,13 +44,13 @@ export const Project = defineDocumentType(() => ({
   computedFields: {
     url: {
       type: "string",
-      resolve: (project) => `/projects/${project._raw.flattenedPath}`,
+      resolve: (project) => `/${project._raw.flattenedPath}`,
     },
   },
 }));
 
 export default makeSource({
   contentDirPath: ".",
-  contentDirInclude: ["content"],
-  documentTypes: [Content],
+  contentDirInclude: ["posts", "projects"],
+  documentTypes: [Post, Project],
 });
