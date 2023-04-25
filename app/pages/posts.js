@@ -4,7 +4,7 @@ import Date from "../components/date";
 import Link from "next/link";
 import Header from "../components/header";
 import { MDXProvider } from "@mdx-js/react";
-export default function PostsPage({ allPostsData }) {
+export default function PostsPage({ posts }) {
   return (
     <>
       <MDXProvider>
@@ -12,7 +12,7 @@ export default function PostsPage({ allPostsData }) {
         <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
           <h1>Posts</h1>
           <ul className={utilStyles.list}>
-            {allPostsData.map(({ id, date, title }) => (
+            {posts.map(({ id, date, title }) => (
               <li
                 className={utilStyles.listItem}
                 key={id}
@@ -44,10 +44,10 @@ export async function getStaticProps() {
   return { props: { posts } };
 }
 // export async function getStaticProps() {
-//   const allPostsData = getSortedPostsData();
+//   const posts = getSortedPostsData();
 //   return {
 //     props: {
-//       allPostsData,
+//       posts,
 //     },
 //   };
 // }
