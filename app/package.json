@@ -16,9 +16,6 @@
     "next": "13.2.4",
     "next-contentlayer": "^0.3.2",
     "next-themes": "^0.2.1",
-    "path": "^0.12.7",
-    "prettier": "^2.8.5",
-    "pretty-quick": "^3.1.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-wrap-balancer": "^0.4.0",
@@ -30,5 +27,9 @@
     "remark-frontmatter": "^4.0.1",
     "remark-gfm": "^3.0.1",
     "remark-html": "^15.0.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "pretty-quick": "^3.1.3"
   }
 }
