@@ -37,34 +37,36 @@ export default function Home() {
           </p>
         </Card>{" "}
       </div>
-      <Card>
-        <Link href="https://linkedin.com/in/jencorbett">
-          <h2 className={``}>
-            Linkedin <span>-&gt;</span>
-          </h2>
-        </Link>
-      </Card>
-      <Card>
-        <Link href="mailto:hello@jencorbett.dev">
-          <h2 className={``}>
-            Email <span>-&gt;</span>
-          </h2>
-        </Link>
-      </Card>
-      <Card>
-        <Link href="https://mastodon.nz/@jen">
-          <h2 className={``}>
-            Mastodon <span>-&gt;</span>
-          </h2>
-        </Link>
-      </Card>
-      <Card>
-        <Link href="https://twitter.com/@ajenstory">
-          <h2 className={``}>
-            Twitter <span>-&gt;</span>
-          </h2>
-        </Link>
-      </Card>
+      <div className={`${styles.div} ${styles.grid}`}>
+        <Card>
+          <Link href="https://linkedin.com/in/jencorbett">
+            <h2 className={``}>
+              Linkedin <span>-&gt;</span>
+            </h2>
+          </Link>
+        </Card>
+        <Card>
+          <Link href="mailto:hello@jencorbett.dev">
+            <h2 className={``}>
+              Email <span>-&gt;</span>
+            </h2>
+          </Link>
+        </Card>
+        <Card>
+          <Link href="https://mastodon.nz/@jen">
+            <h2 className={``}>
+              Mastodon <span>-&gt;</span>
+            </h2>
+          </Link>
+        </Card>
+        <Card>
+          <Link href="https://twitter.com/@ajenstory">
+            <h2 className={`${styles.card.h2}`}>
+              Twitter <span>-&gt;</span>
+            </h2>
+          </Link>
+        </Card>
+      </div>
     </>
   );
 }

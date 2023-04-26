@@ -5,6 +5,7 @@
   align-items: center;
   font-size: calc(0.9rem + 0.15vw);
   padding: 6rem;
+
   min-height: 100vh;
   color-scheme: dark;
 }
@@ -14,7 +15,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
   padding: 6rem;
   min-height: 100vh;
 }
@@ -23,7 +23,6 @@
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
-
   max-width: var(--max-width);
   width: 100%;
   z-index: 2;
@@ -72,7 +71,7 @@
 
 .card h2 {
   font-weight: 600;
-  margin-bottom: 0.7rem;
+  margin-bottom: 1rem;
 }
 
 .card p {
@@ -91,15 +90,15 @@
   padding: 2rem 4rem;
 }
 /* Bootstrapped custom transforms */
-/* .center::before {
+.center::before {
   background: var(--secondary-glow);
   border-radius: 50%;
   width: 480px;
   height: 360px;
   margin-left: -400px;
-} */
+}
 
-/* .center::after {
+.center::after {
   background: var(--primary-glow);
   width: 240px;
   height: 180px;
@@ -113,7 +112,7 @@
   position: absolute;
   filter: blur(45px);
   transform: translateZ(0);
-} */
+}
 
 .hide {
   visibility: hidden;
@@ -203,21 +202,16 @@
     text-align: center;
   }
 
-  /* .card {
+  .card {
     padding: 1rem 2.5rem;
   }
 
   .card h2 {
     margin-bottom: 0.5rem;
-  } */
+  }
 
   .center {
     padding: 2rem 0 2rem;
-  }
-
-  .center::before {
-    transform: none;
-    height: 300px;
   }
 
   .description a {
