@@ -85,6 +85,10 @@ const AboutPage = () => {
             express
           </p>
         </div>
+      </section>{" "}
+      <h1>Bio</h1>
+      <section className={``}>
+        <div></div>
       </section>
       <Link
         className={utilStyles.center}
