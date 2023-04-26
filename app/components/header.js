@@ -19,7 +19,7 @@ const MainLayout = ({ home }) => {
               width={108}
               alt="Profile picture of me deep in thought"
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className={utilStyles.headingXl}>{name}</h1>
           </>
         ) : (
           <>
