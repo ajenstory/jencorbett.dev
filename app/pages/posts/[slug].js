@@ -35,28 +35,32 @@ function PostContent(post) {
 
 const Post = ({ post }) => {
   return (
-    <div>
-      <Layout>
-        <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-          <article>
-            <h1 className={utilStyles.headingXl}>{post.title}</h1>
-            <div className={utilStyles.lightText}>
-              <Date dateString={post.date} />
-            </div>
-            <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
-            <PostContent {...post} />{" "}
-          </article>
-          <small className={utilStyles.lightText}>
-            <Link
-              className={utilStyles.center}
-              href="/"
-            >
-              ← Back to home{" "}
-            </Link>{" "}
-          </small>
-        </section>
-      </Layout>
-    </div>
+    <>
+      <div>
+        <Layout>
+          <section
+            className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}
+          >
+            <article>
+              <h1 className={utilStyles.headingXl}>{post.title}</h1>
+              <div className={utilStyles.lightText}>
+                <Date dateString={post.date} />
+              </div>
+              <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+              <PostContent {...post} />{" "}
+            </article>
+            <small className={utilStyles.lightText}>
+              <Link
+                className={utilStyles.center}
+                href="/"
+              >
+                ← Back to home{" "}
+              </Link>{" "}
+            </small>
+          </section>
+        </Layout>
+      </div>
+    </>
   );
 };
 

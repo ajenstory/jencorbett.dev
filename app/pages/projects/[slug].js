@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { allProjects } from "contentlayer/generated";
 import Date from "../../components/date.js";
+
 import utilStyles from "../../styles/utils.module.css";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import Layout from "../../components/layout.js";
@@ -34,28 +35,32 @@ function ProjectContent(project) {
 
 const Project = ({ project }) => {
   return (
-    <div>
-      <Layout>
-        <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-          <article>
-            <h1 className={utilStyles.headingXl}>{project.title}</h1>
-            <div className={utilStyles.lightText}>
-              <Date dateString={project.date} />
-            </div>
-            <div dangerouslySetInnerHTML={{ __html: project.contentHtml }} />
-            <ProjectContent {...project} />{" "}
-          </article>
-          <small className={utilStyles.lightText}>
-            <Link
-              className={utilStyles.center}
-              href="/"
-            >
-              ← Back to home{" "}
-            </Link>{" "}
-          </small>
-        </section>
-      </Layout>
-    </div>
+    <>
+      <div>
+        <Layout>
+          <section
+            className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}
+          >
+            <article>
+              <h1 className={utilStyles.headingXl}>{project.title}</h1>
+              <div className={utilStyles.lightText}>
+                <Date dateString={project.date} />
+              </div>
+              <div dangerouslySetInnerHTML={{ __html: project.contentHtml }} />
+              <ProjectContent {...project} />{" "}
+            </article>
+            <small className={utilStyles.lightText}>
+              <Link
+                className={utilStyles.center}
+                href="/"
+              >
+                ← Back to home{" "}
+              </Link>{" "}
+            </small>
+          </section>
+        </Layout>
+      </div>{" "}
+    </>
   );
 };
 
