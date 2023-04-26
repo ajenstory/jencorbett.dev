@@ -29,10 +29,6 @@
   border-radius: 90px;
 }
 
-.hide {
-  visibility: hidden;
-}
-
 .expressjs {
   font-family: "helvetica neue", "open sans", sans-serif;
   padding: 0;
@@ -70,4 +66,8 @@
 
 .lightText {
   color: #666;
+}
+
+.bold {
+  font-weight: bold;
 }
