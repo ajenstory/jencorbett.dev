@@ -4,7 +4,7 @@ import Logo from "../components/logo";
 import Image from "next/image";
 import agile from "../public/assets/agile.svg";
 import next from "../public/assets/next.svg";
-import nodejs from "../public/assets/nodejs.svg";
+import nodejs from "../public/assets/nodejs.png";
 import dockercompose from "../public/assets/docker-compose.png";
 import css3 from "../public/assets/css3.svg";
 import html5 from "../public/assets/html5.svg";
