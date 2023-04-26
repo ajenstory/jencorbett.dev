@@ -2,7 +2,8 @@ import Link from "next/link";
 import utilStyles from "../styles/utils.module.css";
 import styles from "./header.module.css";
 import Image from "next/image";
-import profilePic from "../public/profile.jpg";
+
+const profilePic = "/profile.jpg";
 
 const MainLayout = ({ home }) => {
   const name = "@aJenStory";
@@ -28,7 +29,6 @@ const MainLayout = ({ home }) => {
               className={utilStyles.borderCircle}
               height={108}
               width={108}
-              object-fit={fill}
               alt="Profile picture of me deep in thought"
             />
             <h2 className={utilStyles.headingLg}>
