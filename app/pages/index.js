@@ -23,9 +23,8 @@ export default function Home() {
           </p>{" "}
           <p>
             I'm currently working on this site. So there's not much to see here
-            yet. In time, I'll have be growing a little digital garden, as a
-            sort of digital garden and porfolio, with some writing to share and
-            project stuff to show off too.
+            yet. In time, I'll have a lovely digital garden growing here. A
+            porfolio, with some writing to share and projects to show off too.
           </p>
           <p>
             In the meantime, please don't hesitate to reach out on Linkedin or
