@@ -1,47 +1,62 @@
 import utilStyles from "../styles/utils.module.css";
 import Date from "../components/date";
+import { compareDesc } from "date-fns";
 import Link from "next/link";
 import Header from "../components/header";
-import { getSortedProjectsData } from "../lib/projects";
-import { MDXProvider } from "@mdx-js/react";
-export default function ProjectsPage({ allProjectsData }) {
+import Layout from "components/layout";
+import { allProjects } from "contentlayer/generated";
+console.log(allProjects);
+export async function getStaticProps() {
+  const projects = allProjects.sort((a, b) => {
+    return compareDesc(new Date(a.date), new Date(b.date));
+  });
+  return { props: { projects } };
+}
+function ProjectCard(project) {
   return (
-    <>
-      <> </>
-      <MDXProvider>
-        <Header />
-        <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-          <h1>Latest projects</h1>
-          <ul className={utilStyles.list}>
-            {allProjectsData.map(({ id, date, title }) => (
-              <li
-                className={utilStyles.listItem}
-                key={id}
-              >
-                <Link href={`/projects/${id}`}>{title}</Link>
-                <br />
-                <small className={utilStyles.lightText}>
-                  <Date dateString={JSON.parse(JSON.stringify(date))} />
-                </small>
-              </li>
-            ))}
-          </ul>{" "}
-        </section>
-        <Link
-          className={utilStyles.center}
-          href="/"
-        >
-          ← Back to home{" "}
-        </Link>
-      </MDXProvider>
-    </>
+    <article className="">
+      <p>
+        {" "}
+        <Link href={project.url}>{project.title}</Link>
+      </p>
+    </article>
   );
 }
-export async function getStaticProps() {
-  const allProjectsData = getSortedProjectsData();
-  return {
-    props: {
-      allProjectsData,
-    },
-  };
+
+export default function ProjectPage({ projects }) {
+  return (
+    <>
+      {" "}
+      <Header />
+      <Layout>
+        <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+          <div className="">
+            <ul className={utilStyles.list}>
+              {projects.map((project, idx) => (
+                <li
+                  key={idx}
+                  className={utilStyles.listItem}
+                >
+                  <ProjectCard {...project}>{project.title}</ProjectCard>
+                  <small className={utilStyles.lightText}>
+                    <Date
+                      dateString={JSON.parse(JSON.stringify(project.date))}
+                    />{" "}
+                  </small>{" "}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <small className={utilStyles.lightText}>
+            <Link
+              className={utilStyles.center}
+              href="/"
+            >
+              ← Back to home{" "}
+            </Link>{" "}
+          </small>
+        </section>{" "}
+      </Layout>
+    </>
+  );
 }
