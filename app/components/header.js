@@ -1,13 +1,13 @@
 import Link from "next/link";
 import utilStyles from "../styles/utils.module.css";
-// import styles from "./header.module.css";
+import styles from "./header.module.css";
 import Image from "next/image";
-// import Layout from "./layout";
+
 const MainLayout = ({ home }) => {
-  const name = "Portfolio";
+  const name = "@aJenStory";
   return (
     <div>
-      <header>
+      <header className={styles.header}>
         {home ? (
           <>
             <Image
@@ -22,20 +22,19 @@ const MainLayout = ({ home }) => {
           </>
         ) : (
           <>
-            <Link href="/">
-              <Image
-                priority
-                src="/../public/profile.jpg"
-                className={utilStyles.borderCircle}
-                height={108}
-                width={108}
-                alt=""
-              />
-            </Link>
+            <Image
+              priority
+              src="/../public/profile.jpg"
+              className={utilStyles.borderCircle}
+              height={108}
+              width={108}
+              alt=""
+            />
             <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
-                {name}
-              </Link>
+              <Link
+                href="/"
+                className={utilStyles.colorInherit}
+              ></Link>
             </h2>
           </>
         )}
