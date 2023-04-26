@@ -1,5 +1,5 @@
 import utilStyles from "../styles/utils.module.css";
-import styles from "../styles/home.module.css";
+import styles from "../styles/Home.module.css";
 import Logo from "../components/logo";
 import Image from "next/image";
 import agile from "../public/assets/agile.svg";
