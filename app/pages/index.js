@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import utilStyles from "../styles/utils.module.css";
 import styles from "../styles/Home.module.css";
 import Card from "../components/card";
-
 import Header from "../components/header";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,15 +10,16 @@ export default function Home() {
   return (
     <>
       <Header home />
-
-      <div className={`${inter.className}  ${styles.center} ${styles.grid}`}>
+      <div className={` ${styles.center} ${styles.grid}`}>
         {" "}
         <Card>
           {" "}
-          <h1 className={`${utilStyles.headingLg}`}>Hello</h1>{" "}
+          <h2 className={`${inter.className} `}>
+            From Hashtags to HTTP...
+          </h2>{" "}
           <p className={` ${styles}`}>
-            I'm Jen...chief storyteller, early adopter, "late" developer and
-            veteran of the social media era.
+            Hello, I'm Jen! Early adopter, "late" developer and veteran of the
+            social media era.
           </p>{" "}
           <p>
             I'm currently working on this site. So there's not much to see here
