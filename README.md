@@ -2,7 +2,7 @@
 
 This is my porfolio site [`jencorbett.dev`](https://jencorbett.dev), bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
 
-As you can see, it's **very much** a work-in-progress, but here's what's currently in progress:
+As you can see, it's **very much** a work-in-progress, but here's what's currently happening with it:
 
 - **Architecture** [`JamStack `](https://jamstack.org/)
 - **Framework**: [Next.js](https://nextjs.org/)
