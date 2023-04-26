@@ -32,6 +32,7 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  text-decoration: underline;
 }
 
 .description p {
@@ -111,6 +112,10 @@
   position: absolute;
   filter: blur(45px);
   transform: translateZ(0);
+}
+
+.hide {
+  visibility: hidden;
 }
 
 .logo,
