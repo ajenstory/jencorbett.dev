@@ -3,7 +3,6 @@ import "../styles/globals.css";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import Layout from "../components/layout";
-import { MDXProvider } from "@mdx-js/react";
 import { Provider } from "react-wrap-balancer";
 const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false);
@@ -32,20 +31,13 @@ const ThemeSwitch = () => {
 
 const App = ({ Component, pageProps }) => {
   return (
-    <>
-      <ThemeProvider>
-        <Provider>
-          <MDXProvider>
-            {" "}
-            <>
-              <Layout main>
-                <Component {...pageProps} /> <ThemeSwitch />
-              </Layout>{" "}
-            </>
-          </MDXProvider>
-        </Provider>
-      </ThemeProvider>
-    </>
+    <ThemeProvider>
+      <Provider>
+        <Layout main>
+          <Component {...pageProps} /> <ThemeSwitch />{" "}
+        </Layout>
+      </Provider>
+    </ThemeProvider>
   );
 };
 
