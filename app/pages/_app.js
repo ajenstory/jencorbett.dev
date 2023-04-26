@@ -34,11 +34,13 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <ThemeProvider>
-        <ThemeSwitch />
         <MDXProvider>
-          <Layout main>
-            <Component {...pageProps} />
-          </Layout>
+          {" "}
+          <>
+            <Layout main>
+              <Component {...pageProps} /> <ThemeSwitch />
+            </Layout>{" "}
+          </>
         </MDXProvider>
       </ThemeProvider>
     </>
