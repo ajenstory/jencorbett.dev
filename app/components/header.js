@@ -6,7 +6,7 @@ import Image from "next/image";
 const profilePic = "/profile.jpg";
 
 const MainLayout = ({ home }) => {
-  const name = "@aJenStory";
+  const name = "Jen Corbett";
   return (
     <div>
       <header className={styles.header}>
@@ -18,7 +18,7 @@ const MainLayout = ({ home }) => {
               className={utilStyles.borderCircle}
               height={108}
               width={108}
-              alt="Profile picture of me deep in thought"
+              alt="Profile picture of Jen deep in thought"
             />
             <h1 className={utilStyles.headingXl}>{name}</h1>
           </>
@@ -29,7 +29,7 @@ const MainLayout = ({ home }) => {
               className={utilStyles.borderCircle}
               height={108}
               width={108}
-              alt="Profile picture of me deep in thought"
+              alt="Profile picture of Jen deep in thought"
             />
             <h2 className={utilStyles.headingLg}>
               <Link
