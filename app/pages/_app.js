@@ -1,9 +1,10 @@
-import { ThemeProvider } from "next-themes";
 import "../styles/globals.css";
+import { ThemeProvider } from "next-themes";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import Layout from "../components/layout";
 import { Provider } from "react-wrap-balancer";
+
 const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
