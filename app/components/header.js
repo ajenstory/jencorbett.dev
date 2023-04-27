@@ -1,6 +1,5 @@
 import Link from "next/link";
 import utilStyles from "../styles/utils.module.css";
-import styles from "./header.module.css";
 import Image from "next/image";
 
 const profilePic = "/profile.jpg";
@@ -9,7 +8,7 @@ const MainLayout = ({ home }) => {
   const name = "Jen Corbett";
   return (
     <div>
-      <header className={styles.header}>
+      <header className={`${utilStyles.header}`}>
         {home ? (
           <>
             <Image
