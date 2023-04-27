@@ -2,10 +2,18 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "contentlayer/generated": ["./.contentlayer/generated"]
-      // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      "@public/*": ["./public/*"],
+      "@components/*": ["./components/*"],
+      "contentlayer/generated": ["./.contentlayer/generated"],
+      "@styles/*": ["./styles/*"],
+      "@utils/*": ["./utils/*"]
     }
   },
-  "include": ["next-env.d.ts","next-env.d.js","**/*.jsx" ,"**/*.tsx", "**/*.ts", "**/*.js", ".contentlayer/generated"]
-  //                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  "include": [
+    "next-env.d.ts",
+    "next-env.d.js",
+    "**/*.jsx",
+    "**/*.js",
+    ".contentlayer/generated"
+  ]
 }
