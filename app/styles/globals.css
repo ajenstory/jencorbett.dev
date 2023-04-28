@@ -18,6 +18,8 @@ body {
 
 li {
   text-decoration: none;
+  list-style: none;
+  text-align: left;
 }
 
 body {

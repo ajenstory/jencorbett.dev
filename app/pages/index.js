@@ -1,12 +1,13 @@
 import Link from "next/link";
 import HeadComponent from "@components/head";
-import div from "../components/card";
+
 import Header from "../components/header";
 import utilStyles from "@styles/utils.module.css";
 import styles from "@styles/Home.module.css";
 import Image from "next/image";
 
 import { SiSpotify } from "react-icons/si";
+import { FiMusic } from "react-icons/fi";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -82,44 +83,50 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 const NowPlaying = () => {
   const { data, error } = useSWR("/api/spotify/player", fetcher);
+
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
 
   return (
-    <div className={` ${styles.center}`}>
-      <SiSpotify
-        size={64}
-        color={"#1ED760"}
-      />
-      <div>
-        <Image
-          src={data.albumImageUrl}
-          height={64}
-          width={64}
-          alt="Spotify album cover art"
-        ></Image>
-      </div>{" "}
-      <div>
-        <p>
-          {console.log(data)}
-          {data.name}
-        </p>
-      </div>
-      <div>
-        <p>
-          {console.log(data)}
-          {data.artist}
-        </p>
-      </div>
-      <div>
-        <p>
-          {console.log(data)}
-          {data.artist}
-        </p>
-      </div>
-      <div>
+    <div
+      className={`${utilStyles.player} ${utilStyles.padding} ${utilStyles.center}${styles.playerGrid}`}
+    >
+      <h2>
         {" "}
-        <p>{console.log(data)}</p>{" "}
+        Now playing{" "}
+        <span className={`${utilStyles.left}`}>
+          <FiMusic size="18" />
+        </span>{" "}
+      </h2>{" "}
+      <div className={` `}>
+        {" "}
+        <div>
+          <Image
+            src={data.albumImageUrl}
+            height={180}
+            width={180}
+            quality={100}
+            alt="Spotify album cover art"
+          ></Image>
+        </div>
+        <div className={`${styles.playerGrid}}`}>
+          <ol>
+            <Link href={data.songUrl}>
+              {" "}
+              <li>
+                <SiSpotify />
+              </li>
+              <li>
+                {console.log(data)}
+                {data.name}{" "}
+              </li>
+            </Link>
+            <li>
+              {console.log(data)}
+              {data.artist}
+            </li>
+          </ol>
+        </div>
       </div>
     </div>
   );
