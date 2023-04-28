@@ -6,12 +6,13 @@ import utilStyles from "@styles/utils.module.css";
 import styles from "@styles/Home.module.css";
 import Image from "next/image";
 
-import { SiSpotify } from "react-icons/si";
-import { FiMusic } from "react-icons/fi";
+import { SiSpotify, SiMastodon, SiLinkedin } from "react-icons/si";
+import { FiMusic, FiGithub, FiTwitter } from "react-icons/fi";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 import useSWR from "swr";
+
 export default function Home() {
   return (
     <div>
@@ -41,31 +42,35 @@ export default function Home() {
       <div className={`${styles.div} ${styles.grid}`}>
         <div>
           <Link href="https://linkedin.com/in/jencorbett">
-            <h2 className={``}>
-              Linkedin <span>-&gt;</span>
-            </h2>
+            <SiLinkedin
+              size={20}
+              alt="Linkedin icon"
+            />{" "}
           </Link>
         </div>
 
         <div>
           <Link href="https://github.com/ajenstory">
-            <h2 className={``}>
-              Github <span>-&gt;</span>
-            </h2>
+            <FiGithub
+              size={20}
+              alt="GitHub icon"
+            />{" "}
           </Link>
         </div>
         <div>
           <Link href="https://mastodon.nz/@jen">
-            <h2 className={``}>
-              Mastodon <span>-&gt;</span>
-            </h2>
+            <SiMastodon
+              size={20}
+              alt="Mastodon icon"
+            />{" "}
           </Link>
         </div>
         <div>
           <Link href="https://twitter.com/@ajenstory">
-            <h2 className={`${styles.card.h2}`}>
-              Twitter <span>-&gt;</span>
-            </h2>
+            <FiTwitter
+              size={20}
+              alt="Twitter icon"
+            />{" "}
           </Link>
         </div>
       </div>
@@ -84,8 +89,31 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const NowPlaying = () => {
   const { data, error } = useSWR("/api/spotify/player", fetcher);
 
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
+  if (error)
+    return (
+      <div>
+        <Link href="https://open.spotify.com/user/1221141852">
+          {" "}
+          <SiSpotify
+            size={20}
+            alt="Spotify icon"
+          />
+        </Link>
+      </div>
+    );
+  if (!data)
+    return (
+      <div>
+        {" "}
+        Loading...{" "}
+        <span className={`${utilStyles.left}`}>
+          <FiMusic
+            size="18"
+            alt="Musical notes icon"
+          />
+        </span>{" "}
+      </div>
+    );
 
   return (
     <div
