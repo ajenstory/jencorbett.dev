@@ -2,6 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@api/spotify/*": ["./api/spotify/*"],
+      "@api/*": ["./api/*"],
+      "@lib/*": ["./lib/*"],
       "@public/*": ["./public/*"],
       "@components/*": ["./components/*"],
       "contentlayer/generated": ["./.contentlayer/generated"],
@@ -14,6 +17,7 @@
     "next-env.d.js",
     "**/*.jsx",
     "**/*.js",
-    ".contentlayer/generated"
+    ".contentlayer/generated",
+    "pages/api/getNowPlaying.js"
   ]
 }
