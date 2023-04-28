@@ -1,7 +1,12 @@
-import { getNowPlaying } from "../getNowPlaying";
+import { getNowPlaying, getRecentlyPlayed } from "../getNowPlaying";
 
 export const player = async () => {
   const response = await getNowPlaying();
+
+  if (!getNowPlaying) {
+    const response = await getRecentlyPlayed();
+    return response;
+  }
   const { item } = await response.json();
 
   const track = {
