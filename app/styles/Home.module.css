@@ -1,3 +1,4 @@
+/* autoprefixer grid: autoplace */
 .main {
   display: flex;
   flex-direction: column;
@@ -50,7 +51,7 @@
   text-align: center;
 }
 
-.playerGrid {
+.player-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(25%, auto));
   max-width: 100%;
@@ -59,13 +60,14 @@
 
 .card {
   padding: 1rem 1.2rem;
-  background: rgba(var(--card-rgb), 0);
-  transition: background 200ms, border 200ms;
+
+  /* transition: background 200ms, border 200ms; */
 }
 
 .card span {
   display: inline-block;
-  transition: transform 200ms;
+
+  /* transition: transform 200ms; */
 }
 
 .card h2 {
@@ -119,19 +121,10 @@
   margin-left: 16px;
   transform: translateZ(0);
   overflow: hidden;
-  box-shadow: 0px 2px 8px -1px #0000001a;
+  box-shadow: 2px 8px -1px #0000001a;
 }
 
 /* Bootstrapped Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  .card:hover {
-    background: rgba(var(--card-rgb), 0.1);
-  }
-
-  .card:hover span {
-    transform: translateX(4px);
-  }
-}
 
 @media (prefers-reduced-motion) {
   .custom::before {
@@ -144,7 +137,7 @@
 }
 
 /* Mobile */
-@media (max-width: 700px) {
+@media (max-width <= 700px) {
   .content {
     padding: 4rem;
   }
@@ -170,7 +163,7 @@
   }
 
   .center {
-    padding: 2rem 0 2rem;
+    padding: 2rem 0;
   }
 
   .description a {
@@ -203,19 +196,12 @@
 }
 
 /* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
+@media (min-width >= 701px) and (max-width <= 1120px) {
   .grid {
     grid-template-columns: repeat(2, 50%);
   }
 
   .main {
     font-size: calc(0.9rem + 0.3vw);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo,
-  .custom img {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
   }
 }

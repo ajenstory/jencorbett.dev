@@ -1,12 +1,15 @@
-:root {
+:root,
+body {
   --max-width: 1100px;
   --border-radius: 5px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+  --font-mono: ui-monospace, menlo, monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --webkit-font-smoothing: antialiased;
 }
 
 * {
+  white-space: pre-wrap;
   box-sizing: border-box;
 }
 
@@ -20,16 +23,6 @@ li {
   text-decoration: none;
   list-style: none;
   text-align: left;
-}
-
-body {
-  color: rbg(--foreground-rgb);
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
 
 a {
@@ -46,7 +39,6 @@ a {
 button {
   border: 2px;
   transform: translateZ(10);
-  /* background: none; */
   border-radius: 85px;
   padding: 20px 15px;
   border-style: inset;
@@ -54,11 +46,10 @@ button {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
-  box-shadow: 0px 2px 8px -1px #0000001a;
+  box-shadow: 1px 2px 8px -1px #0000001a;
 }
 
 button::before {
-  background: var(--secondary-glow);
   border-radius: 50%;
   width: 480px;
   height: 360px;
@@ -66,7 +57,6 @@ button::before {
 }
 
 button::after {
-  background: var(--primary-glow);
   width: 240px;
   height: 180px;
   z-index: -1;
