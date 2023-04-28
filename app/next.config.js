@@ -7,9 +7,12 @@ const nextConfig = {
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx", "mjs"],
   // Other Next.js config below
   images: {
-    protocol: "https",
-    pathname: "/public/**",
-    // hostname: "**.jencorbett.dev",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i.scdn.co",
+      },
+    ],
   },
   reactStrictMode: true,
 };

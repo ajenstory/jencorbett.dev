@@ -1,19 +1,25 @@
 import Link from "next/link";
 import HeadComponent from "@components/head";
-import Card from "../components/card";
 import Header from "../components/header";
 import utilStyles from "@styles/utils.module.css";
 import styles from "@styles/Home.module.css";
+import Image from "next/image";
+import { SiSpotify, SiMastodon, SiLinkedin } from "react-icons/si";
+import { FiMusic, FiGithub, FiTwitter } from "react-icons/fi";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
+
+import useSWR from "swr";
 
 export default function Home() {
   return (
     <div>
       <HeadComponent />
+
       <Header home />
+
       <div className={` ${styles.center} ${styles.grid}`}>
-        <Card>
+        <div>
           <h2 className={`${inter.className} `}>Hello, I'm Jen!</h2>
           <p>
             {" "}
@@ -29,39 +35,103 @@ export default function Home() {
             </span>
             .
           </p>
-        </Card>{" "}
+        </div>{" "}
       </div>
+      <section className={` ${styles.center} ${styles.grid}`}>
+        <NowPlaying />
+      </section>
       <div className={`${styles.div} ${styles.grid}`}>
-        <Card>
+        <div className={`${styles.card}`}>
           <Link href="https://linkedin.com/in/jencorbett">
-            <h2 className={``}>
-              Linkedin <span>-&gt;</span>
-            </h2>
+            <SiLinkedin size={20} alt="Linkedin icon" />{" "}
           </Link>
-        </Card>
-
-        <Card>
+        </div>
+        <div className={`${styles.card}`}>
           <Link href="https://github.com/ajenstory">
-            <h2 className={``}>
-              Github <span>-&gt;</span>
-            </h2>
+            <FiGithub size={20} alt="GitHub icon" />{" "}
           </Link>
-        </Card>
-        <Card>
+        </div>
+        <div className={`${styles.card}`}>
           <Link href="https://mastodon.nz/@jen">
-            <h2 className={``}>
-              Mastodon <span>-&gt;</span>
-            </h2>
+            <SiMastodon size={20} alt="Mastodon icon" />{" "}
           </Link>
-        </Card>
-        <Card>
+        </div>
+        <div className={`${styles.card}`}>
           <Link href="https://twitter.com/@ajenstory">
-            <h2 className={`${styles.card.h2}`}>
-              Twitter <span>-&gt;</span>
-            </h2>
+            <FiTwitter size={20} alt="Twitter icon" />{" "}
           </Link>
-        </Card>
+        </div>
       </div>
     </div>
   );
 }
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
+const NowPlaying = () => {
+  const { data, error } = useSWR("/api/spotify/player", fetcher);
+
+  if (error)
+    return (
+      <div>
+        <Link href="https://open.spotify.com/user/1221141852">
+          {" "}
+          <SiSpotify size={20} alt="Spotify icon" />
+        </Link>
+      </div>
+    );
+  if (!data)
+    return (
+      <div>
+        {" "}
+        Loading...{" "}
+        <span className={`${utilStyles.left}`}>
+          <FiMusic size="18" alt="Musical notes icon" />
+        </span>{" "}
+      </div>
+    );
+
+  return (
+    <div
+      className={`${utilStyles.player} ${utilStyles.padding} ${utilStyles.center}${styles.playerGrid}`}
+    >
+      <h2>
+        {" "}
+        Now playing{" "}
+        <span className={`${utilStyles.left}`}>
+          <FiMusic size="18" />
+        </span>{" "}
+      </h2>{" "}
+      <div className={` `}>
+        {" "}
+        <div>
+          <Image
+            src={data.albumImageUrl}
+            height={180}
+            width={180}
+            quality={100}
+            alt="Spotify album cover art"
+          ></Image>
+        </div>
+        <div className={`${styles.playerGrid}}`}>
+          <ol>
+            <Link href={data.songUrl}>
+              {" "}
+              <li>
+                <SiSpotify />
+              </li>
+              <li>
+                {console.log(data)}
+                {data.name}{" "}
+              </li>
+            </Link>
+            <li>
+              {console.log(data)}
+              {data.artist}
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  );
+};
