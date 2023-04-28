@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@api/spotify/*": ["./api/spotify/*"],
+      "@api/*": ["./api/*"],
+      "@lib/*": ["./lib/*"],
+      "@public/*": ["./public/*"],
+      "@components/*": ["./components/*"],
+      "contentlayer/generated": ["./.contentlayer/generated"],
+      "@styles/*": ["./styles/*"],
+      "@utils/*": ["./utils/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "next-env.d.js",
+    "**/*.jsx",
+    "**/*.js",
+    ".contentlayer/generated",
+    "pages/api/getNowPlaying.js"
+  ]
+}
