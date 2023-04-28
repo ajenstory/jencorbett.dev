@@ -1,11 +1,9 @@
 import Link from "next/link";
 import HeadComponent from "@components/head";
-
 import Header from "../components/header";
 import utilStyles from "@styles/utils.module.css";
 import styles from "@styles/Home.module.css";
 import Image from "next/image";
-
 import { SiSpotify, SiMastodon, SiLinkedin } from "react-icons/si";
 import { FiMusic, FiGithub, FiTwitter } from "react-icons/fi";
 import { Inter } from "next/font/google";
@@ -39,46 +37,30 @@ export default function Home() {
           </p>
         </div>{" "}
       </div>
+      <section className={` ${styles.center} ${styles.grid}`}>
+        <NowPlaying />
+      </section>
       <div className={`${styles.div} ${styles.grid}`}>
-        <div>
+        <div className={`${styles.card}`}>
           <Link href="https://linkedin.com/in/jencorbett">
-            <SiLinkedin
-              size={20}
-              alt="Linkedin icon"
-            />{" "}
+            <SiLinkedin size={20} alt="Linkedin icon" />{" "}
           </Link>
         </div>
-
-        <div>
+        <div className={`${styles.card}`}>
           <Link href="https://github.com/ajenstory">
-            <FiGithub
-              size={20}
-              alt="GitHub icon"
-            />{" "}
+            <FiGithub size={20} alt="GitHub icon" />{" "}
           </Link>
         </div>
-        <div>
+        <div className={`${styles.card}`}>
           <Link href="https://mastodon.nz/@jen">
-            <SiMastodon
-              size={20}
-              alt="Mastodon icon"
-            />{" "}
+            <SiMastodon size={20} alt="Mastodon icon" />{" "}
           </Link>
         </div>
-        <div>
+        <div className={`${styles.card}`}>
           <Link href="https://twitter.com/@ajenstory">
-            <FiTwitter
-              size={20}
-              alt="Twitter icon"
-            />{" "}
+            <FiTwitter size={20} alt="Twitter icon" />{" "}
           </Link>
         </div>
-      </div>
-      <div>
-        {" "}
-        <small className={` ${styles.center} ${styles.grid}`}>
-          <NowPlaying />
-        </small>
       </div>
     </div>
   );
@@ -94,10 +76,7 @@ const NowPlaying = () => {
       <div>
         <Link href="https://open.spotify.com/user/1221141852">
           {" "}
-          <SiSpotify
-            size={20}
-            alt="Spotify icon"
-          />
+          <SiSpotify size={20} alt="Spotify icon" />
         </Link>
       </div>
     );
@@ -107,10 +86,7 @@ const NowPlaying = () => {
         {" "}
         Loading...{" "}
         <span className={`${utilStyles.left}`}>
-          <FiMusic
-            size="18"
-            alt="Musical notes icon"
-          />
+          <FiMusic size="18" alt="Musical notes icon" />
         </span>{" "}
       </div>
     );
