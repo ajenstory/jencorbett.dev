@@ -14,7 +14,7 @@ const MainLayout = ({ home }) => {
             <Image
               priority
               src={profilePic}
-              className={utilStyles.borderCircle}
+              className={`${utilStyles.borderCircle} ${utilStyles.change}`}
               height={108}
               width={108}
               alt="Profile picture of Jen deep in thought"
@@ -31,10 +31,7 @@ const MainLayout = ({ home }) => {
               alt="Profile picture of Jen deep in thought"
             />
             <h2 className={utilStyles.headingLg}>
-              <Link
-                href="/"
-                className={utilStyles.colorInherit}
-              ></Link>
+              <Link href="/" className={utilStyles.colorInherit}></Link>
             </h2>
           </>
         )}
