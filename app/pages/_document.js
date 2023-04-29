@@ -1,6 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
-import HeadComponent from "@components/head";
 const title = "Jen Corbett Web Development, Design & Digital Strategy";
 
 export default function Document() {
@@ -31,7 +30,6 @@ export default function Document() {
           content={title}
         />
       </Head>
-      <HeadComponent />
       <body>
         {" "}
         <Main />
