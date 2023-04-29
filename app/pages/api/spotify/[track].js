@@ -25,7 +25,9 @@ export const player = async () => {
       album: items[0].track.album.artists[0],
       artist: items[0].track.album.artists[0].name,
       albumImageUrl: items[0].track.album.images[0].url,
-      songUrl: items[0].track.preview_url,
+      audioUrl: items[0].track.preview_url,
+      songUrl: items[0].track.external_urls.spotify,
+      heading: "Recently Played",
     };
     return track;
   } else if (
@@ -35,12 +37,14 @@ export const player = async () => {
     const { item } = await response.json();
     const track = {
       item: item,
-      name: nowPlaying.name,
-      album: nowPlaying.album.name,
-      artist: nowPlaying.artists[0].name,
-      artistUrl: nowPlaying.artists[0].uri,
-      songUrl: nowPlaying.uri,
-      albumImageUrl: nowPlaying.album.images[0].url,
+      name: item.name,
+      album: item.album.name,
+      artist: item.artists[0].name,
+      artistUrl: item.artists[0].uri,
+      audioUrl: item.uri,
+      songUrl: item.external_urls.spotify,
+      albumImageUrl: item.album.images[0].url,
+      heading: "Currently playing",
     };
     return track;
   } else {
