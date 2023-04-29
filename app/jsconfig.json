@@ -18,6 +18,6 @@
     "**/*.jsx",
     "**/*.js",
     ".contentlayer/generated",
-    "pages/api/getNowPlaying.js"
+    "pages/api/tracks.js"
   ]
 }

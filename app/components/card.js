@@ -1,8 +1,9 @@
+import styles from "@styles/Home.module.css";
 
 const Card = ({ children }) => {
   return (
     <>
-      <div >{children}</div>
+      <div className={styles.content}>{children}</div>
     </>
   );
 };
