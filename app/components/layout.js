@@ -1,11 +1,9 @@
 import styles from "../styles/Home.module.css";
 import utilStyles from "../styles/utils.module.css";
 import { Inter } from "next/font/google";
-
 import { FaMoon } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-
 import Footer from "./footer";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -65,9 +63,7 @@ const Layout = ({ children }) => {
           <div>
             <main className={`${inter.className}`}>
               {" "}
-              <div className={` ${utilStyles.center} `}>
-                <ThemeSwitch />
-              </div>
+              <ThemeSwitch />
               {children}
               <Footer />
             </main>{" "}
@@ -75,12 +71,10 @@ const Layout = ({ children }) => {
         </>
       ) : (
         <>
-          <main className={``}>
+          <main>
             {children}
-            <div>
-              {" "}
-              <ThemeSwitch />
-            </div>{" "}
+
+            <ThemeSwitch />
           </main>
         </>
       )}

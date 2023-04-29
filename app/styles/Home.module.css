@@ -37,7 +37,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
+  grid-template-columns: repeat(4, minmax(10%, auto));
   max-width: 100%;
   text-align: center;
 }
@@ -83,7 +83,7 @@
 /* Tablet and Smaller Desktop */
 @media (min-width >= 701px) and (max-width <= 1120px) {
   .grid {
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(2, 10%);
   }
 
   .main {
