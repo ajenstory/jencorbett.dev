@@ -1,59 +1,59 @@
 import { getNowPlaying, getRecentlyPlayed } from "../tracks";
-import Date from "components/date";
 
 const checkPlayer = async () => {
   const response = await getNowPlaying();
-  console.log(response);
+
   if (response.status === 204 || response.status > 500) {
     const response = await getRecentlyPlayed();
-    console.log(response);
+
     return response;
   }
   return response;
 };
 
 export const player = async () => {
-  const response = await checkPlayer();
-  if (response.url.includes("recently-played")) {
-    const { items } = await response.json();
-    console.log(items);
-    const track = {
-      item: items[0],
-      name: items[0].track.name,
-      played_at: items[0].played_at,
-      album: items[0].track.album.artists[0],
-      artist: items[0].track.album.artists[0].name,
-      albumImageUrl: items[0].track.album.images[0].url,
-      audioUrl: items[0].track.preview_url,
-      songUrl: items[0].track.external_urls.spotify,
-      heading: "Recently Played",
-    };
-    return track;
-  } else if (
-    !response.url.includes("currently-playing") &&
-    response.url.includes("currently-playing")
-  ) {
-    const { item } = await response.json();
-    const track = {
-      item: item,
-      name: item.name,
-      album: item.album.name,
-      artist: item.artists[0].name,
-      artistUrl: item.artists[0].uri,
-      audioUrl: item.uri,
-      songUrl: item.external_urls.spotify,
-      albumImageUrl: item.album.images[0].url,
-      heading: "Currently playing",
-    };
-    return track;
-  }
+  try {
+    const response = await checkPlayer();
+    if (response.url.includes("recently-played")) {
+      const { items } = await response.json();
+
+      const track = {
+        item: items[0],
+        name: items[0].track.name,
+        played_at: items[0].played_at,
+        album: items[0].track.album.artists[0],
+        artist: items[0].track.album.artists[0].name,
+        albumImageUrl: items[0].track.album.images[0].url,
+        audioUrl: items[0].track.preview_url,
+        songUrl: items[0].track.external_urls.spotify,
+        heading: "Recently Played",
+      };
+      return track;
+    } else if (
+      !response.url.includes("currently-playing") &&
+      response.url.includes("currently-playing")
+    ) {
+      const { item } = await response.json();
+      const track = {
+        item: item,
+        name: item.name,
+        album: item.album.name,
+        artist: item.artists[0].name,
+        artistUrl: item.artists[0].uri,
+        audioUrl: item.uri,
+        songUrl: item.external_urls.spotify,
+        albumImageUrl: item.album.images[0].url,
+        heading: "Currently playing",
+      };
+      return track;
+    }
+  } catch (error) {}
 
   return error(console.log("Something went wrong"));
 };
 
 export default async function (req, res) {
   const response = await player();
-  console.log(response);
   res.setHeader(
     "Cache-Control",
     "public, s-maxage=86400, stale-while-revalidate=43200"
