@@ -38,7 +38,10 @@ const NowPlaying = () => {
         </Link>
       </div>
       <div>
-        <audio src={data.audioUrl} controls></audio>
+        <audio
+          src={data.audioUrl}
+          controls
+        ></audio>
       </div>
       {console.log(data)}
     </div>

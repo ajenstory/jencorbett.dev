@@ -14,7 +14,6 @@ const checkPlayer = async () => {
 
 export const player = async () => {
   const response = await checkPlayer();
-
   if (response.url.includes("recently-played")) {
     const { items } = await response.json();
     console.log(items);
@@ -47,7 +46,6 @@ export const player = async () => {
       heading: "Currently playing",
     };
     return track;
-  } else {
   }
 
   return error(console.log("Something went wrong"));
