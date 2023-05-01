@@ -20,15 +20,13 @@ const Player = () => {
           {" "}
           <figure>
             {" "}
-            <Link href={data.albumUrl}>
-              <Image
-                className={`${playerStyles.image} ${playerStyles.center}`}
-                width={100}
-                height={100}
-                quality={100}
-                src={data.albumImageUrl}
-              />
-            </Link>
+            <Image
+              className={`${playerStyles.image} ${playerStyles.center}`}
+              width={100}
+              height={100}
+              quality={100}
+              src={data.albumImageUrl}
+            />
           </figure>
           <figure>
             <div className={`${playerStyles.audio} ${playerStyles.center}`}>
