@@ -1,42 +1,85 @@
+/* autoprefixer grid: autoplace */
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem;
+  margin: 0 auto;
+  max-width: 70rem;
+}
+
 .page {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
-}
-
-.center {
   align-items: center;
-}
-
-.main {
+  padding: 6rem;
   min-height: 100vh;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.content {
-  font-size: calc(0.85rem + 0.2vw);
-  margin: 0 auto;
-  padding: 0 5rem;
-  width: 100%;
-  text-align: center;
-  max-width: 70rem;
-}
-
-.contentgrid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(25%, auto));
-  max-width: 100%;
-  text-align: center;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(10%, auto));
+  grid-template-columns: repeat(4, minmax(25%, auto));
   max-width: 100%;
   text-align: center;
 }
+
+.card {
+  padding: 1rem 1.2rem;
+}
+
+.card p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: calc(0.95rem + 0.2rem);
+  line-height: 1.5;
+  max-width: 70ch;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 2rem 4rem;
+}
+
+/* Bootstrapped custom transforms */
+
+.center::before,
+.center::after {
+  content: "";
+  left: 50%;
+  position: absolute;
+  filter: blur(45px);
+  transform: translateZ(0);
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.logo,
+.custom {
+  position: relative;
+}
+
+/* Bootstrapped custom transforms */
+.custom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  height: 75px;
+  padding: 25px 10px;
+  margin-left: 16px;
+  transform: translateZ(0);
+  overflow: hidden;
+  box-shadow: 2px 8px -1px #0000001a;
+}
+
+/* Bootstrapped Enable hover only on non-touch devices */
 
 @media (prefers-reduced-motion) {
   .custom::before {
@@ -48,48 +91,46 @@
   }
 }
 
-/* Desktop */
-@media (min-width >= 30rem) and (max-width <= 1120px) {
+/* Mobile */
+@media (max-width <= 40rem) {
   .main {
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    min-height: 100vh;
-  }
-
-  .content {
-    font-size: calc(0.9rem + 0.15vw);
-    display: flex;
-    align-items: center;
+    padding: 1.2rem;
     margin: 0 auto;
-    width: 70%;
-    max-width: 50rem;
+    max-width: 70rem;
   }
 
-  .playergrid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(25%, auto));
+  .grid {
+    grid-template-columns: 1fr;
+    margin-bottom: 20px;
+    max-width: 320px;
     text-align: center;
-    grid-gap: 4px;
+  }
+
+  .card {
+    padding: 1rem 2.5rem;
+  }
+
+  .card h2 {
+    margin-bottom: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  .card p {
+    font-size: calc(1.5rem + 0.3rem);
+  }
+
+  .center {
+    padding: 2rem 0;
   }
 }
 
 /* Tablet and Smaller Desktop */
 @media (min-width >= 701px) and (max-width <= 1120px) {
   .grid {
-    grid-template-columns: repeat(2, 10%);
-  }
-
-  .main {
-    font-size: calc(0.9rem + 0.3vw);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .icon,
-  .content img {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+    grid-template-columns: repeat(2, 50%);
   }
 }
