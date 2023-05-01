@@ -74,6 +74,7 @@
 }
 
 .figcaption {
+  color: rgba(0, 0, 0, 0.1);
   padding: 2rem 1rem;
   font-weight: 300;
   font-size: calc(0.85rem + 0.15vw);
