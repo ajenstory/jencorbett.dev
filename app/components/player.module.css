@@ -68,11 +68,9 @@
 .audio {
   max-width: fit-content;
   min-width: auto;
-  height: 100%;
+  height: fit-content;
   width: auto;
   display: flex;
-  background: transparent;
-  transition: background 200ms, border 200ms;
 }
 
 .figcaption {
