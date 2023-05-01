@@ -116,7 +116,7 @@
 
   .card h2 {
     margin-bottom: 0.5rem;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
   }
 
   .card p {
@@ -124,7 +124,7 @@
   }
 
   .center {
-    padding: 2rem 0;
+    padding: 1rem 0;
   }
 }
 
