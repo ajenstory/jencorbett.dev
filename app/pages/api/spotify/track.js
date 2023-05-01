@@ -1,56 +1,108 @@
 import { getNowPlaying, getRecentlyPlayed } from "../tracks";
+import { format } from "date-fns/locale";
 
 const checkPlayer = async () => {
   const response = await getNowPlaying();
-
+  console.log(response);
   if (response.status === 204 || response.status > 500) {
     const response = await getRecentlyPlayed();
-
     return response;
   }
   return response;
 };
 
 export const player = async () => {
-  try {
-    const response = await checkPlayer();
-    if (response.url.includes("recently-played")) {
-      const { items } = await response.json();
-
-      const track = {
-        item: items[0],
-        name: items[0].track.name,
-        played_at: items[0].played_at,
-        album: items[0].track.album.artists[0],
-        artist: items[0].track.album.artists[0].name,
-        albumImageUrl: items[0].track.album.images[0].url,
-        audioUrl: items[0].track.preview_url,
-        songUrl: items[0].track.external_urls.spotify,
-        heading: "Recently Played",
-      };
-      return track;
-    } else if (
-      !response.url.includes("currently-playing") &&
-      response.url.includes("currently-playing")
-    ) {
-      const { item } = await response.json();
-      const track = {
-        item: item,
-        name: item.name,
-        album: item.album.name,
-        artist: item.artists[0].name,
-        artistUrl: item.artists[0].uri,
-        audioUrl: item.uri,
-        songUrl: item.external_urls.spotify,
-        albumImageUrl: item.album.images[0].url,
-        heading: "Currently playing",
-      };
-      return track;
-    }
-  } catch (error) {}
-
-  return error(console.log("Something went wrong"));
+  const response = await checkPlayer();
+  console.log(response);
+  if (response.url.includes("recently-played")) {
+    const { items } = await response.json();
+    console.log(items);
+    const tracks = {
+      item: items[0],
+      songName: items[0].track.name,
+      played_at: format(new Date(), "yyyy-MM-dd") + "T23:59:59.999Z",
+      albumName: items[0].track.album.name,
+      artist: items[0].track.album.artists[0].name,
+      artistUrl: items[0].track.artists[0].external_urls.spotify,
+      albumUrl: items[0].track.album.external_urls.spotify,
+      albumImageUrl: items[0].track.album.images[0].url,
+      audioUrl: items[0].track.preview_url,
+      songUrl: items[0].track.external_urls.spotify,
+      heading: "Recently Played",
+    };
+    console.log(format(new Date(), "yyyy-MM-dd") + "T23:59:59.999Z");
+    return tracks;
+  } else if (
+    !response.url.includes("recently-played") &&
+    response.url.includes("currently-playing")
+  ) {
+    const { item } = await response.json();
+    console.log(item);
+    const track = {
+      item: item,
+      songName: item.name,
+      // played_at: JSON.stringify(Date.now()),
+      albumName: item.album.name,
+      artist: item.artists[0].name,
+      artistUrl: item.artists[0].uri,
+      albumUrl: item.album.external_urls.spotify,
+      audioUrl: item.preview_url,
+      songUrl: item.external_urls.spotify,
+      albumImageUrl: item.album.images[0].url,
+      heading: "Currently playing",
+    };
+    console.log(track);
+    return track;
+  }
+  const error = new Error("Something went wrong");
+  return error;
 };
+
+// export const player = async () => {
+//   try {
+//     const response = await checkPlayer();
+//     const { items } = await response.json();
+//     console.log(items);
+//     const tracks = {
+//       item: items[0],
+//       songName: items[0].track.name,
+//       played_at: items[0].played_at,
+//       albumName: items[0].track.album.name,
+//       artist: items[0].track.album.artists[0].name,
+//       artistUrl: items[0].track.artists[0].external_urls.spotify,
+//       albumUrl: items[0].track.album.external_urls.spotify,
+//       albumImageUrl: items[0].track.album.images[0].url,
+//       audioUrl: items[0].track.preview_url,
+//       songUrl: items[0].track.external_urls.spotify,
+//       heading: "Recently Played",
+//     };
+//     return tracks;
+//   } catch (err) {
+//     const errorMessage = err.message;
+//     console.log(errorMessage);
+//   }
+//   try {
+//     const { item } = await response.json();
+//     console.log(item);
+//     const track = {
+//       item: item,
+//       songName: item.name,
+//       albumName: item.album.name,
+//       artist: item.artists[0].name,
+//       artistUrl: item.artists[0].uri,
+//       albumUrl: item.album.external_urls.spotify,
+//       audioUrl: item.track.preview_url,
+//       songUrl: item.external_urls.spotify,
+//       albumImageUrl: item.album.images[0].url,
+//       heading: "Currently playing",
+//     };
+//     console.log(track);
+
+//     return track;
+//   } catch (err) {
+//     return err;
+//   }
+// };
 
 export default async function (req, res) {
   const response = await player();
