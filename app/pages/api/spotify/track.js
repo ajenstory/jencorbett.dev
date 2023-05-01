@@ -20,7 +20,7 @@ export const player = async () => {
     const tracks = {
       item: items[0],
       songName: items[0].track.name,
-      played_at: format(new Date(), "yyyy-MM-dd") + "T23:59:59.999Z",
+      played_at: items[0].played_at,
       albumName: items[0].track.album.name,
       artist: items[0].track.album.artists[0].name,
       artistUrl: items[0].track.artists[0].external_urls.spotify,
