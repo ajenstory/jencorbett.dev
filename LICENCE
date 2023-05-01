@@ -1,0 +1,20 @@
+1. You are free to use this code as inspiration. Do not copy directly.
+2. Use at your own risk. It is not recommended to use this if you don't understand it. I am also only learning myself, and I don't take any responsibility for the use of this code. 
+3. If you have any contributions or suggestions to improve my code please feel free to do so.
+4. Remove any of my personal information from this site before you use it.
+5. Crediting the author and related authors is appreciated. See below for sources.
+6. Be kind and help others learn.
+
+
+## Dark and light mode button
+[Alireza M](https://codepen.io/alireza82/pen/poRqBOq)
+
+### Nextjs credits
+Styles and inspiration:
+[create-next-app](https://nextjs.org/docs/api-reference/create-next-app)
+[nextjs](https://nextjs.org/learn/foundations/about-nextjs?utm_source=next-site&utm_medium=nav-cta&utm_campaign=next-website)
+
+### Spotify API credits
+[Theodorus Clarence](https://theodorusclarence.com/blog/spotify-now-playing)
+[Jatin Sharma](https://dev.to/j471n/how-to-use-spotify-api-with-nextjs-50o5)
+[Salma Alam-Naylor](https://whitep4nth3r.com/blog/next-js-beginner-tutorial-using-spotify-api/)
