@@ -1,5 +1,5 @@
 import Link from "next/link";
-import utilStyles from "../styles/utils.module.css";
+import headerStyles from "@components/header.module.css";
 import Image from "next/image";
 
 const profilePic = "/profile.jpg";
@@ -8,30 +8,37 @@ const MainLayout = ({ home }) => {
   const name = "Jen Corbett";
   return (
     <div>
-      <header className={`${utilStyles.header}`}>
+      <header className={`${headerStyles.header}`}>
         {home ? (
           <>
-            <Image
-              priority
-              src={profilePic}
-              className={`${utilStyles.borderCircle} ${utilStyles.change}`}
-              height={108}
-              width={108}
-              alt="Profile picture of Jen deep in thought"
-            />
-            <h1 className={utilStyles.headingXl}>{name}</h1>
+            <div>
+              <Image
+                priority
+                src={profilePic}
+                className={`${headerStyles.borderCircle} ${headerStyles.change}`}
+                height={108}
+                width={108}
+                alt="Profile picture of Jen deep in thought"
+              />
+            </div>
+            <div>
+              <h1 className={headerStyles.headingXl}>{name}</h1>
+            </div>{" "}
           </>
         ) : (
           <>
             <Image
               src={profilePic}
-              className={utilStyles.borderCircle}
+              className={headerStyles.borderCircle}
               height={108}
               width={108}
               alt="Profile picture of Jen deep in thought"
             />
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}></Link>
+            <h2 className={headerStyles.headingLg}>
+              <Link
+                href="/"
+                className={headerStyles.colorInherit}
+              ></Link>
             </h2>
           </>
         )}

@@ -4,7 +4,10 @@ import Link from "next/link";
 
 const Icon = ({ children, alt, size }) => {
   return (
-    <div alt={alt} size={size}>
+    <div
+      alt={alt}
+      size={size}
+    >
       {children}
     </div>
   );
@@ -13,7 +16,10 @@ const Icon = ({ children, alt, size }) => {
 const IconWrapper = ({ children, href }) => {
   return (
     <>
-      <Link href={href} className={`${styles.custom} ${utilStyles.icon}`}>
+      <Link
+        href={href}
+        className={`${styles.card} ${styles.center} ${utilStyles.icon}`}
+      >
         <Icon size={22}>{children}</Icon>
       </Link>
     </>

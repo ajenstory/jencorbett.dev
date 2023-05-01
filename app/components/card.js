@@ -3,7 +3,7 @@ import styles from "@styles/Home.module.css";
 const Card = ({ children }) => {
   return (
     <>
-      <div className={styles.content}>{children}</div>
+      <div className={`${styles.card} ${styles.center}`}>{children}</div>
     </>
   );
 };

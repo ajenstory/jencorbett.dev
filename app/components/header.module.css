@@ -1,0 +1,17 @@
+.header {
+  margin-top: 6rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.borderCircle {
+  border-radius: 90px;
+}
+
+.change {
+  animation-name: change;
+  animation-duration: 1s;
+  animation-direction: alternate;
+}
