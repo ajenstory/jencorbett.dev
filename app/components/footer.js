@@ -1,11 +1,7 @@
-import Player from "./player";
-
 const Footer = () => {
   return (
     <div>
-      <footer>
-        <Player />
-      </footer>{" "}
+      <footer>© Jen Corbett 2023</footer>{" "}
     </div>
   );
 };
