@@ -1,0 +1,68 @@
+.iconlabel {
+  font-size: 1rem;
+  white-space: nowrap;
+  line-height: 1.5;
+  letter-spacing: 0.1rem;
+}
+
+.card {
+  padding: 1rem 1.2rem;
+}
+
+.card p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: calc(0.95rem + 0.2rem);
+  line-height: 1.5;
+  max-width: 70ch;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 2rem 4rem;
+}
+
+.icon {
+  list-style: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: color 0.2s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #fff;
+}
+
+.icon:hover {
+  color: #fff;
+  opacity: 70%;
+}
+
+.icon.active {
+  color: #fff;
+  opacity: 70%;
+}
+
+.icon.active:hover {
+  color: #fff;
+}
+
+.icon.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.icon.disabled:hover {
+  color: #fff;
+}
+
+.change {
+  animation-name: change;
+  animation-duration: 1s;
+  animation-direction: alternate;
+}

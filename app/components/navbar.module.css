@@ -7,58 +7,9 @@
   display: flex;
 }
 
-.navitemlabel {
-  font-size: 1rem;
-  white-space: nowrap;
-  line-height: 1.5;
-  letter-spacing: 0.1rem;
-}
-
-.navitem {
-  list-style: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: bold;
-  transition: color 0.2s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  color: #fff;
-}
-
-.navitem:hover {
-  color: #fff;
-  opacity: 70%;
-}
-
-.navitem.active {
-  color: #fff;
-  opacity: 70%;
-}
-
-.navitem.active:hover {
-  color: #fff;
-}
-
-.navitem.disabled {
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.navitem.disabled:hover {
-  color: #fff;
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-}
-
-.change {
-  animation-name: change;
-  animation-duration: 1s;
-  animation-direction: alternate;
 }
 
 @media (min-width: 40rem) {
