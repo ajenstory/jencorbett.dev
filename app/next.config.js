@@ -15,7 +15,7 @@ const nextConfig = {
     ],
   },
   generateBuildId: async () => {
-   // get latest build hash
+    // get latest build hash
     return "latest-build-hash";
   },
   reactStrictMode: true,

@@ -8,9 +8,6 @@ const NavBar = () => {
     <div className="">
       <div className="">
         <ol className={` ${navStyles.nav} ${navStyles.grid}`}>
-          <li
-            lassName={` ${navStyles.navitem} ${navStyles.nav} ${navStyles.change}`}
-          >
             <IconWrapper
               alt="Linkedin icon"
               href="https://linkedin.com/in/jencorbett"
@@ -18,7 +15,7 @@ const NavBar = () => {
               <SiLinkedin size={22} />
             </IconWrapper>
           </li>
-          <li lassName={`  ${navStyles.change}`}>
+          <li className={`  `}>
             <IconWrapper
               alt="GitHub icon"
               href="https://github.com/ajenstory"
@@ -26,7 +23,7 @@ const NavBar = () => {
               <FiGithub size={22} />
             </IconWrapper>
           </li>
-          <li lassName={` ${navStyles.navitem} ${navStyles.change}`}>
+          <li>
             <IconWrapper
               alt="Mastodon icon"
               href="https://mastodon.nz/@jen"
@@ -34,7 +31,7 @@ const NavBar = () => {
               <SiMastodon size={22} />
             </IconWrapper>
           </li>
-          <li lassName={` ${navStyles.navitem} ${navStyles.change}`}>
+          <li>
             <IconWrapper
               alt="Twitter icon"
               href="https://twitter.com/@ajenstory"

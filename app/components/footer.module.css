@@ -1,0 +1,37 @@
+/* mobile responsive footer */
+.container {
+  margin: 0 auto;
+  position: fixed;
+  justify-self: end;
+  align-self: start;
+  max-height: fit-content;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 10;
+  padding: 1rem;
+}
+
+.footerlink:hover {
+  font-style: italic;
+  text-decoration: underline;
+  font-weight: 400;
+  cursor: pointer;
+  transition-delay: 2ms;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.border {
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(175, 175, 175, 10%);
+  border: 1px solid rgba(237, 237, 237, 10%);
+}

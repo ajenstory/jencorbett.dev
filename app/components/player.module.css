@@ -1,5 +1,4 @@
 /* mobile responsive player */
-
 .container {
   margin: 0 auto;
   position: fixed;
@@ -67,14 +66,13 @@
 .audio {
   max-width: fit-content;
   min-width: auto;
-  height: 100%;
+  height: fit-content;
   width: auto;
   display: flex;
-  background: transparent;
-  transition: background 200ms, border 200ms;
 }
 
 .figcaption {
+  color: rgba(0, 0, 0, 0.1);
   padding: 2rem 1rem;
   font-weight: 300;
   font-size: calc(0.85rem + 0.15vw);
