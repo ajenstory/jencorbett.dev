@@ -9,9 +9,19 @@
 .borderCircle {
   border-radius: 90px;
 }
+/* 
+@keyframes change {
+  10% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
+}
 
 .change {
   animation-name: change;
   animation-duration: 1s;
   animation-direction: alternate;
-}
+} */

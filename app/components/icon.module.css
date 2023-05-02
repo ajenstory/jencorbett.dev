@@ -35,16 +35,13 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #fff;
 }
 
 .icon:hover {
-  color: #fff;
   opacity: 70%;
 }
 
 .icon.active {
-  color: #fff;
   opacity: 70%;
 }
 
@@ -61,8 +58,19 @@
   color: #fff;
 }
 
+/* @keyframes change {
+  10% {
+    transform: rotate(1turn);
+  }
+
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
 .change {
   animation-name: change;
   animation-duration: 1s;
-  animation-direction: alternate;
-}
+  animation-delay: 2ms;
+  animation-direction: normal;
+} */
