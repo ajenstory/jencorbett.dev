@@ -14,9 +14,9 @@ const Layout = ({ children }) => {
       {`${children}` ? (
         <>
           {" "}
-          <NavBar /> <ThemeSwitch />
+          <ThemeSwitch />
           <div className={`${styles.main}`}>
-            <Header main />
+            <Header main /> <NavBar />
           </div>
           <div className={`${styles.main}`}>
             {" "}
@@ -26,10 +26,10 @@ const Layout = ({ children }) => {
         </>
       ) : (
         <>
-          <NavBar /> <ThemeSwitch />
+          <ThemeSwitch />
           {/* <---- change this to page when new layout is created --->  */}
           <div className={`${styles.main}`}>
-            <Header page />
+            <Header page /> <NavBar />
           </div>
           <main className={`${styles.main}`}>{children}</main>
           <Footer />
