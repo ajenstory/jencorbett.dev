@@ -12,6 +12,14 @@
   padding: 1rem;
 }
 
+.footerlink:hover {
+  font-style: italic;
+  text-decoration: underline;
+  font-weight: 400;
+  cursor: pointer;
+  transition-delay: 2ms;
+}
+
 .center {
   display: flex;
   justify-content: center;
