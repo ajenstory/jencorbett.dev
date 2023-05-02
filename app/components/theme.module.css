@@ -1,0 +1,41 @@
+.darkMode {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.lightShadow {
+  background: linear-gradient(145deg, #23282c, #1e2125);
+  box-shadow: 17px 17px 23px #1a1d20, -17px -17px 23px #282d32,
+    inset 5px 5px 4px #1e2226, inset -5px -5px 4px #24282c;
+}
+
+.darkShadow {
+  background: linear-gradient(218.32deg, #fffcfc, #fdfeff);
+  box-shadow: 17px 17px 23px #fafdff, -17px -17px 23px #d5d5d5,
+    inset 5px 5px 4px #f9fbfc, inset -5px -5px 4px #f1f1f1;
+}
+
+.darkMode:hover {
+  opacity: 0.8;
+}
+
+@keyframes change {
+  10% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.change {
+  animation-name: change;
+  animation-duration: 1s;
+  animation-direction: alternate;
+}
