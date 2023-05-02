@@ -5,8 +5,7 @@ import Card from "@components/card";
 const title = "Jen Corbett Web Development, Design & Digital Strategy";
 
 const description = {
-  h2: "Hi I'm Jen",
-  text: `I'm a developer and web designer based in Ruakākā, Aotearoa NZ. If you would like to say hi or check my availability, feel free to email me on hello[at]jencorbett.dev or reach out on social.`,
+  text: `I'm a developer based in Ruakākā, Aotearoa NZ. If you would like to say hi or check my availability, feel free to email me on hello[at]jencorbett.dev or reach out on social.`,
 };
 
 export default function Home() {

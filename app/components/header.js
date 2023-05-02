@@ -7,7 +7,7 @@ const profilePic = "/profile.jpg";
 const MainLayout = ({ home }) => {
   const name = "Jen Corbett";
   return (
-    <div className={`${headerStyles.header}  ${headerStyles.change}`}>
+    <div className={`${headerStyles.header} `}>
       <header>
         {home ? (
           <>

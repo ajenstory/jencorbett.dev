@@ -17,7 +17,7 @@ const IconWrapper = ({ children, href }) => {
     <>
       <Link
         href={href}
-        className={`${iconStyles.card} ${iconStyles.icon} ${iconStyles.change} ${iconStyles.center}`}
+        className={`${iconStyles.wrapper} ${iconStyles.icon} ${iconStyles.change} `}
       >
         <Icon size={22}>{children}</Icon>
       </Link>

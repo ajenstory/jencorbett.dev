@@ -3,20 +3,22 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className={`${footerStyles.container}  ${footerStyles.border}`}>
-      <footer>
+    <footer>
+      <div
+        className={`${footerStyles.container} ${footerStyles.footer} ${footerStyles.border} ${footerStyles.center}`}
+      >
         <p>
           {" "}
-          © Jen Corbett 2023 &#183;{" "}
+          © 2023 Jen Corbett &#183;{" "}
           <Link
             className={footerStyles.footerlink}
             href="https://github.com/ajenstory/jencorbett.dev"
           >
-            visit this project on github
+            see this on github
           </Link>
         </p>
-      </footer>{" "}
-    </div>
+      </div>
+    </footer>
   );
 };
 

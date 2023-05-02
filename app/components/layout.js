@@ -15,9 +15,7 @@ const Layout = ({ children }) => {
         <>
           {" "}
           <ThemeSwitch />
-          <div className={`${styles.main}`}>
-            <Header main /> <NavBar />
-          </div>
+          <Header main /> <NavBar />
           <div className={`${styles.main}`}>
             {" "}
             <main>{children}</main>
