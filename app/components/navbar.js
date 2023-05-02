@@ -8,7 +8,7 @@ const NavBar = () => {
     <div className="">
       <div className="">
         <ol className={` ${navStyles.nav} ${navStyles.grid}`}>
-          <li>
+        <li>
             <IconWrapper
               alt="Linkedin icon"
               href="https://linkedin.com/in/jencorbett"
