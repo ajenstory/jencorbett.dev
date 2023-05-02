@@ -44,8 +44,8 @@ const Player = () => {
               className={`${playerStyles.itemUrl} `}
               href={data.songUrl}
             >
-              {data.songName}
-            </Link>
+              Listening to {data.songName}
+            </Link>{" "}
             &#183;{" "}
             <Link
               className={`${playerStyles.itemUrl} `}

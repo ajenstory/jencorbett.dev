@@ -7,15 +7,15 @@ const profilePic = "/profile.jpg";
 const MainLayout = ({ home }) => {
   const name = "Jen Corbett";
   return (
-    <div>
-      <header className={`${headerStyles.header}`}>
+    <div className={`${headerStyles.header}  ${headerStyles.change}`}>
+      <header>
         {home ? (
           <>
             <div>
               <Image
                 priority
                 src={profilePic}
-                className={`${headerStyles.borderCircle} ${headerStyles.change}`}
+                className={`${headerStyles.borderCircle}  `}
                 height={108}
                 width={108}
                 alt="Profile picture of Jen deep in thought"

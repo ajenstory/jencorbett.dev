@@ -1,10 +1,12 @@
-import utilStyles from "@styles/utils.module.css";
-import styles from "@styles/Home.module.css";
+import iconStyles from "./icon.module.css";
 import Link from "next/link";
 
 const Icon = ({ children, alt, size }) => {
   return (
-    <div alt={alt} size={size}>
+    <div
+      alt={alt}
+      size={size}
+    >
       {children}
     </div>
   );
@@ -13,7 +15,10 @@ const Icon = ({ children, alt, size }) => {
 const IconWrapper = ({ children, href }) => {
   return (
     <>
-      <Link href={href} className={`${styles.custom} ${utilStyles.icon}`}>
+      <Link
+        href={href}
+        className={`${iconStyles.card} ${iconStyles.icon} ${iconStyles.change} ${iconStyles.center}`}
+      >
         <Icon size={22}>{children}</Icon>
       </Link>
     </>

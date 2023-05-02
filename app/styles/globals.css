@@ -6,15 +6,16 @@ body {
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
   --webkit-font-smoothing: antialiased;
-  --background: rgb(20, 20, 20);
-  --foreground: rgb(249, 249, 249);
 }
 
+[data-theme="light"] body {
+  background-color: rgb(255, 255, 255);
+  color: #161716;
+}
 [data-theme="dark"] body {
-  --background: rgb(26, 25, 25);
-  --foreground: rgb(249, 249, 249);
+  background-color: #161716;
+  color: rgb(255, 255, 255);
 }
-
 /*
  Use a more-intuitive box-sizing model.
 */
@@ -35,8 +36,6 @@ body {
 
 html,
 body {
-  --background: rgb(217, 217, 217);
-  --foreground: rgb(20, 20, 20);
   min-height: 100vh;
   white-space: inherit;
   max-width: 100vw;
@@ -107,7 +106,7 @@ a {
 }
 
 /*
-  Special sticky button style
+  Creates sticky button styleinspired by [Alireza M - Dark & light mode button](https://codepen.io/alireza82/pen/poRqBOq)
 */
 
 button {
@@ -131,13 +130,6 @@ button::after {
   width: 240px;
   height: 180px;
   z-index: -1;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: light;
-    background-color: azure;
-  }
 }
 
 /*
