@@ -10,7 +10,7 @@ As you can see, this is **very much** a work-in-progress, :flushed: but here's w
 - **Framework**: [Next.js](https://nextjs.org/)
 - **UI Theme**: [Next Themes](https://github.com/pacocoursey/next-themes)
 - **Data fetching**: [React Hooks for Data Fetching](https://swr.vercel.app/)
-- **Content SDK**: [ContentLayer](https://jamstack.org/)
+- **Content SDK**: [ContentLayer](https://www.contentlayer.dev/)
 - **Site Deployment**: [Vercel](https://vercel.com)
 - **Spotify Web Api**: [Spotify](https://developer.spotify.com/documentation/web-api)
 
