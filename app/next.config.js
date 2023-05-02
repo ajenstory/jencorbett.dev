@@ -23,15 +23,15 @@ const nextConfig = {
     styledComponents: {
       // Enabled by default in development, disabled in production to reduce file size,
       // setting this will override the default for all environments.
-      displayName,
+      displayName: false,
       // Enabled by default.
-      ssr,
+      ssr: false,
       // Enabled by default.
-      fileName,
+      fileName: false,
       // Empty by default.
       topLevelImportPaths,
       // Defaults to ["index"].
-      meaninglessFileNames,
+      meaninglessFileNames: ["index", "styles"],
       // Enabled by default.
       cssProp,
       // Empty by default.
