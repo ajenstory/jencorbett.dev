@@ -1,6 +1,8 @@
+import footerStyles from "./footer.module.css";
+
 const Footer = () => {
   return (
-    <div>
+    <div className={`${footerStyles.container}   ${footerStyles.border}`}>
       <footer>© Jen Corbett 2023</footer>{" "}
     </div>
   );
