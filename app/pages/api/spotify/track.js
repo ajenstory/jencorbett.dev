@@ -1,9 +1,8 @@
 import { getNowPlaying, getRecentlyPlayed } from "../tracks";
-import { format } from "date-fns/locale";
 
 const checkPlayer = async () => {
   const response = await getNowPlaying();
-  console.log(response);
+
   if (response.status === 204 || response.status > 500) {
     const response = await getRecentlyPlayed();
     return response;
@@ -13,10 +12,10 @@ const checkPlayer = async () => {
 
 export const player = async () => {
   const response = await checkPlayer();
-  console.log(response);
+
   if (response.url.includes("recently-played")) {
     const { items } = await response.json();
-    console.log(items);
+
     const tracks = {
       item: items[0],
       songName: items[0].track.name,
@@ -36,11 +35,10 @@ export const player = async () => {
     response.url.includes("currently-playing")
   ) {
     const { item } = await response.json();
-    console.log(item);
+
     const track = {
       item: item,
       songName: item.name,
-      // played_at: JSON.stringify(Date.now()),
       albumName: item.album.name,
       artist: item.artists[0].name,
       artistUrl: item.artists[0].uri,
@@ -50,7 +48,7 @@ export const player = async () => {
       albumImageUrl: item.album.images[0].url,
       heading: "Currently playing",
     };
-    console.log(track);
+
     return track;
   } else if (!response) {
     const error = new Error("Something went wrong");

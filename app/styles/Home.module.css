@@ -20,9 +20,9 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
+  grid-template-columns: repeat(4, minmax(20%, auto));
   max-width: 100%;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .card {
@@ -45,8 +45,7 @@
   padding: 2rem 4rem;
 }
 
-/* Bootstrapped custom transforms */
-
+/* Mobile */
 .center::before,
 .center::after {
   content: "";
@@ -55,31 +54,6 @@
   filter: blur(45px);
   transform: translateZ(0);
 }
-
-.hide {
-  visibility: hidden;
-}
-
-.logo,
-.custom {
-  position: relative;
-}
-
-/* Bootstrapped custom transforms */
-.custom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 75px;
-  height: 75px;
-  padding: 25px 10px;
-  margin-left: 16px;
-  transform: translateZ(0);
-  overflow: hidden;
-  box-shadow: 2px 8px -1px #0000001a;
-}
-
-/* Bootstrapped Enable hover only on non-touch devices */
 
 @media (prefers-reduced-motion) {
   .custom::before {
@@ -91,7 +65,6 @@
   }
 }
 
-/* Mobile */
 @media (max-width <= 40rem) {
   .main {
     display: flex;

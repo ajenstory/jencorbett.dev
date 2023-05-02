@@ -1,5 +1,4 @@
 /* mobile responsive player */
-
 .container {
   margin: 0 auto;
   position: fixed;
@@ -50,8 +49,7 @@
 }
 
 .image {
-  display: none;
-  /* display: block;
+  display: block;
   position: relative;
   align-items: baseline;
   justify-content: center;
@@ -61,7 +59,7 @@
   padding: 4px;
   max-height: calc(15vh - 6px);
   object-fit: scale-down;
-  z-index: 1; */
+  z-index: 1;
 }
 
 /* mobile responsive audio player */
@@ -130,7 +128,7 @@
   }
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   .spotifyicon,
   .image {
     filter: invert(1);
@@ -145,7 +143,7 @@
   .audio:hover {
     background: rgb(255, 255, 255);
   }
-} */
+}
 
 .lightShadow {
   background: linear-gradient(145deg, #23282c, #1e2125);
