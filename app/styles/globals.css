@@ -9,12 +9,11 @@ body {
 }
 
 [data-theme="light"] body {
-  background-color: rgb(255, 255, 255);
+  background-color: #faf9f6;
   color: #161716;
 }
 [data-theme="dark"] body {
-  background-color: #161716;
-  color: rgb(255, 255, 255);
+  color: #faf9f6;
 }
 /*
  Use a more-intuitive box-sizing model.

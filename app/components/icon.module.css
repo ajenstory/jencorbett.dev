@@ -5,31 +5,15 @@
   letter-spacing: 0.1rem;
 }
 
-.card {
-  padding: 1rem 1.2rem;
-}
-
-.card p {
-  margin: 0;
-  opacity: 0.9;
-  font-size: calc(0.95rem + 0.2rem);
-  line-height: 1.5;
-  max-width: 70ch;
-}
-
-.center {
+.wrapper {
+  margin: 0 auto;
+  padding: 2rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  padding: 2rem 4rem;
 }
 
 .icon {
   list-style: none;
   cursor: pointer;
-  text-transform: uppercase;
-  font-weight: bold;
   transition: color 0.2s;
   -webkit-user-select: none;
   -moz-user-select: none;

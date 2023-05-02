@@ -1,15 +1,18 @@
 /* mobile responsive footer */
 .container {
-  margin: 0 auto;
-  position: fixed;
-  justify-self: end;
-  align-self: start;
-  max-height: fit-content;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  z-index: 10;
-  padding: 1rem;
+  bottom: 0px;
+  /* left: 20px;
+  right: 20px; */
+  padding: calc(1.2rem + 0.2rem);
+  width: 100%;
+  height: auto;
+  color: #faf9f6;
+  background-color: #161716;
+  font-size: calc(0.75rem + 0.2rem);
+}
+
+.footer {
+  opacity: 85%;
 }
 
 .footerlink:hover {
@@ -21,17 +24,14 @@
 }
 
 .center {
+  position: absolute;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  flex-direction: row;
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
 }
 
 .border {
-  border-radius: 8px;
-  box-shadow: 0 0 0 1px rgba(175, 175, 175, 10%);
-  border: 1px solid rgba(237, 237, 237, 10%);
+  width: 100%;
+  border-top: 2px solid rgb(175, 175, 175, 65%);
 }
