@@ -15,13 +15,13 @@ As you can see, this is **very much** a work-in-progress, :flushed: but here's w
 - **Spotify Web Api**: [Spotify](https://developer.spotify.com/documentation/web-api)
 
 ## TODO list
-
-- fix and improve homepage ui mobile-responsive & accessibility
+- fix code style issues and remove unused variables etc
+- fix and improve ui accessibility across site
 - implement tests with Jest, React Testing Library and msw
 - complete spotify player api with testing and error handling
 - implement content-layer blog posts with testing and error handling
 - implement projects page with image loading optimisation
-- improve animation and ui tweaks to theme
+- improve animation sugar etc
 - implement full colour theme
 - add resume :blush:
 
