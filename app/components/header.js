@@ -7,22 +7,23 @@ const profilePic = "/profile.jpg";
 const MainLayout = ({ home }) => {
   const name = "Jen Corbett";
   return (
-    <div className={`${headerStyles.header}  ${headerStyles.change}`}>
+    <div className={`${headerStyles.container} `}>
       <header>
         {home ? (
           <>
-            <div>
-              <Image
-                priority
-                src={profilePic}
-                className={`${headerStyles.borderCircle}  `}
-                height={108}
-                width={108}
-                alt="Profile picture of Jen deep in thought"
-              />
-            </div>
-            <div>
-              <h1 className={headerStyles.headingXl}>{name}</h1>
+            <div className={` ${headerStyles.header} `}>
+              <div className={`${headerStyles.borderCircle}  `}>
+                <Image
+                  priority
+                  src={profilePic}
+                  height={108}
+                  width={108}
+                  alt="Profile picture of Jen deep in thought"
+                />{" "}
+              </div>
+              <div className={headerStyles.title}>
+                <h1>{name}</h1>
+              </div>
             </div>{" "}
           </>
         ) : (

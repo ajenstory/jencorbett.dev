@@ -1,23 +1,22 @@
-import footerStyles from "./footer.module.css";
 import Link from "next/link";
+import footerStyles from "./footer.module.css";
 
-const Footer = () => {
-  return (
-    <div className={`${footerStyles.container}  ${footerStyles.border}`}>
+const Footer = () => (
+  <>
+    {" "}
+    <div className={` ${footerStyles.container}`}>
       <footer>
-        <p>
-          {" "}
-          © Jen Corbett 2023 &#183;{" "}
-          <Link
-            className={footerStyles.footerlink}
-            href="https://github.com/ajenstory/jencorbett.dev"
-          >
-            visit this project on github
-          </Link>
-        </p>
-      </footer>{" "}
+        <div className={`${footerStyles.grid}`}>
+          <div>© 2023 Jen Corbett</div>
+          <div className={footerStyles.footerlink}>
+            <Link href="https://github.com/ajenstory/jencorbett.dev">
+              see this project on github
+            </Link>
+          </div>
+        </div>
+      </footer>
     </div>
-  );
-};
+  </>
+);
 
 export default Footer;
