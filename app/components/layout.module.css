@@ -1,34 +1,43 @@
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  padding: calc(1rem + 0.21rem);
+/* mobile responsive main site layout  */
+/* sets main layout container for all site content*/
+
+.main {
+  max-width: 48rem;
+  margin: 0 auto;
+  width: 100%;
+  display: block;
 }
 
-.gridContainer {
+.grid {
   display: grid;
-  grid-template-columns: repeat(1, minmax(20%, auto));
-  max-width: 100%;
+  grid-template-columns: 3;
 }
 
-@media (max-width >= 40rem) {
+/* mobile responsive grid content for main site layout (all content) */
+
+@media (min-width: 48rem) {
   .grid {
-    grid-template-columns: 1fr;
-    margin-bottom: 20px;
-    max-width: 40rem;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 3;
+    gap: 1rem, 6rem;
   }
-  .mainContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem;
-    margin: 0 auto;
-    max-width: 70rem;
+
+  .main {
+    max-width: 60rem;
+    display: block;
   }
-  .center {
-    padding: 0.5rem 0;
+}
+
+/* Desktop and larger screen */
+@media (min-width: 60rem) {
+  .grid {
+    display: grid;
+    grid-template-columns: 3;
+    gap: 0, 8rem;
+  }
+
+  .main {
+    width: 100%;
+    display: block;
   }
 }

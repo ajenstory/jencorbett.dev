@@ -1,40 +1,13 @@
 /* mobile responsive footer */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
 .container {
-  display: block;
-  color: #faf9f6;
-  background-color: #161716;
-}
-
-@media (max-width <= 40rem) {
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-  .footerlink {
-    font-size: calc(0.75rem + 0.2rem);
-  }
-
-  .container {
-    display: block;
-    padding: calc(1.2rem + 0.2rem);
-    color: #faf9f6;
-    background-color: #161716;
-  }
-}
-
-.footer {
-  opacity: 85%;
-}
-
-.center {
-  align-self: auto;
-  justify-content: center;
-  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  bottom: 1px;
+  margin: 0 auto;
+  padding: 0;
+  margin: 0 auto;
+  font-weight: 300;
+  min-width: 20rem;
 }
 
 .footerlink:hover {
@@ -45,7 +18,39 @@
   transition-delay: 2ms;
 }
 
-.border {
-  width: 100%;
-  border-top: 2px solid rgb(175, 175, 175, 65%);
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(25%, auto));
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 48rem) and (max-width: 60rem) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(25%, auto));
+  }
+
+  .container {
+    max-width: 100%;
+    font-size: calc(0.65rem + 0.1rem);
+  }
+}
+
+/* Desktop and larger screen */
+@media (min-width: 60rem) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(25%, auto));
+  }
+
+  .container {
+    max-width: 100%;
+    font-size: calc(0.65rem + 0.2rem);
+    outline: none;
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: auto;
+    bottom: 1px;
+  }
 }
