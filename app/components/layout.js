@@ -1,5 +1,5 @@
 import ThemeSwitch from "./themeSwitch";
-import layoutStyles from "@components/Layout.module.css";
+import layoutStyles from "@components/layout.module.css";
 import { Inter } from "next/font/google";
 import Footer from "./footer";
 import Header from "./header";
