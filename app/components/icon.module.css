@@ -42,6 +42,42 @@
   color: #fff;
 }
 
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .icon:hover {
+    background: rgba(var(--icon-rgb), 0.1);
+    border: 1px solid rgba(var(--icon-border-rgb), 0.15);
+  }
+
+  .icon:hover span {
+    transform: translateX(4px);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .icon::before {
+    animation: none;
+  }
+
+  .icon:hover span {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .darkmode::before {
+    animation: none;
+  }
+
+  .darkmode::after {
+    animation: none;
+  }
+
+  .darkmode:hover {
+    transform: none;
+  }
+}
+
 /* @keyframes change {
   10% {
     transform: rotate(1turn);

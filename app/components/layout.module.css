@@ -1,0 +1,34 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: calc(1rem + 0.21rem);
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(20%, auto));
+  max-width: 100%;
+}
+
+@media (max-width >= 40rem) {
+  .grid {
+    grid-template-columns: 1fr;
+    margin-bottom: 20px;
+    max-width: 40rem;
+    text-align: center;
+  }
+  .mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    margin: 0 auto;
+    max-width: 70rem;
+  }
+  .center {
+    padding: 0.5rem 0;
+  }
+}
