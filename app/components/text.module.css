@@ -5,9 +5,10 @@
 
 .text p {
   margin: 0 auto;
-  padding: 2rem 4rem 0rem 4rem;
+  padding: 1rem 4rem 0rem 4rem;
   letter-spacing: 0.1vmin;
   line-height: 1.5rem;
+  text-align: center;
 }
 
 .list li {
@@ -22,6 +23,7 @@
     padding: 0rem 3rem 0rem 3rem;
     letter-spacing: 0.02vmax;
     line-height: 1.4rem;
+    text-align: center;
   }
   .wrapper {
     margin: 0 auto;
@@ -35,6 +37,7 @@
     padding: 0rem 2rem 0rem 2rem;
     letter-spacing: 0.02vmax;
     line-height: 1.2rem;
+    text-align: center;
   }
 
   .wrapper {
