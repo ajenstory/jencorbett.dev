@@ -1,10 +1,8 @@
 /* mobile responsive grid content for index / home page */
-
 .container {
   margin: 0 auto;
   max-width: 68rem;
   font-size: 1rem;
-
   justify-content: center;
   align-items: center;
   position: relative;
