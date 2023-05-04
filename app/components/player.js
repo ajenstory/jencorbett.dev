@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import TextBlock from "./text.js";
 import playerStyles from "@components/player.module.css";
-import { Time, Date } from "../utils/date.js";
+import { PlayedAt } from "./date.js";
 
 import useSWR from "swr";
 
@@ -10,7 +10,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 const Player = () => {
   const { data, isError, isLoading } = useSWR("/api/spotify/track", fetcher);
-  console.log(data);
+
   if (isError) {
     return <div>Something went wrong</div>;
   }
@@ -26,18 +26,23 @@ const Player = () => {
         {" "}
         <figure>
           {" "}
-          <Image
-            className={` ${playerStyles.coverimage} `}
-            width={164}
-            height={164}
-            quality={100}
-            src={data.albumImageUrl}
-          />
+          <Link href={data.albumUrl}>
+            <Image
+              className={` ${playerStyles.coverimage} `}
+              width={240}
+              height={240}
+              quality={100}
+              src={data.albumImageUrl}
+            />
+          </Link>
           <div className={`${playerStyles.caption} `}>
             <p>
               <h3> {data.heading}</h3>{" "}
               <div className={` ${playerStyles.audio} `}>
-                <audio src={data.audioUrl} controls></audio>
+                <audio
+                  src={data.audioUrl}
+                  controls
+                ></audio>
               </div>
               <TextBlock>
                 {" "}
@@ -53,13 +58,12 @@ const Player = () => {
                 <Link
                   target="_blank"
                   aria-label={`${data.artist}`}
-                  className={`${playerStyles.itemurl}`}
+                  className={`${playerStyles.itemUrl}`}
                   href={data.artistUrl}
                 >
                   {data.artist}
                 </Link>{" "}
-                {/* <Date dateString={JSON.parse(JSON.stringify(data.playedAt))} />{" "}
-                <Time dateString={JSON.parse(JSON.stringify(data.playedAt))} />{" "} */}
+                <PlayedAt data={data.playedAt} />
               </TextBlock>{" "}
             </p>{" "}
           </div>
