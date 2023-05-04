@@ -13,6 +13,7 @@
 }
 
 .footerlink {
+  font-style: italic;
   text-decoration: underline;
   font-weight: 400;
   z-index: 10;

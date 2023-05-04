@@ -30,11 +30,11 @@ export const player = async () => {
 
   if (response.url.includes("recently-played")) {
     const { items } = await response.json();
-    console.log(items[0].played_at);
+    console.log(items);
     const tracks = {
       item: items[0],
       songName: items[0].track.name,
-      played_at: items[0].played_at,
+      playedAt: items[0].track.played_at,
       albumName: items[0].track.album.name,
       artist: items[0].track.album.artists[0].name,
       artistUrl: items[0].track.artists[0].external_urls.spotify,
@@ -42,9 +42,8 @@ export const player = async () => {
       albumImageUrl: items[0].track.album.images[0].url,
       audioUrl: items[0].track.preview_url,
       songUrl: items[0].track.external_urls.spotify,
-      heading: "Was listening to",
+      heading: "I was just listening to...",
     };
-    console.log(tracks);
     return tracks;
   }
 
@@ -55,20 +54,19 @@ export const player = async () => {
     const { item } = await response.json();
 
     const nowPlaying = new Date();
-    const nowPlayingAt = format(nowPlaying);
 
     const track = {
       item,
       songName: item.name,
       albumName: item.album.name,
-      playedAt: nowPlayingAt,
+      playedAt: nowPlaying,
       artist: item.artists[0].name,
       artistUrl: item.artists[0].uri,
       albumUrl: item.album.external_urls.spotify,
       audioUrl: item.preview_url,
       songUrl: item.external_urls.spotify,
       albumImageUrl: item.album.images[0].url,
-      heading: "Is listening to...",
+      heading: "I'm listening to...",
     };
     console.log(track);
     return track;
