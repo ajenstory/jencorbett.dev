@@ -1,13 +1,14 @@
 /* mobile responsive footer */
 .container {
-  position: fixed;
+  position: relative;
+  display: block;
   width: 100%;
-  bottom: 1px;
   margin: 0 auto;
   padding: 0;
   margin: 0 auto;
-  font-weight: 300;
+  font-weight: 400;
   min-width: 20rem;
+  background-color: #161716;
 }
 
 .footerlink {
