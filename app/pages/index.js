@@ -17,7 +17,7 @@ export default function Home() {
           <div className={`${indexStyles.subtitle} `}>
             <IconWrapper
               alt="icon"
-              href=""
+              href="https://earth.google.com/web/@-35.94049299,174.48521471,-2.87629318a,20986.29788927d,35y,27.81515585h,0t,0r/data=ClUaUxJNCiUweDZkMGM5YjQ5Mzk3NzNjMjU6MHg1NTM3ZTlmMWRkNmNiNzA1KiROb3J0aGxhbmQgQmVhY2gKVm9sbGV5YmFsbCBTY2hvb2zigKYYASAB"
             >
               {" "}
               <FaPaw size={22} />
@@ -28,7 +28,7 @@ export default function Home() {
             {" "}
             <IconWrapper
               alt="icon"
-              href=""
+              href="mailto:hello@jencorbett.dev"
             >
               {" "}
               <FaPaw size={22} />
@@ -40,7 +40,7 @@ export default function Home() {
             {" "}
             <IconWrapper
               alt="icon"
-              href=""
+              href="https://www.linkedin.com/in/jencorbett"
             >
               {" "}
               <FaPaw size={22} />

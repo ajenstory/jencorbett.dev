@@ -10,6 +10,7 @@ const Footer = () => (
           <div>© 2023 Jen Corbett</div>
           <div className={footerStyles.footerlink}>
             <Link
+              target="_blank"
               aria-label="see this project on github"
               href="https://github.com/ajenstory/jencorbett.dev"
             >

@@ -16,6 +16,7 @@ const IconWrapper = ({ children, href, label }) => (
       className={`${iconStyles.wrapper} ${iconStyles.icon} ${iconStyles.change} `}
     >
       <Link
+        target="_blank"
         label={label}
         href={href}
       >
