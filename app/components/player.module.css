@@ -1,168 +1,84 @@
 /* mobile responsive player */
-.container {
-  margin: 0 auto;
-  position: fixed;
-  align-self: auto;
-  justify-self: end;
-  align-self: start;
-  max-height: fit-content;
-  padding: 0 auto;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  z-index: 10;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+.wrapper {
+  display: block;
+  border-radius: 6px;
+  margin-top: 1rem;
+  line-height: 1.2rem;
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  height: 100%;
+.audio {
   width: 100%;
+  padding: 1rem;
+}
+
+.caption {
+  font-size: calc(0.55rem + 0.13vw);
+  max-width: 40vmax;
   margin: 0 auto;
+  font-weight: 400;
+  cursor: pointer;
+  text-align: center;
 }
 
-.border {
-  border-radius: 8px;
-  box-shadow: 0 0 0 1px rgba(175, 175, 175, 10%);
-  border: 1px solid rgba(237, 237, 237, 10%);
+.caption h3 {
+  padding: 1rem 0rem 0rem;
+  max-width: 30vmax;
+  line-height: 1.4rem;
 }
 
-/* mobile responsive grid*/
-
-.grid,
-.container {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(25%, auto));
-  min-width: 20rem;
+.itemurl {
+  font-style: italic;
 }
 
-.itemUrl:hover {
+.itemurl:hover {
   font-style: italic;
   text-decoration: underline;
   font-weight: 400;
   cursor: pointer;
 }
 
-.image {
+.coverimage {
   display: block;
-  position: relative;
-  align-items: baseline;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  margin: 1px auto;
-  padding: 4px;
-  max-height: calc(15vh - 6px);
-  object-fit: scale-down;
-  z-index: 1;
+  margin: 0 auto;
+  height: auto;
+  max-width: 100%;
+  padding: 0.5rem;
+  box-shadow: 0 0 0 1px rgba(175, 175, 175, 30%);
+  border: 1px solid rgba(237, 237, 237, 10%);
 }
 
-/* mobile responsive audio player */
 .audio {
-  max-width: fit-content;
-  min-width: auto;
-  height: fit-content;
-  width: auto;
   display: flex;
-}
-
-.figcaption {
-  color: rgba(0, 0, 0, 0.1);
-  padding: 2rem 1rem;
-  font-weight: 300;
-  font-size: calc(0.85rem + 0.15vw);
+  top: 0px;
+  width: 100%;
+  height: fit-content;
   margin: 0 auto;
 }
 
-.spotifyicon {
-  display: block;
-  position: fixed;
-  right: 40px;
-  bottom: 40px;
-  opacity: 40%;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  z-index: 10;
-  cursor: pointer;
-}
-
-/* tablet and desktop player*/
-
-@media (min-width: 40rem) {
-  .grid,
-  .container {
-    grid-template-columns: repeat(2, minmax(25%, auto));
-  }
-
-  .image {
+@media (min-width: 48rem) {
+  .wrapper {
     display: block;
-    padding: 0 0 0 0;
-    margin: 0;
-    width: 100%;
-    height: auto;
-    object-fit: scale-down;
-    z-index: 3;
+    border-radius: 6px;
+    margin-top: 1rem;
   }
 
-  .center {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .figcaption {
-    padding: 4rem 3rem;
-    font-weight: 300;
-    font-size: calc(0.85rem + 0.3vw);
-    text-align: center;
+  .caption {
+    font-size: calc(0.1rem + 0.1vw);
+    max-width: 40vmax;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .spotifyicon,
-  .image {
-    filter: invert(1);
-  }
-  .border,
-  .container {
-    filter: invert(2);
-    border-radius: 2px;
-    border: 2px solid rgba(237, 237, 237, 10%);
-    box-shadow: 1px 2px 8px -1px #0000001a;
-  }
-  .audio:hover {
-    background: rgb(255, 255, 255);
-  }
-}
-
-.lightShadow {
-  background: linear-gradient(145deg, #23282c, #1e2125);
-  box-shadow: 17px 17px 23px #1a1d20, -17px -17px 23px #282d32,
-    inset 5px 5px 4px #1e2226, inset -5px -5px 4px #24282c;
-}
-
-.darkShadow {
-  background: linear-gradient(218.32deg, #fffcfc, #fdfeff);
-  box-shadow: 17px 17px 23px #fafdff, -17px -17px 23px #d5d5d5,
-    inset 5px 5px 4px #f9fbfc, inset -5px -5px 4px #f1f1f1;
-}
-
-@keyframes change {
-  10% {
-    transform: scale(0.8);
+@media (min-width: 60rem) {
+  .wrapper {
+    display: block;
+    border-radius: 6px;
+    margin-top: 1rem;
   }
 
-  100% {
-    transform: scale(1.2);
+  .caption h3 {
+    padding: 1rem 0rem 0rem;
+    max-width: 30vmax;
+    line-height: 1.2rem;
   }
 }

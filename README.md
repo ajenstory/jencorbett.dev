@@ -1,6 +1,6 @@
 # jencorbett.dev
 
-This is my personal website project [jencorbett.dev](https://jencorbett.dev), bootstrapped with [create-next-app](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and is being [deployed with vercel](https://github.com/ajenstory/portfolio/deployments).
+This is my personal web app project [jencorbett.dev](https://jencorbett.dev), bootstrapped with [create-next-app](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and is being [deployed with vercel](https://github.com/ajenstory/portfolio/deployments).
 
 As you can see, this is **very much** a work-in-progress, :flushed: but here's what's currently happening with it:
 
@@ -15,13 +15,14 @@ As you can see, this is **very much** a work-in-progress, :flushed: but here's w
 - **Spotify Web Api**: [Spotify](https://developer.spotify.com/documentation/web-api)
 
 ## TODO list
-
-- fix and improve homepage ui mobile-responsive & accessibility
-- implement tests with Jest, React Testing Library and msw
-- complete spotify player api with testing and error handling
-- implement content-layer blog posts with testing and error handling
-- implement projects page with image loading optimisation
-- improve animation and ui tweaks to theme
+- fix code style issues and remove unused variables
+- fix and improve ui accessibility
+- set up tests with Jest, React Testing Library and msw
+- implement testing and error handling in spotify player
+- implement content-layer in main
+- implement blog in main 
+- implement projects page in main with image loading optimisation
+- improve and optimise / refactor css, animations etc
 - implement full colour theme
 - add resume :blush:
 

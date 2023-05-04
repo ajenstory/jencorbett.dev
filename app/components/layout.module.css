@@ -1,0 +1,46 @@
+/* mobile responsive main site layout  */
+
+.container {
+  min-height: 100vh;
+}
+
+.main body {
+  max-width: 48rem;
+  margin: 0 auto;
+  width: 100%;
+  display: block;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 3;
+}
+
+/* mobile responsive grid content for main site layout (all content) */
+
+@media (min-width: 48rem) {
+  .grid {
+    display: grid;
+    grid-template-columns: 3;
+    gap: 1rem, 6rem;
+  }
+
+  .main {
+    max-width: 60rem;
+    display: block;
+  }
+}
+
+/* Desktop and larger screen */
+@media (min-width: 60rem) {
+  .grid {
+    display: grid;
+    grid-template-columns: 3;
+    gap: 0, 8rem;
+  }
+
+  .main {
+    width: 100%;
+    display: block;
+  }
+}

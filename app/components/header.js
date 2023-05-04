@@ -7,22 +7,25 @@ const profilePic = "/profile.jpg";
 const MainLayout = ({ home }) => {
   const name = "Jen Corbett";
   return (
-    <div className={`${headerStyles.header} `}>
+    <div className={`${headerStyles.container} `}>
       <header>
         {home ? (
           <>
-            <div>
-              <Image
-                priority
-                src={profilePic}
-                className={`${headerStyles.borderCircle}  `}
-                height={108}
-                width={108}
-                alt="Profile picture of Jen deep in thought"
-              />
-            </div>
-            <div>
-              <h1 className={headerStyles.headingXl}>{name}</h1>
+            <div className={` ${headerStyles.header} `}>
+              <div className={`${headerStyles.borderCircle}  `}>
+                <Link href="https://github.com/ajenstory/jencorbett.dev">
+                  <Image
+                    priority
+                    src={profilePic}
+                    height={108}
+                    width={108}
+                    alt="Profile picture of Jen deep in thought"
+                  />{" "}
+                </Link>
+              </div>
+              <div className={headerStyles.title}>
+                <h1>{name}</h1>
+              </div>
             </div>{" "}
           </>
         ) : (
@@ -36,6 +39,7 @@ const MainLayout = ({ home }) => {
             />
             <h2 className={headerStyles.headingLg}>
               <Link
+                aria-label="go back to homepage"
                 href="/"
                 className={headerStyles.colorInherit}
               ></Link>

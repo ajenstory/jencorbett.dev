@@ -1,5 +1,5 @@
 /*
-  Creates sticky button styleinspired by [Alireza M - Dark & light mode button](https://codepen.io/alireza82/pen/poRqBOq)
+  Creates dark mode button style inspired by [Alireza M - Dark & light mode button](https://codepen.io/alireza82/pen/poRqBOq)
 */
 
 .darkMode {
@@ -28,16 +28,6 @@
   opacity: 0.8;
 }
 
-.darkmode button {
-  border: 2px;
-  transform: translateZ(10);
-  border-radius: 85px;
-  padding: 20px 15px;
-  border-style: inset;
-  cursor: pointer;
-  box-shadow: 1px 2px 8px -1px #0000001a;
-}
-
 .darkmode::before {
   border-radius: 50%;
   width: 480px;
@@ -51,6 +41,31 @@
   z-index: -1;
 }
 
+.change {
+  animation-name: change;
+  animation-duration: 1s;
+  animation-direction: alternate;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .change {
+    animation: none;
+  }
+
+  .darkmode:hover {
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion) {
+  .change {
+    animation: none;
+  }
+
+  .darkmode:hover {
+    transform: none;
+  }
+}
+
 @keyframes change {
   10% {
     transform: scale(0.8);
@@ -59,10 +74,4 @@
   100% {
     transform: scale(1.2);
   }
-}
-
-.change {
-  animation-name: change;
-  animation-duration: 1s;
-  animation-direction: alternate;
 }

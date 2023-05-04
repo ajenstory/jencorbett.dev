@@ -1,28 +1,37 @@
-import iconStyles from "./icon.module.css";
 import Link from "next/link";
+import iconStyles from "./icon.module.css";
 
-const Icon = ({ children, alt, size }) => {
-  return (
+const Icon = ({ children, alt, size }) => (
+  <div
+    alt={alt}
+    size={size}
+  >
+    {children}
+  </div>
+);
+
+const IconWrapper = ({ children, href, label }) => (
+  <>
     <div
-      alt={alt}
-      size={size}
+      className={`${iconStyles.wrapper} ${iconStyles.icon} ${iconStyles.change} `}
     >
-      {children}
-    </div>
-  );
-};
-
-const IconWrapper = ({ children, href }) => {
-  return (
-    <>
       <Link
+        target="_blank"
+        label={label}
         href={href}
-        className={`${iconStyles.wrapper} ${iconStyles.icon} ${iconStyles.change} `}
       >
-        <Icon size={22}>{children}</Icon>
-      </Link>
-    </>
-  );
-};
+        <span>
+          <Icon
+            aria-hidden={true}
+            className={`${iconStyles.change} `}
+            size={22}
+          >
+            {children}
+          </Icon>
+        </span>
+      </Link>{" "}
+    </div>
+  </>
+);
 
 export default IconWrapper;

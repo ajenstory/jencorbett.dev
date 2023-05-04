@@ -1,4 +1,18 @@
-import { getNowPlaying, getRecentlyPlayed } from "../tracks";
+import { getNowPlaying, getRecentlyPlayed } from "../tracks.js";
+import {} from "date-fns/locale/en-GB";
+import { format } from "date-fns";
+
+function CurrentTime() {
+  let dateString = new Date();
+  const played_at = parseISO(dateString);
+  return <time CurrentTime={dateString}>{format(played_at)}</time>;
+}
+
+const getCurrentDateAndTime = (now) => {
+  return <CurrentTime dateString={JSON.parse(JSON.stringify(now))} />;
+};
+
+console.log(getCurrentDateAndTime(new Date()));
 
 const checkPlayer = async () => {
   const response = await getNowPlaying();
@@ -7,6 +21,7 @@ const checkPlayer = async () => {
     const response = await getRecentlyPlayed();
     return response;
   }
+
   return response;
 };
 
@@ -15,11 +30,11 @@ export const player = async () => {
 
   if (response.url.includes("recently-played")) {
     const { items } = await response.json();
-
+    console.log(items);
     const tracks = {
       item: items[0],
       songName: items[0].track.name,
-      played_at: items[0].played_at,
+      playedAt: items[0].track.played_at,
       albumName: items[0].track.album.name,
       artist: items[0].track.album.artists[0].name,
       artistUrl: items[0].track.artists[0].external_urls.spotify,
@@ -27,37 +42,45 @@ export const player = async () => {
       albumImageUrl: items[0].track.album.images[0].url,
       audioUrl: items[0].track.preview_url,
       songUrl: items[0].track.external_urls.spotify,
-      heading: "Recently Played",
+      heading: "I was just listening to...",
     };
     return tracks;
-  } else if (
+  }
+
+  if (
     !response.url.includes("recently-played") &&
     response.url.includes("currently-playing")
   ) {
     const { item } = await response.json();
 
+    const nowPlaying = new Date();
+
     const track = {
-      item: item,
+      item,
       songName: item.name,
       albumName: item.album.name,
+      playedAt: nowPlaying,
       artist: item.artists[0].name,
       artistUrl: item.artists[0].uri,
       albumUrl: item.album.external_urls.spotify,
       audioUrl: item.preview_url,
       songUrl: item.external_urls.spotify,
       albumImageUrl: item.album.images[0].url,
-      heading: "Currently playing",
+      heading: "I'm listening to...",
     };
-
+    console.log(track);
     return track;
-  } else if (!response) {
+  }
+
+  if (!response) {
     const error = new Error("Something went wrong");
     return error;
   }
+
   return response;
 };
 
-export default async function (req, res) {
+export default async function (request, res) {
   const response = await player();
   res.setHeader(
     "Cache-Control",
