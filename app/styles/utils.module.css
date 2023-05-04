@@ -66,6 +66,10 @@
   text-align: left;
 }
 
+.center {
+  text-align: left;
+}
+
 .header {
   margin-top: 6rem;
   padding: 1rem;

@@ -9,8 +9,12 @@ const Footer = () => (
         <div className={`${footerStyles.grid}`}>
           <div>© 2023 Jen Corbett</div>
           <div className={footerStyles.footerlink}>
-            <Link href="https://github.com/ajenstory/jencorbett.dev">
-              see this project on github
+            <Link
+              target="_blank"
+              aria-label="see this project on github"
+              href="https://github.com/ajenstory/jencorbett.dev"
+            >
+              See this project on github
             </Link>
           </div>
         </div>

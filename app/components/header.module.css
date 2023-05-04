@@ -4,10 +4,10 @@
   right: 0px;
   bottom: 1px;
   width: 100%;
-  padding: 1rem 0.25rem 0rem;
 }
 
 .header {
+  padding-top: 1rem;
   display: block;
 }
 

@@ -4,7 +4,7 @@ import indexStyles from "@styles/index.module.css";
 import { FaPaw } from "react-icons/fa";
 const description = {
   intro:
-    "   Hello! I'm a developer based in Ruakākā, Aotearoa - New Zealand. As you can see, this is a work in progress.",
+    "  I'm a developer based in Ruakākā, Aotearoa - New Zealand. As you can see, this is a work in progress.",
   cta: "   To say hi or check my availability, please feel free to email me on hello[at]jencorbett.dev",
   social: "   You can also find me on LinkedIn, twitter, or GitHub etc.",
 };
@@ -14,36 +14,38 @@ export default function Home() {
     <>
       <div className={`${indexStyles.container} `}>
         <div className={`${indexStyles.grid} `}>
-          <div>
+          <div className={`${indexStyles.subtitle} `}>
             <IconWrapper
               alt="icon"
-              href=""
+              href="https://earth.google.com/web/@-35.94049299,174.48521471,-2.87629318a,20986.29788927d,35y,27.81515585h,0t,0r/data=ClUaUxJNCiUweDZkMGM5YjQ5Mzk3NzNjMjU6MHg1NTM3ZTlmMWRkNmNiNzA1KiROb3J0aGxhbmQgQmVhY2gKVm9sbGV5YmFsbCBTY2hvb2zigKYYASAB"
             >
               {" "}
               <FaPaw size={22} />
             </IconWrapper>
-            <TextBlock>{description.intro}</TextBlock>
+            <h2> Hello! </h2> <TextBlock>{description.intro}</TextBlock>
           </div>
-          <div>
+          <div className={`${indexStyles.subtitle} `}>
             {" "}
             <IconWrapper
               alt="icon"
-              href=""
+              href="mailto:hello@jencorbett.dev"
             >
               {" "}
               <FaPaw size={22} />
             </IconWrapper>
+            <h2>Contact</h2>
             <TextBlock>{description.cta}</TextBlock>
           </div>
-          <div>
+          <div className={`${indexStyles.subtitle} `}>
             {" "}
             <IconWrapper
               alt="icon"
-              href=""
+              href="https://www.linkedin.com/in/jencorbett"
             >
               {" "}
               <FaPaw size={22} />
             </IconWrapper>
+            <h2>Connect</h2>
             <TextBlock> {description.social}</TextBlock>
           </div>
         </div>
