@@ -11,7 +11,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const Player = () => {
   const { data, isError, isLoading } = useSWR("/api/spotify/track", fetcher);
   if (isError) {
-    return <div>{""}</div>;
+    return <div>Something went wrong</div>;
   }
 
   if (isLoading) {
@@ -20,7 +20,6 @@ const Player = () => {
 
   return (
     <>
-      {" "}
       <div className={`${playerStyles.wrapper}`}>
         <div className={` ${playerStyles.coverImage} ${playerStyles.center}  `}>
           <Image
@@ -33,10 +32,10 @@ const Player = () => {
           <audio
             src={data.audioUrl}
             controls
-          ></audio>{" "}
+          ></audio>
           <p>
-            {" "}
             <Link
+              aria-label={`${data.heading} ${data.songName}  &#183;  ${data.artist}`}
               className={`${playerStyles.itemUrl} `}
               href={data.songUrl}
             >
@@ -45,6 +44,7 @@ const Player = () => {
             </Link>{" "}
             &#183;{" "}
             <Link
+              aria-label={`${data.artist}`}
               className={`${playerStyles.itemUrl} `}
               href={data.artistUrl}
             >

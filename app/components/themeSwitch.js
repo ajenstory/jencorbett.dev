@@ -1,5 +1,5 @@
 import themeStyles from "components/theme.module.css";
-import { FaMoon } from "react-icons/fa";
+import { FaMoon, FaRegMoon } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 
@@ -16,29 +16,39 @@ const ThemeSwitch = () => {
   }
 
   return (
-    <div>
+    <div id="darkMode">
       {theme === "light" ? (
         <>
           <button
+            id="darkModeOff"
+            name="dark mode off"
+            aria-label="button to switch to dark mode"
             className={`${themeStyles.change} ${themeStyles.darkMode} ${themeStyles.darkShadow}`}
             onClick={() =>
               theme === "light" ? setTheme("dark") : setTheme("light")
             }
           >
-            <FaMoon />
+            <span>
+              <FaMoon title="switch dark mode on" />
+              <p> off </p>{" "}
+            </span>
           </button>
         </>
       ) : (
         <>
           <button
+            id="lightModeOn"
+            name="light mode on"
+            aria-label="button to switch to light mode"
             className={`${themeStyles.change} ${themeStyles.darkMode} ${themeStyles.lightShadow}`}
             onClick={() =>
-              theme === "dark"
-                ? setTheme("light") && setLight()
-                : setTheme("dark")
+              theme === "dark" ? setTheme("light") : setTheme("dark")
             }
           >
-            <FaMoon />
+            <span>
+              <FaRegMoon title="switch dark mode on" />
+              <p> on </p>{" "}
+            </span>
           </button>
         </>
       )}

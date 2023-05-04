@@ -10,18 +10,24 @@ const Icon = ({ children, alt, size }) => (
   </div>
 );
 
-const IconWrapper = ({ children, href }) => (
+const IconWrapper = ({ children, href, label }) => (
   <>
     <div
       className={`${iconStyles.wrapper} ${iconStyles.icon} ${iconStyles.change} `}
     >
-      <Link href={href}>
-        <Icon
-          className={`${iconStyles.change} `}
-          size={22}
-        >
-          {children}
-        </Icon>
+      <Link
+        label={label}
+        href={href}
+      >
+        <span>
+          <Icon
+            aria-hidden={true}
+            className={`${iconStyles.change} `}
+            size={22}
+          >
+            {children}
+          </Icon>
+        </span>
       </Link>{" "}
     </div>
   </>

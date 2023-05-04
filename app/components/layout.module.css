@@ -1,11 +1,14 @@
 /* mobile responsive main site layout  */
 
+.container {
+  min-height: 100vh;
+}
+
 .main body {
   max-width: 48rem;
   margin: 0 auto;
   width: 100%;
   display: block;
-  min-height: 100vh;
 }
 
 .grid {

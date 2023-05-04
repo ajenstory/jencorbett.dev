@@ -37,6 +37,7 @@ const MainLayout = ({ home }) => {
             />
             <h2 className={headerStyles.headingLg}>
               <Link
+                aria-label="go back to homepage"
                 href="/"
                 className={headerStyles.colorInherit}
               ></Link>
