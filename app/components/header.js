@@ -13,13 +13,15 @@ const MainLayout = ({ home }) => {
           <>
             <div className={` ${headerStyles.header} `}>
               <div className={`${headerStyles.borderCircle}  `}>
-                <Image
-                  priority
-                  src={profilePic}
-                  height={108}
-                  width={108}
-                  alt="Profile picture of Jen deep in thought"
-                />{" "}
+                <Link href="https://github.com/ajenstory/jencorbett.dev">
+                  <Image
+                    priority
+                    src={profilePic}
+                    height={108}
+                    width={108}
+                    alt="Profile picture of Jen deep in thought"
+                  />{" "}
+                </Link>
               </div>
               <div className={headerStyles.title}>
                 <h1>{name}</h1>
