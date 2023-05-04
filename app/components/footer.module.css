@@ -8,12 +8,14 @@
   margin: 0 auto;
   font-weight: 400;
   min-width: 20rem;
-  background-color: #161716;
+
+  color: inherit;
 }
 
 .footerlink {
   text-decoration: underline;
   font-weight: 400;
+  z-index: 10;
 }
 
 .footerlink:hover {
