@@ -1,12 +1,15 @@
 /* mobile responsive grid content for index / home page */
 .container {
   margin: 0 auto;
-  max-width: 68rem;
+  max-width: 100%;
+  height: auto;
   font-size: 1rem;
   justify-content: center;
   align-items: center;
   position: relative;
   min-height: 100vh;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 .subtitle h2 {
@@ -14,8 +17,9 @@
   font-size: 1.2rem;
   line-height: 1.1;
   font-weight: 600;
-  letter-spacing: 0.012rem;
-  padding-bottom: 0.5rem;
+  letter-spacing: 0.022rem;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
 }
 
 .grid {
@@ -31,6 +35,9 @@
     grid-template-columns: repeat(2, minmax(25%, auto));
     gap: 1rem 1rem;
   }
+  .container {
+    padding-top: 4rem;
+  }
 }
 
 /* Desktop and larger screen */
@@ -40,5 +47,9 @@
     width: 60rem;
     gap: 1rem 1rem;
     max-width: 100%;
+  }
+  .container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 }
