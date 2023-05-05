@@ -27,7 +27,7 @@ const Player = () => {
           {" "}
           <Link href={data.albumUrl}>
             <Image
-              className={` ${playerStyles.coverimage} `}
+              className={` ${playerStyles.coverImage} `}
               width={240}
               height={240}
               quality={100}
