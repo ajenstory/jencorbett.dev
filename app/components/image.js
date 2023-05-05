@@ -2,10 +2,7 @@ const ImageLinkCard = ({ children, label }) => (
   <>
     {" "}
     <div className={`${styles.card} ${styles.center}`}>
-      <Link
-        aria-label={label}
-        href={href}
-      >
+      <Link aria-label={label} href={href}>
         {" "}
         <Image>{children}</Image>
       </Link>
@@ -16,11 +13,7 @@ const ImageLinkCard = ({ children, label }) => (
 const ImageCard = ({ children, alt, width, height }) => (
   <>
     <div className={`${styles.card} ${styles.center}`}>
-      <Image
-        height={height}
-        width={width}
-        alt={alt}
-      >
+      <Image height={height} width={width} alt={alt}>
         {" "}
       </Image>
     </div>

@@ -29,11 +29,7 @@ const ThemeSwitch = () => {
             }
           >
             <span>
-              <FaMoon
-                id="on"
-                title="switch dark mode on"
-              ></FaMoon>{" "}
-              <p> off </p>{" "}
+              <FaMoon id="on" title="switch dark mode on"></FaMoon> <p> off </p>{" "}
             </span>
           </button>
         </>
@@ -49,10 +45,7 @@ const ThemeSwitch = () => {
             }
           >
             <span>
-              <FaRegMoon
-                id="off"
-                title="switch dark mode on"
-              >
+              <FaRegMoon id="off" title="switch dark mode on">
                 {" "}
               </FaRegMoon>{" "}
               <p> on </p>{" "}

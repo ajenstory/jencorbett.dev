@@ -4,6 +4,7 @@ import Player from "@components/player";
 import indexStyles from "@styles/index.module.css";
 import { FaPaw } from "react-icons/fa";
 import { SiSpotify } from "react-icons/si";
+
 const description = {
   intro:
     "  I'm a developer based in Ruakākā, Aotearoa - New Zealand. As you can see, this is a work in progress.",
@@ -26,10 +27,7 @@ export default function Home() {
             <h2> Hello! </h2> <TextBlock>{description.intro}</TextBlock>
           </div>
           <div className={`${indexStyles.subtitle} `}>
-            <IconWrapper
-              alt="icon"
-              href="mailto:hello@jencorbett.dev"
-            >
+            <IconWrapper alt="icon" href="mailto:hello@jencorbett.dev">
               <FaPaw size={28} />
             </IconWrapper>
             <h2>Contact</h2>
@@ -47,10 +45,7 @@ export default function Home() {
           </div>{" "}
         </div>{" "}
         <div className={`${indexStyles.panel}`}>
-          <IconWrapper
-            alt="icon"
-            href="https://www.linkedin.com/in/jencorbett"
-          >
+          <IconWrapper alt="icon" href="https://www.linkedin.com/in/jencorbett">
             <SiSpotify size={28} />{" "}
           </IconWrapper>
           <Player />

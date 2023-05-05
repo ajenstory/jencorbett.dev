@@ -50,6 +50,7 @@ export const getTrack = async () => {
   if (!track) {
     throw new Error("Something went wrong fetching the track ");
   }
+
   if (track.url.includes("currently-playing")) {
     const { item } = await track.json();
 
@@ -85,14 +86,15 @@ const Track = async (request, response) => {
   try {
     const track = await getTrack();
     response.setHeader(
-      `Cache-Control`,
-      `public, s-maxage=86400, stale-while-revalidate=43200`
+      "Cache-Control",
+      "public, s-maxage=86400, stale-while-revalidate=43200"
     );
     return response.status(200).json(track);
   } catch (error) {
     if (error.message === "No tracks found") {
       return response.status(404).json({ error: "No tracks found" });
     }
+
     throw new Error(`Something went wrong with the API 😔 -- ${error.message}`);
   }
 };

@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import TextBlock from "./text.js";
 import playerStyles from "@components/player.module.css";
-
 import useSWR from "swr";
+import TextBlock from "./text.js";
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+const fetcher = (...args) => fetch(...args).then((response) => response.json());
 
 const Player = () => {
   const { data, isError, isLoading } = useSWR("/api/spotify/track", fetcher);
@@ -38,10 +37,7 @@ const Player = () => {
             <p>
               <h3> {data.heading}</h3>{" "}
               <div className={` ${playerStyles.audio} `}>
-                <audio
-                  src={data.audioUrl}
-                  controls
-                ></audio>
+                <audio src={data.audioUrl} controls></audio>
               </div>
               <TextBlock>
                 {" "}

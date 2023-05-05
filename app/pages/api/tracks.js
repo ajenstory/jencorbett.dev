@@ -1,7 +1,7 @@
 import memoryCache from "memory-cache";
 import queryString from "query-string";
 
-const CACHE_TTL = 600; // in seconds
+const CACHE_TTL = 600; // In seconds
 
 /**
  * @func getRefreshToken fetches a new refresh token from Spotify's API, converting refresh token object to url query string.
@@ -34,9 +34,9 @@ const getRefreshToken = async () => {
     }
 
     return response.json();
-  } catch (err) {
+  } catch (error) {
     throw new Error(
-      `Something went wrong while fetching refresh token. Message: ${err.message}`
+      `Something went wrong while fetching refresh token. Message: ${error.message}`
     );
   }
 };
@@ -50,7 +50,7 @@ const getRefreshToken = async () => {
 export const getRecentlyPlayed = async () => {
   try {
     const { access_token } = await getRefreshToken();
-    const url = `https://api.spotify.com/v1/me/player/recently-played`;
+    const url = "https://api.spotify.com/v1/me/player/recently-played";
     const cacheKey = url + access_token;
     const cachedResponse = memoryCache.get(url);
 
@@ -64,11 +64,11 @@ export const getRecentlyPlayed = async () => {
         "Cache-Control": "no-cache",
       },
     });
-    memoryCache.put(cacheKey, response, CACHE_TTL * 1000); // convert seconds to ms
+    memoryCache.put(cacheKey, response, CACHE_TTL * 1000); // Convert seconds to ms
     return response;
-  } catch (err) {
+  } catch (error) {
     throw new Error(
-      `Something went wrong while fetching recently played track. Message: ${err.message}`
+      `Something went wrong while fetching recently played track. Message: ${error.message}`
     );
   }
 };
@@ -97,11 +97,11 @@ export const getCurrentlyPlaying = async () => {
       },
     });
 
-    memoryCache.put(cacheKey, response, CACHE_TTL * 1000); // convert seconds to ms
+    memoryCache.put(cacheKey, response, CACHE_TTL * 1000); // Convert seconds to ms
     return response;
-  } catch (err) {
+  } catch (error) {
     throw new Error(
-      `Something went wrong while fetching recently played track. Message: ${err.message}`
+      `Something went wrong while fetching recently played track. Message: ${error.message}`
     );
   }
 };
