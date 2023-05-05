@@ -20,14 +20,17 @@ export default function Home() {
           <div className={`${indexStyles.subtitle} `}>
             <IconWrapper
               alt="icon"
-              href="https://goo.gl/maps/LqfnwxnbCmHwgqiv8"
+              href="https://www.google.com/maps/place/Ruakaka+Beach/@-35.9176644,174.4861701,13z/data=!4m14!1m7!3m6!1s0x6d0c9b183750f961:0xf686d0dca449a435!2sRuakaka+Beach!8m2!3d-35.9084902!4d174.460184!16s%2Fg%2F11df1t9dyq!3m5!1s0x6d0c9b183750f961:0xf686d0dca449a435!8m2!3d-35.9084902!4d174.460184!16s%2Fg%2F11df1t9dyq"
             >
               <FaPaw size={28} />
             </IconWrapper>
             <h2> Hello! </h2> <TextBlock>{description.intro}</TextBlock>
           </div>
           <div className={`${indexStyles.subtitle} `}>
-            <IconWrapper alt="icon" href="mailto:hello@jencorbett.dev">
+            <IconWrapper
+              alt="icon"
+              href="mailto:hello@jencorbett.dev"
+            >
               <FaPaw size={28} />
             </IconWrapper>
             <h2>Contact</h2>
@@ -45,7 +48,10 @@ export default function Home() {
           </div>{" "}
         </div>{" "}
         <div className={`${indexStyles.panel}`}>
-          <IconWrapper alt="icon" href="https://www.linkedin.com/in/jencorbett">
+          <IconWrapper
+            alt="icon"
+            href="https://www.linkedin.com/in/jencorbett"
+          >
             <SiSpotify size={28} />{" "}
           </IconWrapper>
           <Player />
