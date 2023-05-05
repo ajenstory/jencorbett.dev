@@ -20,26 +20,45 @@ const Player = () => {
   return (
     <>
       {" "}
-      <div className={`${playerStyles.wrapper}`}>
+      <div className={`${playerStyles.container}`}>
         {" "}
         <figure>
           {" "}
-          <Link href={data.albumUrl}>
+          <Link
+            target="_blank"
+            href={data.albumUrl}
+          >
+            {" "}
+            <div
+              className={`${playerStyles.subtitle} ${playerStyles.caption} `}
+            >
+              {" "}
+              <TextBlock>
+                {" "}
+                <h2>Spotify</h2>
+              </TextBlock>
+            </div>
             <Image
               className={` ${playerStyles.coverImage} `}
               width={240}
               height={240}
               quality={100}
               src={data.albumImageUrl}
+              alt={`cover of ${data.albumName}`}
             />
           </Link>
-          <div className={`${playerStyles.caption} `}>
-            <p>
-              <h3> {data.heading}</h3>{" "}
-              <div className={` ${playerStyles.audio} `}>
-                <audio src={data.audioUrl} controls></audio>
-              </div>
-              <TextBlock>
+          <div className={`${playerStyles.subtitle} `}>
+            {" "}
+            <h3> {data.albumName}</h3>{" "}
+            <div className={` ${playerStyles.audio} `}>
+              <audio
+                src={data.audioUrl}
+                controls
+              ></audio>
+            </div>
+            <TextBlock>
+              {" "}
+              <h4>
                 {" "}
                 <Link
                   target="_blank"
@@ -58,9 +77,9 @@ const Player = () => {
                 >
                   {data.artist}
                 </Link>{" "}
-                &#183; on spotify
-              </TextBlock>{" "}
-            </p>{" "}
+              </h4>
+              &#183;
+            </TextBlock>{" "}
           </div>
         </figure>
       </div>
