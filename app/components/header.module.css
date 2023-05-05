@@ -22,6 +22,9 @@
 
 .borderCircle img {
   border-radius: 90px;
+  border-top: linear-gradient(218.32deg, #fffcfc, #fdfeff);
+  box-shadow: 17px 17px 23px #fafdff, -17px -17px 23px #d5d5d5,
+    5px 5px 4px #f9fbfc, -5px -5px 4px #f1f1f1;
 }
 
 /* Tablet and Smaller Desktop */

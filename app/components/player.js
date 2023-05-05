@@ -30,13 +30,14 @@ const Player = () => {
           >
             {" "}
             <div
-              className={`${playerStyles.subtitle} ${playerStyles.caption} `}
+              className={`${playerStyles.subtitle} ${playerStyles.caption} ${playerStyles.wrapper}`}
             >
               {" "}
-              <TextBlock>
+              <div className={` ${playerStyles.wrapper} `}>
                 {" "}
                 <h2>Spotify</h2>
-              </TextBlock>
+              </div>
+              <h3> {data.heading}</h3>
             </div>
             <Image
               className={` ${playerStyles.coverImage} `}
@@ -47,7 +48,7 @@ const Player = () => {
               alt={`cover of ${data.albumName}`}
             />
           </Link>
-          <div className={`${playerStyles.subtitle} `}>
+          <div className={`${playerStyles.subtitle} ${playerStyles.wrapper}`}>
             {" "}
             <h3> {data.albumName}</h3>{" "}
             <div className={` ${playerStyles.audio} `}>

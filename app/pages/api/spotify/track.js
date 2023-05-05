@@ -58,7 +58,7 @@ export const getTrack = async () => {
 
     const current = {
       playedAt,
-      heading: "I'm currently listening to...",
+      heading: "Now playing...",
       ...setTrack(item),
     };
 
@@ -72,7 +72,7 @@ export const getTrack = async () => {
 
     const recentlyPlayed = {
       playedAt: randomTrack.played_at || items[0].played_at,
-      heading: "I was just listening to...",
+      heading: "Just listened to...",
       ...setTrack(randomTrack.track || items),
     };
 
