@@ -1,4 +1,7 @@
+import memoryCache from "memory-cache";
 import queryString from "query-string";
+
+const CACHE_TTL = 600; // in seconds
 
 /**
  * @func getRefreshToken fetches a new refresh token from Spotify's API, converting refresh token object to url query string.
@@ -22,7 +25,8 @@ const getRefreshToken = async () => {
         refresh_token,
       }),
     });
-    if (!response.ok || response.status !== 200) {
+
+    if (!response.ok) {
       const errorData = await response.json();
       throw new Error(
         `Failed to get access token from Spotify API. Status code: ${response.status}. Error: ${errorData.error}`
@@ -37,34 +41,65 @@ const getRefreshToken = async () => {
   }
 };
 
+/**
+ * @func GetRecentlyPlayed fetches an array of recently played tracks from the Spotify API.
+ * @throw error message if something goes wrong during the API call or while fetching the access token.
+ * @returns in JSON format.
+/ */
+
 export const getRecentlyPlayed = async () => {
   try {
     const { access_token } = await getRefreshToken();
+    const url = `https://api.spotify.com/v1/me/player/recently-played`;
+    const cacheKey = url + access_token;
+    const cachedResponse = memoryCache.get(url);
 
-    return fetch("https://api.spotify.com/v1/me/player/recently-played", {
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+
+    const response = await fetch(url, {
       headers: {
         Authorization: `Bearer ${access_token}`,
+        "Cache-Control": "no-cache",
       },
     });
+    memoryCache.put(cacheKey, response, CACHE_TTL * 1000); // convert seconds to ms
+    return response;
   } catch (err) {
-    // handles errors
     throw new Error(
       `Something went wrong while fetching recently played track. Message: ${err.message}`
     );
   }
 };
 
+/**
+ * @func GetCurrentlyPlaying fetches currently playing tracks from the Spotify API.
+ * @throw error message if something goes wrong during the API call or while fetching the access token.
+ * @return array of tracks in JSON format.
+ */
+
 export const getCurrentlyPlaying = async () => {
   try {
     const { access_token } = await getRefreshToken();
+    const url = "https://api.spotify.com/v1/me/player/currently-playing";
+    const cacheKey = url + access_token;
+    const cachedResponse = memoryCache.get(url);
 
-    return fetch("https://api.spotify.com/v1/me/player/currently-playing", {
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+
+    const response = await fetch(url, {
       headers: {
         Authorization: `Bearer ${access_token}`,
+        "Cache-Control": "no-cache",
       },
     });
+
+    memoryCache.put(cacheKey, response, CACHE_TTL * 1000); // convert seconds to ms
+    return response;
   } catch (err) {
-    // handle errors
     throw new Error(
       `Something went wrong while fetching recently played track. Message: ${err.message}`
     );
@@ -72,10 +107,10 @@ export const getCurrentlyPlaying = async () => {
 };
 
 {
-  /*
-
-Spotify player inspired by: [How to show Now Playing in Spotify with Next.js - Theodorus Clarence](https://theodorusclarence.com/blog/spotify-now-playing) & [How to show Now Playing in Spotify with Next.js - Theodorus Clarence](https://theodorusclarence.com/blog/spotify-now
-and also [How to use Spotify API with Next.js - Jatin Sharma](https://dev.to/j471n/how-to-use-spotify-api-with-nextjs-50o5)
-with a little help from [A Next.js complete beginner tutorial using the Spotify API - Salma Alam-Naylor](https://whitep4nth3r.com/blog/next-js-beginner-tutorial-using-spotify-api/)
-*/
+  /**
+   * Caching ref: chatGPT prompts for optimising performance
+   * Spotify player inspired by: [How to show Now Playing in Spotify with Next.js - Theodorus Clarence](https://theodorusclarence.com/blog/spotify-now-playing) & [How to show Now Playing in Spotify with Next.js - Theodorus Clarence](https://theodorusclarence.com/blog/spotify-now
+   * and also [How to use Spotify API with Next.js - Jatin Sharma](https://dev.to/j471n/how-to-use-spotify-api-with-nextjs-50o5)
+   * with a little help from [A Next.js complete beginner tutorial using the Spotify API - Salma Alam-Naylor](https://whitep4nth3r.com/blog/next-js-beginner-tutorial-using-spotify-api/)
+   */
 }
