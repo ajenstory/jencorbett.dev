@@ -8,8 +8,7 @@
       "@public/*": ["./public/*"],
       "@components/*": ["./components/*"],
       "contentlayer/generated": ["./.contentlayer/generated"],
-      "@styles/*": ["./styles/*"],
-      "@utils/*": ["./utils/*"]
+      "@styles/*": ["./styles/*"]
     }
   },
   "include": [

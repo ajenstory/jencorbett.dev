@@ -29,6 +29,7 @@
 }
 
 .darkmode::before {
+  cursor: pointer;
   border-radius: 50%;
   width: 480px;
   height: 360px;

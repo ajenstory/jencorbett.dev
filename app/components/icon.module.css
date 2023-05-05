@@ -92,9 +92,8 @@
   }
 }
 
-@keyframes change {
+/* @keyframes change {
   100% {
-    transform: rotate(1turn);
     transition-delay: 5ms;
   }
 }
@@ -102,6 +101,6 @@
 .change {
   animation-name: change;
   animation-duration: 1.5s;
-  /* animation-delay: 5ms; */
+  animation-delay: 5ms;
   animation-direction: normal;
-}
+} */

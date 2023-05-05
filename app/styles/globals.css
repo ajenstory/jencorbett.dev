@@ -134,6 +134,23 @@ button::after {
   z-index: -1;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  button::before {
+    animation: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  button:hover span {
+    transform: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
 /*
  Create a root stacking context
 */

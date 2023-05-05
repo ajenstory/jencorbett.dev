@@ -1,16 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import TextBlock from "./text.js";
 import playerStyles from "@components/player.module.css";
-import { Time, Date } from "../utils/date.js";
-
 import useSWR from "swr";
+import TextBlock from "./text.js";
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+const fetcher = (...args) => fetch(...args).then((response) => response.json());
 
 const Player = () => {
   const { data, isError, isLoading } = useSWR("/api/spotify/track", fetcher);
-  console.log(data);
+
   if (isError) {
     return <div>Something went wrong</div>;
   }
@@ -26,13 +24,15 @@ const Player = () => {
         {" "}
         <figure>
           {" "}
-          <Image
-            className={` ${playerStyles.coverimage} `}
-            width={164}
-            height={164}
-            quality={100}
-            src={data.albumImageUrl}
-          />
+          <Link href={data.albumUrl}>
+            <Image
+              className={` ${playerStyles.coverImage} `}
+              width={240}
+              height={240}
+              quality={100}
+              src={data.albumImageUrl}
+            />
+          </Link>
           <div className={`${playerStyles.caption} `}>
             <p>
               <h3> {data.heading}</h3>{" "}
@@ -44,7 +44,7 @@ const Player = () => {
                 <Link
                   target="_blank"
                   aria-label={`${data.songName}  &#183;  ${data.artist}`}
-                  className={`${playerStyles.itemurl} `}
+                  className={`${playerStyles.itemUrl} `}
                   href={data.songUrl}
                 >
                   {data.songName}
@@ -53,13 +53,12 @@ const Player = () => {
                 <Link
                   target="_blank"
                   aria-label={`${data.artist}`}
-                  className={`${playerStyles.itemurl}`}
+                  className={`${playerStyles.itemUrl} `}
                   href={data.artistUrl}
                 >
                   {data.artist}
                 </Link>{" "}
-                {/* <Date dateString={JSON.parse(JSON.stringify(data.playedAt))} />{" "}
-                <Time dateString={JSON.parse(JSON.stringify(data.playedAt))} />{" "} */}
+                &#183; on spotify
               </TextBlock>{" "}
             </p>{" "}
           </div>

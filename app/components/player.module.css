@@ -27,18 +27,19 @@
   line-height: 1.4rem;
 }
 
-.itemurl {
-  font-style: italic;
+.itemUrl {
+  font-style: normal;
+  text-decoration: underline;
 }
 
-.itemurl:hover {
+.itemUrl:hover {
   font-style: italic;
   text-decoration: underline;
   font-weight: 400;
   cursor: pointer;
 }
 
-.coverimage {
+.coverImage {
   display: block;
   margin: 0 auto;
   height: auto;

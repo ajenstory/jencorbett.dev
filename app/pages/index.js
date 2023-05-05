@@ -4,6 +4,7 @@ import Player from "@components/player";
 import indexStyles from "@styles/index.module.css";
 import { FaPaw } from "react-icons/fa";
 import { SiSpotify } from "react-icons/si";
+
 const description = {
   intro:
     "  I'm a developer based in Ruakākā, Aotearoa - New Zealand. As you can see, this is a work in progress.",
@@ -19,18 +20,15 @@ export default function Home() {
           <div className={`${indexStyles.subtitle} `}>
             <IconWrapper
               alt="icon"
-              href="https://earth.google.com/web/@-35.94049299,174.48521471,-2.87629318a,20986.29788927d,35y,27.81515585h,0t,0r/data=ClUaUxJNCiUweDZkMGM5YjQ5Mzk3NzNjMjU6MHg1NTM3ZTlmMWRkNmNiNzA1KiROb3J0aGxhbmQgQmVhY2gKVm9sbGV5YmFsbCBTY2hvb2zigKYYASAB"
+              href="https://goo.gl/maps/LqfnwxnbCmHwgqiv8"
             >
-              <FaPaw size={22} />
+              <FaPaw size={28} />
             </IconWrapper>
             <h2> Hello! </h2> <TextBlock>{description.intro}</TextBlock>
           </div>
           <div className={`${indexStyles.subtitle} `}>
-            <IconWrapper
-              alt="icon"
-              href="mailto:hello@jencorbett.dev"
-            >
-              <FaPaw size={22} />
+            <IconWrapper alt="icon" href="mailto:hello@jencorbett.dev">
+              <FaPaw size={28} />
             </IconWrapper>
             <h2>Contact</h2>
             <TextBlock>{description.cta}</TextBlock>
@@ -40,18 +38,15 @@ export default function Home() {
               alt="icon"
               href="https://www.linkedin.com/in/jencorbett"
             >
-              <FaPaw size={22} />
+              <FaPaw size={28} />
             </IconWrapper>
             <h2>Connect</h2>
             <TextBlock> {description.social}</TextBlock>
           </div>{" "}
         </div>{" "}
         <div className={`${indexStyles.panel}`}>
-          <IconWrapper
-            alt="icon"
-            href="https://www.linkedin.com/in/jencorbett"
-          >
-            <SiSpotify size={22} />{" "}
+          <IconWrapper alt="icon" href="https://www.linkedin.com/in/jencorbett">
+            <SiSpotify size={28} />{" "}
           </IconWrapper>
           <Player />
         </div>{" "}
