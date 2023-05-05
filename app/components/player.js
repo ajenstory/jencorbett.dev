@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import TextBlock from "./text.js";
 import playerStyles from "@components/player.module.css";
-import { PlayedAt } from "./date.js";
 
 import useSWR from "swr";
 
@@ -26,15 +25,13 @@ const Player = () => {
         {" "}
         <figure>
           {" "}
-          <Link href={data.albumUrl}>
-            <Image
-              className={` ${playerStyles.coverimage} `}
-              width={240}
-              height={240}
-              quality={100}
-              src={data.albumImageUrl}
-            />
-          </Link>
+          <Image
+            className={` ${playerStyles.coverimage} `}
+            width={240}
+            height={240}
+            quality={100}
+            src={data.albumImageUrl}
+          />
           <div className={`${playerStyles.caption} `}>
             <p>
               <h3> {data.heading}</h3>{" "}
@@ -58,12 +55,11 @@ const Player = () => {
                 <Link
                   target="_blank"
                   aria-label={`${data.artist}`}
-                  className={`${playerStyles.itemUrl}`}
+                  className={`${playerStyles.itemUrl} `}
                   href={data.artistUrl}
                 >
                   {data.artist}
                 </Link>{" "}
-                <PlayedAt data={data.playedAt} />
               </TextBlock>{" "}
             </p>{" "}
           </div>
