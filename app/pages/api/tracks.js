@@ -1,6 +1,12 @@
 import queryString from "query-string";
 
-const getAccessToken = async () => {
+/**
+ * @func getRefreshToken fetches a new refresh token from Spotify's API, converting refresh token object to url query string.
+ * @throws an error with API data and status if there was a problem fetching the refresh token.
+ * @returns an object containing the new access token and its expiration time.
+ */
+
+const getRefreshToken = async () => {
   try {
     const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
     const response = await fetch("https://accounts.spotify.com/api/token", {
@@ -11,15 +17,20 @@ const getAccessToken = async () => {
         ).toString("base64")}`,
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      // converts refresh token object to url query string
       body: queryString.stringify({
         grant_type: "refresh_token",
         refresh_token,
       }),
     });
+    if (!response.ok || response.status !== 200) {
+      const errorData = await response.json();
+      throw new Error(
+        `Failed to get access token from Spotify API. Status code: ${response.status}. Error: ${errorData.error}`
+      );
+    }
+
     return response.json();
   } catch (err) {
-    console.error(err.message);
     throw new Error(
       `Something went wrong while fetching refresh token. Message: ${err.message}`
     );
@@ -28,16 +39,15 @@ const getAccessToken = async () => {
 
 export const getRecentlyPlayed = async () => {
   try {
-    // get access token from Spotify API
-    const { access_token } = await getAccessToken();
-    // fetch recently played tracks from Spotify API
+    const { access_token } = await getRefreshToken();
+
     return fetch("https://api.spotify.com/v1/me/player/recently-played", {
       headers: {
         Authorization: `Bearer ${access_token}`,
       },
     });
   } catch (err) {
-    // handle errors
+    // handles errors
     throw new Error(
       `Something went wrong while fetching recently played track. Message: ${err.message}`
     );
@@ -46,8 +56,8 @@ export const getRecentlyPlayed = async () => {
 
 export const getCurrentlyPlaying = async () => {
   try {
-    const { access_token } = await getAccessToken();
-    // fetch currently playing track from Spotify API
+    const { access_token } = await getRefreshToken();
+
     return fetch("https://api.spotify.com/v1/me/player/currently-playing", {
       headers: {
         Authorization: `Bearer ${access_token}`,
