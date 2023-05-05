@@ -1,48 +1,64 @@
 import queryString from "query-string";
 
 const getAccessToken = async () => {
-  const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
-  const response = await fetch("https://accounts.spotify.com/api/token", {
-    method: "POST",
-    headers: {
-      Authorization: `Basic ${Buffer.from(
-        `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`
-      ).toString("base64")}`,
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: queryString.stringify({
-      grant_type: "refresh_token",
-      refresh_token,
-    }),
-  });
-  return response.json();
-};
-
-export const getNowPlaying = async () => {
-  const { access_token } = await getAccessToken();
-  return fetch("https://api.spotify.com/v1/me/player/currently-playing", {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  });
-};
-
-export const getCurrentTrack = async (id) => {
-  const { access_token } = await getAccessToken();
-  return fetch(`https://api.spotify.com/v1/tracks/${id}`, {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  });
+  try {
+    const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
+    const response = await fetch("https://accounts.spotify.com/api/token", {
+      method: "POST",
+      headers: {
+        Authorization: `Basic ${Buffer.from(
+          `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`
+        ).toString("base64")}`,
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      // converts refresh token object to url query string
+      body: queryString.stringify({
+        grant_type: "refresh_token",
+        refresh_token,
+      }),
+    });
+    return response.json();
+  } catch (err) {
+    console.error(err.message);
+    throw new Error(
+      `Something went wrong while fetching refresh token. Message: ${err.message}`
+    );
+  }
 };
 
 export const getRecentlyPlayed = async () => {
-  const { access_token } = await getAccessToken();
-  return fetch("https://api.spotify.com/v1/me/player/recently-played", {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  });
+  try {
+    // get access token from Spotify API
+    const { access_token } = await getAccessToken();
+    // fetch recently played tracks from Spotify API
+    return fetch("https://api.spotify.com/v1/me/player/recently-played", {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
+    });
+  } catch (err) {
+    // handle errors
+    throw new Error(
+      `Something went wrong while fetching recently played track. Message: ${err.message}`
+    );
+  }
+};
+
+export const getCurrentlyPlaying = async () => {
+  try {
+    const { access_token } = await getAccessToken();
+    // fetch currently playing track from Spotify API
+    return fetch("https://api.spotify.com/v1/me/player/currently-playing", {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
+    });
+  } catch (err) {
+    // handle errors
+    throw new Error(
+      `Something went wrong while fetching recently played track. Message: ${err.message}`
+    );
+  }
 };
 
 {
