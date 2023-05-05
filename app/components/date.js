@@ -10,7 +10,7 @@ export const Date = ({ dateString }) => {
   );
 };
 
-export const PlayedAt = ({ data }) => {
+export const TimeStamp = ({ data }) => {
   const played_at = JSON.parse(JSON.stringify(data));
 
   return (
@@ -20,4 +20,4 @@ export const PlayedAt = ({ data }) => {
   );
 };
 
-export default { Date, PlayedAt };
+export default { Date, TimeStamp };
