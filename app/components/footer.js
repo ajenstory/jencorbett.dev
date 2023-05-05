@@ -15,10 +15,10 @@ const Footer = () => (
                 {" "}
                 <Link
                   target="_blank"
-                  aria-label="see this project on github"
                   href="https://github.com/ajenstory/jencorbett.dev"
+                  title="view this project on github"
                 >
-                  See this project on github
+                  view this project on github
                 </Link>{" "}
               </span>
             </p>

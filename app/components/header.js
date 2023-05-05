@@ -37,13 +37,12 @@ const MainLayout = ({ home }) => {
               width={108}
               alt="Profile picture of Jen deep in thought"
             />
-            <h2 className={headerStyles.headingLg}>
+            <h1 className={headerStyles.headingLg}>
               <Link
-                aria-label="go back to homepage"
                 href="/"
                 className={headerStyles.colorInherit}
               ></Link>
-            </h2>
+            </h1>
           </>
         )}
       </header>

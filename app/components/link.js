@@ -2,10 +2,7 @@ const LinkCard = ({ children, href, label }) => (
   <>
     {" "}
     <div>
-      <Link aria-label={label} href={href}>
-        {" "}
-        {children}
-      </Link>
+      <Link href={href}> {children}</Link>
     </div>
   </>
 );

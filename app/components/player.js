@@ -22,7 +22,7 @@ const Player = () => {
       {" "}
       <div className={`${playerStyles.container}`}>
         {" "}
-        <figure>
+        <section>
           {" "}
           <Link
             target="_blank"
@@ -45,17 +45,22 @@ const Player = () => {
               height={240}
               quality={100}
               src={data.albumImageUrl}
-              alt={`cover of ${data.albumName}`}
+              alt={`cover of spotify album ${data.albumName} by ${data.artist}`}
             />
           </Link>
           <div className={`${playerStyles.subtitle} ${playerStyles.wrapper}`}>
             {" "}
             <h3> {data.albumName}</h3>{" "}
             <div className={` ${playerStyles.audio} `}>
-              <audio
-                src={data.audioUrl}
-                controls
-              ></audio>
+              <figure>
+                <audio
+                  title="play spotify audio track preview"
+                  src={data.audioUrl}
+                  controls
+                >
+                  play audio
+                </audio>
+              </figure>
             </div>
             <TextBlock>
               {" "}
@@ -63,7 +68,6 @@ const Player = () => {
                 {" "}
                 <Link
                   target="_blank"
-                  aria-label={`${data.songName}  &#183;  ${data.artist}`}
                   className={`${playerStyles.itemUrl} `}
                   href={data.songUrl}
                 >
@@ -72,7 +76,6 @@ const Player = () => {
                 &#183;{" "}
                 <Link
                   target="_blank"
-                  aria-label={`${data.artist}`}
                   className={`${playerStyles.itemUrl} `}
                   href={data.artistUrl}
                 >
@@ -82,7 +85,7 @@ const Player = () => {
               &#183;
             </TextBlock>{" "}
           </div>
-        </figure>
+        </section>
       </div>
     </>
   );
