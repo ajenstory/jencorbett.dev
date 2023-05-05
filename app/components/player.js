@@ -25,13 +25,15 @@ const Player = () => {
         {" "}
         <figure>
           {" "}
-          <Image
-            className={` ${playerStyles.coverimage} `}
-            width={240}
-            height={240}
-            quality={100}
-            src={data.albumImageUrl}
-          />
+          <Link href={data.albumUrl}>
+            <Image
+              className={` ${playerStyles.coverimage} `}
+              width={240}
+              height={240}
+              quality={100}
+              src={data.albumImageUrl}
+            />
+          </Link>
           <div className={`${playerStyles.caption} `}>
             <p>
               <h3> {data.heading}</h3>{" "}
@@ -46,7 +48,7 @@ const Player = () => {
                 <Link
                   target="_blank"
                   aria-label={`${data.songName}  &#183;  ${data.artist}`}
-                  className={`${playerStyles.itemurl} `}
+                  className={`${playerStyles.itemUrl} `}
                   href={data.songUrl}
                 >
                   {data.songName}
@@ -60,6 +62,7 @@ const Player = () => {
                 >
                   {data.artist}
                 </Link>{" "}
+                &#183; on spotify
               </TextBlock>{" "}
             </p>{" "}
           </div>
