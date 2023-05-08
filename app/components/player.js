@@ -21,6 +21,7 @@ const Player = () => {
     <>
       <div className={`${playerStyles.container} `}>
         {" "}
+        <h1>{data.heading}</h1>
         <ol className={`${playerStyles.grid} ${playerStyles.center}`}>
           <li className={``}>
             {" "}
