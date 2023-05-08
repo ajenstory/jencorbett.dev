@@ -25,7 +25,10 @@ const Player = () => {
           <li className={``}>
             {" "}
             <div className={`${playerStyles.LinkWrapper}`}>
-              <Link target="_blank" href={data.albumUrl}>
+              <Link
+                target="_blank"
+                href={data.albumUrl}
+              >
                 <div className={`${playerStyles.ImgWrapper} `}>
                   {" "}
                   <Image
@@ -39,11 +42,7 @@ const Player = () => {
                 </div>
               </Link>
             </div>
-            <div className={`${playerStyles.textWrapper}`}>
-              <span className={`${playerStyles.subtitle}`}>
-                <h3> {data.albumName}</h3>{" "}
-              </span>
-            </div>
+            <div className={`${playerStyles.textWrapper}`}></div>
           </li>{" "}
           <li>
             <div
@@ -59,28 +58,32 @@ const Player = () => {
               </audio>
             </div>{" "}
             <div className={`${playerStyles.wrapper}`}>
-              <span>
-                <p>
-                  {" "}
-                  <Link
-                    target="_blank"
-                    className={`${playerStyles.itemUrl} `}
-                    href={data.songUrl}
-                  >
-                    {data.songName}
-                  </Link>{" "}
-                  &#183;{" "}
-                  <Link
-                    target="_blank"
-                    className={`${playerStyles.itemUrl} `}
-                    href={data.artistUrl}
-                  >
-                    {" "}
-                    &#183;
-                    {data.artist}
-                  </Link>{" "}
-                </p>
-              </span>
+              <p>
+                {" "}
+                <Link
+                  target="_blank"
+                  className={`${playerStyles.itemUrl} `}
+                  href={data.songUrl}
+                >
+                  {data.songName}
+                </Link>{" "}
+                &#183;{" "}
+                <Link
+                  target="_blank"
+                  className={`${playerStyles.itemUrl} `}
+                  href={data.songUrl}
+                >
+                  {data.albumName}
+                </Link>{" "}
+                &#183;{" "}
+                <Link
+                  target="_blank"
+                  className={`${playerStyles.itemUrl} `}
+                  href={data.artistUrl}
+                >
+                  {data.artist}
+                </Link>{" "}
+              </p>
             </div>
           </li>{" "}
         </ol>
