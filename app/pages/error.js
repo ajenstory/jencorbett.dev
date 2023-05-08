@@ -8,6 +8,12 @@ export default function Error({ error, reset }) {
   return (
     <div>
       <p>Uhoh...🤭</p>
+      <Link
+        className={``}
+        href="/"
+      >
+        ← Back to home{" "}
+      </Link>
     </div>
   );
 }
