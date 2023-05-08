@@ -9,24 +9,24 @@ import NavBar from "./navbar.js";
 const inter = Inter({ subsets: ["latin"] });
 
 const Layout = ({ children }) => (
-  <div className={`${inter.className}`}>
+  <div className={`${inter.className} ${layoutStyles.grid}`}>
     {" "}
     {`${children}` ? (
       <>
-        {" "}
-        <div className={` ${layoutStyles.grid}`}>
+        <div>
           <Meta />
-          <div>
-            <ThemeSwitch /> <NavBar />
-            <Header home />
-          </div>
-          <div className={`${layoutStyles.main} `}>
-            <main>
-              <div>{children}</div>
-            </main>{" "}
-          </div>{" "}
-          <Footer />
+          <ThemeSwitch /> <NavBar />
+          <Header home />
         </div>
+        <div>
+          <main
+            home
+            className={`${layoutStyles.main} `}
+          >
+            <div>{children}</div>
+          </main>{" "}
+        </div>{" "}
+        <Footer />
       </>
     ) : (
       <>
