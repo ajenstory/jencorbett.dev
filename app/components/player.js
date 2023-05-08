@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import playerStyles from "@components/player.module.css";
 import useSWR from "swr";
-import TextBlock from "./text.js";
+// import TextBlock from "./text.js";
 
 const fetcher = (...args) => fetch(...args).then((response) => response.json());
 
@@ -19,73 +19,71 @@ const Player = () => {
 
   return (
     <>
-      {" "}
-      <div className={`${playerStyles.container}`}>
+      <div className={`${playerStyles.container} `}>
         {" "}
-        <section>
-          {" "}
-          <Link
-            target="_blank"
-            href={data.albumUrl}
-          >
+        <ol className={`${playerStyles.grid} ${playerStyles.center}`}>
+          <li className={``}>
             {" "}
+            <div className={`${playerStyles.LinkWrapper}`}>
+              <Link target="_blank" href={data.albumUrl}>
+                <div className={`${playerStyles.ImgWrapper} `}>
+                  {" "}
+                  <Image
+                    className={`${playerStyles.coverImage}`}
+                    width={240}
+                    height={240}
+                    quality={100}
+                    src={data.albumImageUrl}
+                    alt={`cover of spotify album ${data.albumName} by ${data.artist}`}
+                  />
+                </div>
+              </Link>
+            </div>
+            <div className={`${playerStyles.textWrapper}`}>
+              <span className={`${playerStyles.subtitle}`}>
+                <h3> {data.albumName}</h3>{" "}
+              </span>
+            </div>
+          </li>{" "}
+          <li>
             <div
-              className={`${playerStyles.subtitle} ${playerStyles.caption} ${playerStyles.wrapper}`}
+              className={`${playerStyles.figWrapper}  ${playerStyles.audio}`}
             >
               {" "}
-              <div className={` ${playerStyles.wrapper} `}>
-                {" "}
-                <h2>Spotify</h2>
-              </div>
-              <h3> {data.heading}</h3>
+              <audio
+                title="play audio track preview from spotify"
+                src={data.audioUrl}
+                controls
+              >
+                <p> play audio preview</p>
+              </audio>
+            </div>{" "}
+            <div className={`${playerStyles.wrapper}`}>
+              <span>
+                <p>
+                  {" "}
+                  <Link
+                    target="_blank"
+                    className={`${playerStyles.itemUrl} `}
+                    href={data.songUrl}
+                  >
+                    {data.songName}
+                  </Link>{" "}
+                  &#183;{" "}
+                  <Link
+                    target="_blank"
+                    className={`${playerStyles.itemUrl} `}
+                    href={data.artistUrl}
+                  >
+                    {" "}
+                    &#183;
+                    {data.artist}
+                  </Link>{" "}
+                </p>
+              </span>
             </div>
-            <Image
-              className={` ${playerStyles.coverImage} `}
-              width={240}
-              height={240}
-              quality={100}
-              src={data.albumImageUrl}
-              alt={`cover of spotify album ${data.albumName} by ${data.artist}`}
-            />
-          </Link>
-          <div className={`${playerStyles.subtitle} ${playerStyles.wrapper}`}>
-            {" "}
-            <h3> {data.albumName}</h3>{" "}
-            <div className={` ${playerStyles.audio} `}>
-              <figure>
-                <audio
-                  title="play spotify audio track preview"
-                  src={data.audioUrl}
-                  controls
-                >
-                  play audio
-                </audio>
-              </figure>
-            </div>
-            <TextBlock>
-              {" "}
-              <h4>
-                {" "}
-                <Link
-                  target="_blank"
-                  className={`${playerStyles.itemUrl} `}
-                  href={data.songUrl}
-                >
-                  {data.songName}
-                </Link>{" "}
-                &#183;{" "}
-                <Link
-                  target="_blank"
-                  className={`${playerStyles.itemUrl} `}
-                  href={data.artistUrl}
-                >
-                  {data.artist}
-                </Link>{" "}
-              </h4>
-              &#183;
-            </TextBlock>{" "}
-          </div>
-        </section>
+          </li>{" "}
+        </ol>
       </div>
     </>
   );
