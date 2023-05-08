@@ -2,7 +2,7 @@ import layoutStyles from "@components/layout.module.css";
 import { Inter } from "next/font/google";
 import Meta from "@components/meta";
 import ThemeSwitch from "./themeSwitch.js";
-import Footer from "./footer.js";
+// import Footer from "./footer.js";
 import Header from "./header.js";
 import NavBar from "./navbar.js";
 
@@ -26,7 +26,7 @@ const Layout = ({ children }) => (
             <div>{children}</div>
           </main>{" "}
         </div>{" "}
-        <Footer />
+        {/* <Footer /> */}
       </>
     ) : (
       <>
@@ -37,11 +37,10 @@ const Layout = ({ children }) => (
             <Header />
           </div>
           <div className={`${layoutStyles.main} `}>
-            <main>
+            <main page>
               <div>{children}</div>
             </main>{" "}
           </div>{" "}
-          <Footer />
         </div>
       </>
     )}
