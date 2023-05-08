@@ -65,7 +65,6 @@ export default function Home() {
             title="listen to my latest spotify tracks"
             href="https://open.spotify.com/user/1221141852"
           >
-            <SiSpotify size={28} />{" "}
             <span className={`${indexStyles.hidden}`}>
               <h3>Listen to my latest spotify tracks</h3>
             </span>

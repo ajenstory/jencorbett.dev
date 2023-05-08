@@ -1,13 +1,13 @@
 /* mobile responsive grid content for index / home page */
 .container {
-  margin: 0 auto;
   max-width: 100%;
   height: auto;
-  font-size: 1rem;
-  justify-content: center;
-  align-items: center;
   position: relative;
-  min-height: 100vh;
+}
+
+.article {
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-top: 2rem;
   padding-bottom: 6rem;
 }
