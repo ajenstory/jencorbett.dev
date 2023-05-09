@@ -10,6 +10,7 @@ const description = {
     "  I'm a developer based in Ruakākā, Aotearoa - New Zealand. As you can see, this is a work in progress.",
   cta: "   To say hi or check my availability, please feel free to email me on hello[at]jencorbett.dev",
   social: "   You can also find me on LinkedIn, Twitter, Mastodon or GitHub.",
+  spotify: "What's in rotation on my Spotify account:",
 };
 
 export default function Home() {
@@ -31,12 +32,7 @@ export default function Home() {
             <h2> About </h2> <TextBlock>{description.intro}</TextBlock>
           </div>
           <div className={`${indexStyles.subtitle} `}>
-            <IconWrapper
-              alt="icon"
-              href="none"
-              title="email me"
-              hidden={true}
-            >
+            <IconWrapper alt="icon" href="none" title="email me" hidden={true}>
               <FaPaw size={28} />{" "}
               <span className={`${indexStyles.hidden}`}>
                 <h3>Email me directly on hello[at]jencorbett.dev</h3>
@@ -59,19 +55,22 @@ export default function Home() {
             <TextBlock> {description.social}</TextBlock>{" "}
           </div>{" "}
         </div>{" "}
-        <div className={`${indexStyles.panel}`}>
+        <div className={`${indexStyles.subtitle} `}>
           <IconWrapper
             alt="icon"
-            title="listen to my latest spotify tracks"
+            title="What's in rotation on my Spotify account"
             href="https://open.spotify.com/user/1221141852"
           >
+            <SiSpotify size={26} />{" "}
             <span className={`${indexStyles.hidden}`}>
-              <h3>Listen to my latest spotify tracks</h3>
-            </span>
-          </IconWrapper>
+              <h3>Check out my spotify playlist</h3>
+            </span>{" "}
+          </IconWrapper>{" "}
+          <h2>Spotify</h2>
+          <TextBlock> {description.spotify}</TextBlock>{" "}
           <Player title="Spotify music player " />
         </div>{" "}
-      </div>
+      </div>{" "}
     </>
   );
 }

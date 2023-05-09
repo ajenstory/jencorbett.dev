@@ -41,16 +41,12 @@ const NavBar = () => (
           <FiTwitter size={22} />
         </IconWrapper>{" "}
       </li>
-      <li>
+      {/* <li>
         {" "}
-        <IconWrapper
-          title="Blog posts"
-          alt="Rss icon"
-          href="/posts"
-        >
+        <IconWrapper direct title="Blog posts" alt="Rss icon" href="/posts">
           <SiRss size={22} />
         </IconWrapper>
-      </li>
+      </li> */}
     </ol>
   </div>
 );

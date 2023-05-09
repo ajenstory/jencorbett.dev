@@ -1,59 +1,57 @@
-import postStyles from "@styles/post.module.css";
-import indexStyles from "@styles/index.module.css";
-import { CreatedAt } from "../../components/date";
+// import postStyles from "@styles/post.module.css";
+// import indexStyles from "@styles/index.module.css";
+
 import { compareDesc } from "date-fns";
 import Link from "next/link";
 
-import { useEffect, useState } from "react";
-
 import { allPosts } from "contentlayer/generated";
-
+console.log(allPosts);
 export async function getStaticProps() {
+  console.log(allPosts);
   const posts = allPosts.sort((a, b) => {
     return compareDesc(new Date(a.date), new Date(b.date));
   });
+  console.log(posts);
   return { props: { posts } };
 }
 
-function PostCard({ posts }) {
-  return (
-    <article className={`${indexStyles.article}`}>
-      <p>{posts}</p>
-    </article>
-  );
+function PostCard(post) {
+  return <article className=""></article>;
 }
 
 export default function PostPage({ posts }) {
-  const [date, setDate] = useState({});
-  useEffect(() => setDate({}), []);
-
   return (
     <>
-      <section
-        className={`${indexStyles.container} ${indexStyles.section} ${postStyles.headingMd} ${postStyles.padding1px}`}
-      >
-        <PostCard />
-        <div className={` ${date}`}>
-          <ul className={`${postStyles.list}`}>
+      <section className={``}>
+        <div className="">
+          <PostCard />
+          <ul className={``}>
             {posts.map((post, idx) => (
-              <li
-                key={idx}
-                className={postStyles.listItem}
-              >
-                <p>{post.title}</p> <Link href={`/${post.url}`}>read more</Link>{" "}
-                <p className={postStyles.lightText}>
-                  <CreatedAt dateString={post.date} />
-                </p>{" "}
-              </li>
+              <ul>
+                {" "}
+                <li>{post.date}</li>
+                <Link href={`${post.postUrl}`}>
+                  <li
+                    key={idx}
+                    className={``}
+                  >
+                    {post.title}
+                    <small className={``}></small>{" "}
+                  </li>
+                </Link>
+                <li> {post.summary}</li>
+              </ul>
             ))}
           </ul>
         </div>
-        <Link
-          className={``}
-          href="/"
-        >
-          ← Back to home{" "}
-        </Link>
+        <small className={``}>
+          <Link
+            className={``}
+            href="/"
+          >
+            ← Back to home{" "}
+          </Link>{" "}
+        </small>
       </section>
     </>
   );

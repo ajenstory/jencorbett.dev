@@ -16,13 +16,10 @@ const Layout = ({ children }) => (
         <div>
           <Meta />
           <ThemeSwitch /> <NavBar />
-          <Header home />
+          <Header />
         </div>
         <div>
-          <main
-            home
-            className={`${layoutStyles.main} `}
-          >
+          <main className={`${layoutStyles.main} `}>
             <div>{children}</div>
           </main>{" "}
         </div>{" "}

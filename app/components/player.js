@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import playerStyles from "@components/player.module.css";
 import useSWR from "swr";
+import TextBlock from "./text";
 // import TextBlock from "./text.js";
 
 const fetcher = (...args) => fetch(...args).then((response) => response.json());
@@ -19,17 +20,17 @@ const Player = () => {
 
   return (
     <>
-      <div className={`${playerStyles.container} `}>
+      {" "}
+      <div
+        className={`${playerStyles.container} ${playerStyles.grid} ${playerStyles.center}`}
+      >
         {" "}
-        <h1>{data.heading}</h1>
-        <ol className={`${playerStyles.grid} ${playerStyles.center}`}>
-          <li className={``}>
-            {" "}
+        <li className={``}>
+          {" "}
+          <TextBlock>
             <div className={`${playerStyles.LinkWrapper}`}>
-              <Link
-                target="_blank"
-                href={data.albumUrl}
-              >
+              {" "}
+              <Link target="_blank" href={data.albumUrl}>
                 <div className={`${playerStyles.ImgWrapper} `}>
                   {" "}
                   <Image
@@ -43,51 +44,51 @@ const Player = () => {
                 </div>
               </Link>
             </div>
-            <div className={`${playerStyles.textWrapper}`}></div>
-          </li>{" "}
-          <li>
-            <div
-              className={`${playerStyles.figWrapper}  ${playerStyles.audio}`}
+          </TextBlock>{" "}
+          <div className={`${playerStyles.textWrapper}`}></div>{" "}
+          <div className={`${playerStyles.figWrapper}  ${playerStyles.audio}`}>
+            {" "}
+          </div>{" "}
+        </li>{" "}
+        <div className={``}>
+          <p>
+            {" "}
+            <p>{data.heading}</p>
+            <Link
+              target="_blank"
+              className={`${playerStyles.itemUrl} `}
+              href={data.songUrl}
             >
-              {" "}
-              <audio
-                title="play audio track preview from spotify"
-                src={data.audioUrl}
-                controls
-              >
-                <p> play audio preview</p>
-              </audio>
-            </div>{" "}
-            <div className={`${playerStyles.wrapper}`}>
-              <p>
-                {" "}
-                <Link
-                  target="_blank"
-                  className={`${playerStyles.itemUrl} `}
-                  href={data.songUrl}
-                >
-                  {data.songName}
-                </Link>{" "}
-                &#183;{" "}
-                <Link
-                  target="_blank"
-                  className={`${playerStyles.itemUrl} `}
-                  href={data.songUrl}
-                >
-                  {data.albumName}
-                </Link>{" "}
-                &#183;{" "}
-                <Link
-                  target="_blank"
-                  className={`${playerStyles.itemUrl} `}
-                  href={data.artistUrl}
-                >
-                  {data.artist}
-                </Link>{" "}
-              </p>
-            </div>
-          </li>{" "}
-        </ol>
+              {data.songName}
+            </Link>{" "}
+            &#183;{" "}
+            <Link
+              target="_blank"
+              className={`${playerStyles.itemUrl} `}
+              href={data.songUrl}
+            >
+              {data.albumName}
+            </Link>{" "}
+            &#183;{" "}
+            <Link
+              target="_blank"
+              className={`${playerStyles.itemUrl} `}
+              href={data.artistUrl}
+            >
+              {data.artist}
+            </Link>{" "}
+          </p>{" "}
+          <div className={`${playerStyles.figWrapper}  ${playerStyles.audio}`}>
+            {" "}
+            <audio
+              title="play audio track preview from spotify"
+              src={data.audioUrl}
+              controls
+            >
+              <p> play audio preview</p>
+            </audio>
+          </div>{" "}
+        </div>
       </div>
     </>
   );
