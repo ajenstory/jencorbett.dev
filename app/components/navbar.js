@@ -1,4 +1,4 @@
-import { SiLinkedin, SiMastodon } from "react-icons/si";
+import { SiLinkedin, SiMastodon, SiRss } from "react-icons/si";
 import { FiTwitter, FiGithub } from "react-icons/fi";
 import IconWrapper from "./icon.js";
 import navStyles from "./navbar.module.css";
@@ -41,6 +41,12 @@ const NavBar = () => (
           <FiTwitter size={22} />
         </IconWrapper>{" "}
       </li>
+      {/* <li>
+        {" "}
+        <IconWrapper direct title="Blog posts" alt="Rss icon" href="/posts">
+          <SiRss size={22} />
+        </IconWrapper>
+      </li> */}
     </ol>
   </div>
 );

@@ -3,45 +3,40 @@ import { Inter } from "next/font/google";
 import Meta from "@components/meta";
 import ThemeSwitch from "./themeSwitch.js";
 import Footer from "./footer.js";
+import Link from "next/link";
 import Header from "./header.js";
 import NavBar from "./navbar.js";
 
 const inter = Inter({ subsets: ["latin"] });
 
 const Layout = ({ children }) => (
-  <div className={`${inter.className}`}>
+  <div className={`${inter.className} ${layoutStyles.grid}`}>
     {" "}
     {`${children}` ? (
       <>
-        {" "}
-        <div className={` ${layoutStyles.grid}`}>
+        <div className={`${inter.className} ${layoutStyles.grid}`}>
           <Meta />
-          <div>
-            <ThemeSwitch /> <NavBar />
-            <Header home />
-          </div>
-          <div className={`${layoutStyles.main} `}>
-            <main>
-              <div>{children}</div>
-            </main>{" "}
-          </div>{" "}
-          <Footer />
+          <ThemeSwitch /> <NavBar />
+          <Header home />
+        </div>
+        <div>
+          <main className={`${layoutStyles.main} `}>
+            <div>{children}</div>
+          </main>{" "}
         </div>
       </>
     ) : (
       <>
-        <div className={` ${layoutStyles.grid}`}>
+        {" "}
+        <div className={`${inter.className} ${layoutStyles.grid}`}>
           <Meta />
-          <div>
-            <ThemeSwitch /> <NavBar />
-            <Header />
-          </div>
-          <div className={`${layoutStyles.main} `}>
-            <main>
-              <div>{children}</div>
-            </main>{" "}
-          </div>{" "}
-          <Footer />
+          <ThemeSwitch /> <NavBar />
+          <Header />
+        </div>
+        <div>
+          <main className={`${layoutStyles.main} `}>
+            <div>{children}</div>
+          </main>{" "}
         </div>
       </>
     )}

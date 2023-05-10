@@ -1,23 +1,72 @@
 /* mobile responsive player */
 
 .container {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
+  /* background-color: aqua; */
+  max-height: auto;
   height: auto;
-  border-radius: 6px;
   text-align: center;
 }
 
-.wrapper {
-  padding-top: calc(0.125rem + 0.5vw);
-  padding-bottom: calc(0.125rem + 0.5vw);
+.center {
+  margin: 0 auto;
+  display: block;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 0.25rem;
+  /* grid-template-columns: repeat(1, minmax(25%, auto)); */
+}
+
+@media (min-width: 48rem) {
+  .grid {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+  }
+  .wrapper {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media (min-width: 60rem) {
+  .grid {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+  }
+}
+
+.coverImage {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-top: 1.125rem;
+}
+
+.textWrapper {
+  display: block;
+}
+
+.figWrapper {
+  display: flex;
+  padding: 1rem 1rem;
 }
 
 .audio {
+  display: flex;
+  position: relative;
+  align-self: center;
   max-width: fit-content;
   width: 100%;
   height: auto;
+  margin: 0 auto;
 }
 
 .subtitle h2 {
@@ -30,14 +79,12 @@
 
 .subtitle h3 {
   font-style: oblique;
-  font-size: calc(0.95rem + 0.5vw);
   line-height: 1.2rem;
   letter-spacing: 0.02rem;
   font-weight: 500;
   max-width: 100vmin;
 }
 .subtitle h4 {
-  font-size: calc(0.65rem + 1vw);
   line-height: 1.2rem;
   font-weight: 400;
 }
@@ -53,57 +100,4 @@
   font-style: italic;
   text-decoration: underline;
   cursor: pointer;
-}
-
-.coverImage {
-  display: block;
-  margin: 0 auto;
-  height: auto;
-  max-width: 100%;
-  border-top: linear-gradient(218.32deg, #fffcfc, #fdfeff);
-  box-shadow: 17px 17px 23px #fafdff, -17px -17px 23px #d5d5d5,
-    5px 5px 4px #f9fbfc, 5px 5px 4px #f1f1f1;
-}
-
-.audio {
-  display: flex;
-  top: 0px;
-  width: 100%;
-  height: fit-content;
-  margin: 0 auto;
-}
-
-@media (min-width: 48rem) {
-  .wrapper {
-    display: block;
-  }
-
-  .subtitle h3 {
-    font-size: 0.95rem;
-    line-height: 1.4rem;
-  }
-  .subtitle h4 {
-    font-size: 0.75rem;
-    line-height: 1.2rem;
-  }
-}
-
-@media (min-width: 60rem) {
-  .wrapper {
-    display: block;
-  }
-
-  .subtitle h2 {
-    letter-spacing: inherit;
-  }
-  .subtitle h3 {
-    font-weight: 600;
-    font-size: calc(0.65rem + 0.5vw);
-    font-size: 1rem;
-  }
-  .subtitle h4 {
-    font-size: 1rem;
-    line-height: 1rem;
-    padding: 1.2rem;
-  }
 }
