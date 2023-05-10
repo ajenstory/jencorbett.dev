@@ -1,19 +1,26 @@
 import { useEffect } from "react";
-export default function Error({ error, reset }) {
+
+import TextBlock from "@components/text";
+import Link from "next/link";
+import indexStyles from "@styles/index.module.css";
+export default function ErrorPage({ error }) {
   useEffect(() => {
     // Log the error to an error reporting service
-    console.error(error);
   }, [error]);
 
   return (
-    <div>
-      <p>Uhoh...🤭</p>
-      <Link
-        className={``}
-        href="/"
-      >
-        ← Back to home{" "}
-      </Link>
-    </div>
+    <>
+      <div className={`${indexStyles.container}`}>
+        <p>Uhoh...🤭</p>
+      </div>
+      {`${error}` && (
+        <small className={``}>
+          <Link href="/">
+            {" "}
+            <p>&larr; Go back</p>
+          </Link>
+        </small>
+      )}
+    </>
   );
 }

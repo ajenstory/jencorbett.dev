@@ -55,11 +55,6 @@ const Post = ({ post }) => {
             {/* <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} /> */}
             {/* <PostContent /> */}
           </article>
-          <small className={postStyles.lightText}>
-            <Link className={postStyles.center} href="/">
-              ← Back to home{" "}
-            </Link>{" "}
-          </small>
         </section>
       </div>
     </>

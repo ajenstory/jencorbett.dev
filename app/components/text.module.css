@@ -44,9 +44,10 @@
 @media (min-width: 60rem) {
   .text p {
     padding: 0rem 2rem 0rem 2rem;
-    letter-spacing: 0.02vmax;
+    letter-spacing: 0.01vmax;
     line-height: 1.2rem;
     text-align: center;
+    font-size: 1.1rem;
   }
 
   .wrapper {
