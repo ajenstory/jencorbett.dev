@@ -23,35 +23,25 @@ export default function PostPage({ posts }) {
   return (
     <>
       <section className={``}>
-        <div className="">
-          <PostCard />
-          <ul className={``}>
-            {posts.map((post, idx) => (
-              <ul>
-                {" "}
-                <li>{post.date}</li>
-                <Link href={`${post.postUrl}`}>
-                  <li
-                    key={idx}
-                    className={``}
-                  >
-                    {post.title}
-                    <small className={``}></small>{" "}
-                  </li>
-                </Link>
-                <li> {post.summary}</li>
-              </ul>
-            ))}
-          </ul>
-        </div>
-        <small className={``}>
-          <Link
-            className={``}
-            href="/"
-          >
-            ← Back to home{" "}
-          </Link>{" "}
-        </small>
+        <PostCard />
+        <ul className={``}>
+          {posts.map((post, idx) => (
+            <ul>
+              {" "}
+              <li>{post.date}</li>
+              <Link href={`${post.postUrl}`}>
+                <li
+                  key={idx}
+                  className={``}
+                >
+                  {post.title}
+                  <small className={``}></small>{" "}
+                </li>
+              </Link>
+              <li> {post.summary}</li>
+            </ul>
+          ))}
+        </ul>
       </section>
     </>
   );

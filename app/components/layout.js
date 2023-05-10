@@ -2,7 +2,8 @@ import layoutStyles from "@components/layout.module.css";
 import { Inter } from "next/font/google";
 import Meta from "@components/meta";
 import ThemeSwitch from "./themeSwitch.js";
-// import Footer from "./footer.js";
+import Footer from "./footer.js";
+import Link from "next/link";
 import Header from "./header.js";
 import NavBar from "./navbar.js";
 
@@ -13,7 +14,21 @@ const Layout = ({ children }) => (
     {" "}
     {`${children}` ? (
       <>
+        <div className={`${inter.className} ${layoutStyles.grid}`}>
+          <Meta />
+          <ThemeSwitch /> <NavBar />
+          <Header home />
+        </div>
         <div>
+          <main className={`${layoutStyles.main} `}>
+            <div>{children}</div>
+          </main>{" "}
+        </div>
+      </>
+    ) : (
+      <>
+        {" "}
+        <div className={`${inter.className} ${layoutStyles.grid}`}>
           <Meta />
           <ThemeSwitch /> <NavBar />
           <Header />
@@ -22,22 +37,6 @@ const Layout = ({ children }) => (
           <main className={`${layoutStyles.main} `}>
             <div>{children}</div>
           </main>{" "}
-        </div>{" "}
-        {/* <Footer /> */}
-      </>
-    ) : (
-      <>
-        <div className={` ${layoutStyles.grid}`}>
-          <Meta />
-          <div>
-            <ThemeSwitch /> <NavBar />
-            <Header />
-          </div>
-          <div className={`${layoutStyles.main} `}>
-            <main page>
-              <div>{children}</div>
-            </main>{" "}
-          </div>{" "}
         </div>
       </>
     )}
