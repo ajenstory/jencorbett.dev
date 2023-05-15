@@ -1,0 +1,125 @@
+/* shared styles */
+
+/* .homePlayerSectionl {
+  max-width: calc(100% - 1rem);
+} */
+
+/* mobile responsive grid content for index / home page */
+
+.HomeContainer {
+  padding-top: 0rem;
+  text-align: center;
+}
+
+.homeContainer {
+  width: 100%;
+  height: auto;
+  padding-top: 4rem;
+}
+
+.homeBlock {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.playerBlock {
+  width: 100%;
+  display: block;
+  height: auto;
+  position: relative;
+  padding-top: 1rem;
+  max-width: calc(80% - 1rem);
+  padding-top: 0.5rem;
+}
+
+.subtitle h2 {
+  text-align: center;
+  font-size: 1.4rem;
+  letter-spacing: 0.022rem;
+  padding-top: 0.85rem;
+  padding-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(1, minmax(25%, auto));
+  gap: 1rem;
+}
+
+.hidden {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  position: absolute;
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 48rem) and (max-width: 60rem) {
+  .grid {
+    grid-template-columns: repeat(1, minmax(25%, auto));
+  }
+
+  .block {
+    display: block;
+    width: 70%;
+    height: auto;
+    position: relative;
+    padding-top: 0rem;
+  }
+
+  .subtitle h2 {
+    text-align: center;
+    font-size: 1.4rem;
+    letter-spacing: 0.022rem;
+    padding-top: 0.85rem;
+    padding-bottom: 1rem;
+  }
+
+  .panel {
+    max-width: calc(80% - 4rem);
+    padding: 2rem 1rem;
+  }
+}
+
+/* Desktop and larger screen */
+@media (min-width: 60rem) {
+  .grid {
+    grid-template-rows: repeat(2, 0.5fr);
+    grid-template-columns: repeat(2, minmax(25%, auto));
+  }
+  .container {
+    padding-top: 0rem;
+  }
+
+  .subtitle h2 {
+    text-align: center;
+    font-size: 1.4rem;
+    letter-spacing: 0.022rem;
+    padding-top: 0.85rem;
+    padding-bottom: 1rem;
+  }
+
+  .block {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding-top: 1rem;
+  }
+
+  .player {
+    max-width: calc(40% - 9rem);
+    padding-top: 1rem;
+  }
+
+  .panel {
+    max-width: calc(80% - 4rem);
+    padding-top: 4rem;
+  }
+}
