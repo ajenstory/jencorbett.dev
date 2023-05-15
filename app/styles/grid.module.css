@@ -1,0 +1,91 @@
+/* mobile responsive main site layout  */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1;
+  text-align: left;
+}
+
+.gridItem {
+  display: block;
+}
+
+/* mobile responsive grid content for main site layout (all content) */
+
+@media (min-width: 48rem) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1;
+  }
+}
+
+/* Desktop and larger screen */
+@media (min-width: 60rem) {
+  .grid {
+    display: grid;
+    grid-template-columns: 3;
+  }
+}
+
+/* mobile responsive grid content for index / home page 
+
+/* mobile responsive main site layout  */
+
+/* .container {
+  min-height: 100vh;
+}
+
+.main body {
+  margin: 0 auto;
+  width: 100%;
+  display: block;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+} */
+
+/* mobile responsive grid content for main site layout (all content) */
+
+/* @media (min-width: 48rem) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem 6rem;
+  }
+
+  .main {
+    max-width: 60rem;
+  }
+} */
+
+/* Desktop and larger screen */
+/* @media (min-width: 60rem) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 8rem;
+  }
+
+  .main {
+    max-width: 100%;
+  }
+  
+} */
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 48rem) and (max-width: 60rem) {
+  /* .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(25%, auto));
+  } */
+}
+
+/* Desktop and larger screen */
+@media (min-width: 60rem) {
+  /* .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  } */
+}
