@@ -15,15 +15,9 @@
   width: 100%;
   height: auto;
   position: relative;
-<<<<<<< Updated upstream
-  padding-top: 1rem;
-  max-width: calc(80% - 1rem);
-  padding-top: 0.5rem;
-=======
   width: 60vmin;
   padding-bottom: 10rem;
   text-align: center;
->>>>>>> Stashed changes
 }
 
 .container {
