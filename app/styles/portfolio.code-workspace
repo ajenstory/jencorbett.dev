@@ -1,11 +1,13 @@
 {
   "folders": [
-	{
-		"path": "../.."
-	},
-	{
-		"path": "../../../portfolio-snippets"
-	}
-],
-  "settings": {}
+    {
+      "path": "../.."
+    },
+    {
+      "path": "../../../portfolio-snippets"
+    }
+  ],
+  "settings": {
+    "githubPullRequests.ignoredPullRequestBranches": ["main"]
+  }
 }

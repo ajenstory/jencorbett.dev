@@ -3,7 +3,6 @@ import Link from "next/link";
 import playerStyles from "@components/player.module.css";
 import useSWR from "swr";
 import TextBlock from "./text";
-// import TextBlock from "./text.js";
 
 const fetcher = (...args) => fetch(...args).then((response) => response.json());
 
@@ -22,7 +21,7 @@ const Player = () => {
     <>
       {" "}
       <div
-        className={`${playerStyles.container} ${playerStyles.grid} ${playerStyles.center}`}
+        className={`${playerStyles.playerContainer} ${playerStyles.grid} ${playerStyles.center}`}
       >
         {" "}
         <li className={``}>
@@ -30,7 +29,10 @@ const Player = () => {
           <TextBlock>
             <div className={`${playerStyles.LinkWrapper}`}>
               {" "}
-              <Link target="_blank" href={data.albumUrl}>
+              <Link
+                target="_blank"
+                href={data.albumUrl}
+              >
                 <div className={`${playerStyles.ImgWrapper} `}>
                   {" "}
                   <Image

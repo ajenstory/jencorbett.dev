@@ -1,17 +1,13 @@
 .iconlabel {
   font-size: 1rem;
-
   line-height: 1.5;
   letter-spacing: 0.1rem;
 }
 
 .wrapper {
   margin: 0 auto;
-  padding: 1rem 0.25rem 0rem;
-  display: flex;
-  min-width: 3rem;
-  white-space: nowrap;
-  overflow: hidden;
+  padding: 1rem 0.25rem 1rem 1rem;
+  min-width: 2rem;
 }
 
 .icon {
@@ -46,26 +42,26 @@
 }
 
 /* Tablet and Smaller Desktop */
-@media (min-width: 48rem) and (max-width: 60rem) {
+/* @media (min-width: 48rem) and (max-width: 60rem) {
   .wrapper {
     margin: 0 auto;
     padding: 2rem 0.25rem 0rem;
-    display: flex;
+
     min-width: 3rem;
   }
-}
+} */
 /* Desktop and larger screen */
-@media (min-width: 60rem) {
+/* @media (min-width: 60rem) {
   .wrapper {
     margin: 0 auto;
     padding: 1rem 1rem 0.125rem 1rem;
-    display: flex;
+
     min-width: 3rem;
   }
-}
+} */
 
 /* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
+/* @media (hover: hover) and (pointer: fine) {
   .icon:hover {
     background: rgba(var(--icon-rgb), 0.1);
     border: 1px solid rgba(var(--icon-border-rgb), 0.15);
@@ -74,7 +70,7 @@
   .icon:hover {
     transform: translateX(4px);
   }
-}
+} */
 
 @media (hover: hover) and (pointer: fine) {
   .icon::before {
@@ -93,16 +89,3 @@
     user-select: none;
   }
 }
-
-/* @keyframes change {
-  100% {
-    transition-delay: 5ms;
-  }
-}
-
-.change {
-  animation-name: change;
-  animation-duration: 1.5s;
-  animation-delay: 5ms;
-  animation-direction: normal;
-} */
