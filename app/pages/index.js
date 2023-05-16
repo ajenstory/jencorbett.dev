@@ -14,7 +14,10 @@ const Home = () => {
   return (
     <>
       {" "}
-      <section>
+      <section
+    
+        home
+      >
         <div className={indexStyles.indexContainer}>
           <div className={indexStyles.wrapper}>
             <p className={indexStyles.item}>{description.intro}</p>

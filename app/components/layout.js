@@ -18,7 +18,12 @@ const Layout = ({ children }) => (
           <Header home />
         </div>{" "}
         <div className={layoutStyles.layoutContainer}>
-          <main className={layoutStyles.mainContent}>{children}</main>{" "}
+          <main
+            page
+            className={layoutStyles.mainContent}
+          >
+            {children}
+          </main>{" "}
           <Footer />
         </div>{" "}
       </>
