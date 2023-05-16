@@ -6,17 +6,23 @@ As you can see, this is **very much** in development, :flushed: but here's what'
 
 ## Tech specs
 
+I'm building this and my knowledge of:
+
 - **Architecture**: [JamStack](https://jamstack.org/)
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Site Deployment**: [Vercel](https://vercel.com)
 
 ## Other goodies
 
+I'm using this as a playground for some of the following:
+
+- **MDX**[Markdown for the
+component era] (https://mdxjs.com/)
 - **Spotify Web Api**: [Spotify](https://developer.spotify.com/documentation/web-api)
 - **UI Theme**: [Next Themes](https://github.com/pacocoursey/next-themes)
 - **Content SDK**: [ContentLayer](https://www.contentlayer.dev/)
 - **Data fetching**: [React Hooks for Data Fetching](https://swr.vercel.app/)
-
+- **CSS modules**: [Scoped locally by default](https://github.com/css-modules/css-modules)
 
 ## Credits and inspiration
 
