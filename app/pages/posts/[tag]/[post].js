@@ -1,4 +1,3 @@
-
 import { allPosts } from "contentlayer/generated";
 // import { useMDXComponent } from "@mdx-js/react";
 // import postStyles from "@styles/posts.module.css";
@@ -46,9 +45,9 @@ const Post = ({ post }) => {
   return (
     <>
       <div>
-        <section className={`${postStyles.headingMd} ${postStyles.padding1px}`}>
+        <section className={``}>
           <article>
-            <h1 className={postStyles.headingXl}>{post}</h1>
+            <h1>{post}</h1>
             {/* <div className={postStyles.lightText}>
               <Date dateString={post.date} />
             </div> */}
