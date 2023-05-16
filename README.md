@@ -1,30 +1,22 @@
 # jencorbett.dev
 
-This is my personal web app project [jencorbett.dev](https://jencorbett.dev), bootstrapped with [create-next-app](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and [deployed with vercel](https://github.com/ajenstory/portfolio/deployments).
+This is my personal web app project in progress at [jencorbett.dev](https://jencorbett.dev), bootstrapped with [create-next-app](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and [deployed with vercel](https://github.com/ajenstory/portfolio/deployments).
 
-As you can see, this is **very much** a work-in-progress, :flushed: but here's what's currently happening with it:
+As you can see, this is **very much** in development, :flushed: but here's what's currently happening with it:
 
-## Specs and features
+## Tech specs
 
 - **Architecture**: [JamStack](https://jamstack.org/)
 - **Framework**: [Next.js](https://nextjs.org/)
-- **UI Theme**: [Next Themes](https://github.com/pacocoursey/next-themes)
-- **Data fetching**: [React Hooks for Data Fetching](https://swr.vercel.app/)
-- **Content SDK**: [ContentLayer](https://www.contentlayer.dev/)
 - **Site Deployment**: [Vercel](https://vercel.com)
-- **Spotify Web Api**: [Spotify](https://developer.spotify.com/documentation/web-api)
+- 
+## Other goodies
 
-## TODO list
-- fix code style issues and remove unused variables
-- fix and improve ui accessibility
-- set up tests with Jest, React Testing Library and msw
-- implement testing and error handling in spotify player
-- implement content-layer in main
-- implement blog in main 
-- implement projects page in main with image loading optimisation
-- improve and optimise / refactor css, animations etc
-- implement full colour theme
-- add resume :blush:
+- **Spotify Web Api**: [Spotify](https://developer.spotify.com/documentation/web-api)
+- **UI Theme**: [Next Themes](https://github.com/pacocoursey/next-themes)
+- **Content SDK**: [ContentLayer](https://www.contentlayer.dev/)
+- **Data fetching**: [React Hooks for Data Fetching](https://swr.vercel.app/)
+
 
 ## Credits and inspiration
 
