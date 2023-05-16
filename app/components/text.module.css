@@ -4,10 +4,9 @@
 }
 
 .text p {
-  margin: 0 auto;
-  padding: 0.5rem 4rem 2rem 4rem;
+  margin: auto 15vmax;
   letter-spacing: 0.1vmin;
-  line-height: 1.5rem;
+  line-height: 1.1rem;
   text-align: center;
 }
 
@@ -16,6 +15,7 @@
   padding: 0;
   margin: 0;
 }
+
 .bold {
   font-weight: 400;
 }
@@ -27,7 +27,7 @@
 }
 
 /* Tablet and Smaller Desktop */
-@media (min-width: 48rem) and (max-width: 60rem) {
+/* @media (min-width: 48rem) and (max-width: 60rem) {
   .text p {
     padding: 0rem 3rem 0rem 3rem;
     letter-spacing: 0.02vmax;
@@ -38,10 +38,10 @@
     margin: 0 auto;
     width: 100%;
   }
-}
+} */
 
 /* Desktop and larger screen */
-@media (min-width: 60rem) {
+/* @media (min-width: 60rem) {
   .text p {
     padding: 0rem 2rem 0rem 2rem;
     letter-spacing: 0.01vmax;
@@ -54,7 +54,7 @@
     margin: 0 auto;
     width: 100%;
   }
-}
+} */
 
 /* .heading2XL {
   font-size: 2.5rem;
