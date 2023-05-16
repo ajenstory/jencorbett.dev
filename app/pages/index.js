@@ -1,5 +1,5 @@
 import indexStyles from "@styles/index.module.css";
-import TextBlock from "@components/text";
+import Footer from "@components/footer";
 const description = {
   intro: "I'm a developer based in Ruakākā, Aotearoa - New Zealand.",
   about:
@@ -14,10 +14,7 @@ const Home = () => {
   return (
     <>
       {" "}
-      <section
-    
-        home
-      >
+      <section home>
         <div className={indexStyles.indexContainer}>
           <div className={indexStyles.wrapper}>
             <p className={indexStyles.item}>{description.intro}</p>
@@ -31,7 +28,8 @@ const Home = () => {
             <p className={indexStyles.item}>{description.social}</p>
           </div>
         </div>
-      </section>
+      </section>{" "}
+      <Footer />;
     </>
   );
 };

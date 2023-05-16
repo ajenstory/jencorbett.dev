@@ -4,7 +4,7 @@ import Meta from "@components/meta";
 import ThemeSwitch from "./themeSwitch.js";
 import Header from "./header.js";
 import NavBar from "./navbar.js";
-import Footer from "./footer.js";
+// import Footer from "./footer.js";
 const inter = Inter({ subsets: ["latin"] });
 
 const Layout = ({ children }) => (
@@ -24,7 +24,6 @@ const Layout = ({ children }) => (
           >
             {children}
           </main>{" "}
-          <Footer />
         </div>{" "}
       </>
     ) : (
