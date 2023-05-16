@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { allPosts } from "contentlayer/generated";
-import { useMDXComponent } from "@mdx-js/react";
-import postStyles from "@styles/posts.module.css";
+// import { useMDXComponent } from "@mdx-js/react";
+// import postStyles from "@styles/posts.module.css";
 console.log(allPosts);
 export async function getStaticPaths() {
   const paths = allPosts.map((post) => post.postUrl);
