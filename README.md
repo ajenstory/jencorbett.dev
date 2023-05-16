@@ -9,7 +9,7 @@ As you can see, this is **very much** in development, :flushed: but here's what'
 - **Architecture**: [JamStack](https://jamstack.org/)
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Site Deployment**: [Vercel](https://vercel.com)
-- 
+
 ## Other goodies
 
 - **Spotify Web Api**: [Spotify](https://developer.spotify.com/documentation/web-api)
