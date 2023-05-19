@@ -4,7 +4,7 @@ import footerStyles from "./footer.module.css";
 const Footer = () => (
   <>
     <div className={`${footerStyles.container} `}>
-      <div className={`${footerStyles.content} `}>
+      <div className={`${footerStyles.footerContent} `}>
         © 2023 Jen Corbett &#183;
         <Link
           target="_blank"

@@ -15,9 +15,8 @@
 
 .footerContent {
   align-items: center;
-  padding-top: 1rem;
-  width: 100%;
-  height: auto;
+  padding: 1rem;
+  font-size: calc(0.55rem + 1vmin);
 }
 
 .footerlink:hover {
