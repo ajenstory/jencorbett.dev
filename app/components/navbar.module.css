@@ -1,23 +1,23 @@
-.nav {
-  position: fixed;
-  top: 1px;
-  left: 1px;
-  margin: 0;
-  padding: 0 1rem;
-  display: flex;
+.navContainer {
+  display: grid;
+  justify-content: start;
+  width: 40%;
+  margin: 4rem;
+  padding: 0rem;
 }
 
 .grid {
+  margin: 0 auto;
+  padding: 0;
   display: grid;
-  grid-template-columns: repeat(1, minmax(25%, auto));
-  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 48rem) {
   .grid {
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, minmax(25%, auto));
-    gap: 2rem;
-    justify-self: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
   }
 }
