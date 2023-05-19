@@ -4,9 +4,9 @@ import IconWrapper from "./icon.js";
 import navStyles from "./navbar.module.css";
 
 const NavBar = () => (
-  <div>
-    <ol className={` ${navStyles.nav} ${navStyles.grid}`}>
-      <li className={` ${navStyles.hovertext} `}>
+  <div className={` ${navStyles.navContainer}`}>
+    <ul className={` ${navStyles.grid}`}>
+      <li className={` ${navStyles.item}`}>
         <IconWrapper
           alt="Linkedin icon"
           href="https://linkedin.com/in/jencorbett"
@@ -14,7 +14,7 @@ const NavBar = () => (
           <SiLinkedin size={22} />
         </IconWrapper>
       </li>
-      <li>
+      <li className={` ${navStyles.item}`}>
         <IconWrapper
           title="GitHub profile"
           alt="GitHub icon"
@@ -23,7 +23,7 @@ const NavBar = () => (
           <FiGithub size={22} />
         </IconWrapper>
       </li>
-      <li>
+      <li className={` ${navStyles.item}`}>
         <IconWrapper
           title="Mastodon profile"
           alt="Mastodon icon"
@@ -32,7 +32,7 @@ const NavBar = () => (
           <SiMastodon size={22} />
         </IconWrapper>
       </li>
-      <li>
+      <li className={` ${navStyles.item}`}>
         <IconWrapper
           title="Twitter profile"
           alt="Twitter icon"
@@ -42,12 +42,12 @@ const NavBar = () => (
         </IconWrapper>{" "}
       </li>
       {/* <li>
-        {" "}
-        <IconWrapper direct title="Blog posts" alt="Rss icon" href="/posts">
-          <SiRss size={22} />
-        </IconWrapper>
-      </li> */}
-    </ol>
+          {" "}
+          <IconWrapper direct title="Blog posts" alt="Rss icon" href="/posts">
+            <SiRss size={22} />
+          </IconWrapper>
+        </li> */}
+    </ul>
   </div>
 );
 
