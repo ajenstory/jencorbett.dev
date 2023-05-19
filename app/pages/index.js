@@ -21,8 +21,7 @@ const Home = () => {
           </li>
           <li className={indexStyles.intro}>
             <h1 className={indexStyles.title}>{description.title}</h1>
-            <p>{description.intro}</p>
-            <p>{description.cta}</p>
+            <p>{description.cta}</p> <p>{description.intro}</p>
             <p>{description.social}</p>
           </li>
         </ul>
