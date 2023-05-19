@@ -4,9 +4,9 @@
 
 .darkMode {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  display: flex;
+  top: 0rem;
+  right: 0rem;
+  margin: 2rem 4rem auto;
   justify-content: center;
   align-items: center;
   transition: 0.5s;
@@ -57,6 +57,7 @@
     transform: none;
   }
 }
+
 @media (prefers-reduced-motion) {
   .change {
     animation: none;

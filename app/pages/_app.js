@@ -10,7 +10,7 @@ const App = ({ Component, pageProps }) => (
     disableTransitionOnChange
   >
     <Provider>
-      <Layout home>
+      <Layout>
         <Component {...pageProps} />
       </Layout>
     </Provider>
