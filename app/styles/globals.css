@@ -1,73 +1,39 @@
-/* https://www.joshwcomeau.com/css/custom-css-reset/ & create-next-app */
+/* CSS Reset (normalize.css or custom reset) */
+
+/* Define :root variables and global styles */
 :root {
   --font-mono: ui-monospace, menlo, monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-  --webkit-font-smoothing: antialiased;
-  min-height: 100vh;
-  min-width: 100vw;
+  -webkit-font-smoothing: antialiased;
 }
 
+/* Light theme styles */
 [data-theme="light"] body {
   background-color: #faf9f6;
   color: #161716;
 }
+
+/* Dark theme styles */
 [data-theme="dark"] body {
   color: #faf9f6;
 }
 
-/*
- Use a more-intuitive box-sizing model.
-*/
-
+/* Box-sizing and default margin */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
 }
 
-/*
-   Remove default margin
-*/
-
-* {
-  margin: 0 auto;
-}
-
+/* Typographic tweaks */
 body {
-  margin: 0 auto;
-  font-size: calc(1rem + 0.165vmin);
-  font-weight: 380;
   white-space: inherit;
-}
-/*
-  Typographic tweaks!
-  - accessible line-height
-  -  Improve text rendering
-*/
-
-body,
-code {
-  -webkit-font-smoothing: antialiased;
+  font-size: calc(1rem + 0.3vmin);
 }
 
-/*
- Improve media defaults
-*/
-
-img,
-picture,
-video,
-audio,
-figure {
-  display: block;
-  max-width: 100%;
-}
-
-/*
- Remove built-in typography styles
-*/
-
+/* Remove built-in typography styles */
 input,
 button,
 textarea,
@@ -76,10 +42,7 @@ figcaption {
   font: inherit;
 }
 
-/*
-  Avoid text overflows
-*/
-
+/* Avoid text overflows */
 p,
 h1,
 h2,
@@ -90,13 +53,14 @@ h6 {
   overflow-wrap: break-word;
 }
 
-/*
-  Remove default list & link styles
-*/
+/* Remove default list & link styles */
 
-li {
-  text-decoration: none;
+li,
+ul,
+ol {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 a {
@@ -104,55 +68,40 @@ a {
   text-decoration: none;
 }
 
-/*
-  Creates sticky button styleinspired by [Alireza M - Dark & light mode button](https://codepen.io/alireza82/pen/poRqBOq)
-*/
-
+/* Button styles */
 button {
-  border: 2px;
-  transform: translateZ(10);
+  border: 2px inset;
   border-radius: 85px;
   padding: 20px 15px;
-  border-style: inset;
   cursor: pointer;
   box-shadow: 1px 2px 8px -1px #0000001a;
 }
 
 button::before {
   border-radius: 50%;
-  width: 480px;
-  height: 360px;
-  margin-left: -400px;
+  width: 48rem;
+  height: 36rem;
+  margin-left: -40rem;
 }
 
 button::after {
-  width: 240px;
-  height: 180px;
+  width: 24rem;
+  height: 18rem;
   z-index: -1;
 }
 
 @media (hover: hover) and (pointer: fine) {
   button::before {
     animation: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
   }
 
   button:hover span {
     transform: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
   }
 }
-/*
- Create a root stacking context
-*/
 
-/* #root,
+/* Root stacking context */
+:root,
 #__next {
   isolation: isolate;
-} */
+}
