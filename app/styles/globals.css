@@ -30,7 +30,14 @@
 /* Typographic tweaks */
 body {
   white-space: inherit;
-  font-size: calc(1rem + 0.3vmin);
+}
+
+p {
+  margin: 0rem;
+}
+
+p+p {
+  margin-top: 0.6rem;
 }
 
 /* Remove built-in typography styles */
