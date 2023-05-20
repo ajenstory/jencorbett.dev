@@ -14,24 +14,26 @@ const description = {
 const Home = () => {
   return (
     <div className={indexStyles.sectionContainer}>
-      <div className={`${indexStyles.body} ${indexStyles.indexContent}`}>
-        <ul className={indexStyles.headerContent}>
-          <li className={indexStyles.headerImg}>
-            <Header home />
-          </li>
-          <li>
-            <h1 className={indexStyles.title}>{description.title}</h1>
-            <span className={indexStyles.intro}>
-              <p className="item">{description.intro}</p>
-              <p className="item">{description.about}</p>
-              <p className="item">{description.info}</p>
-              <p className="item">{description.details}</p>
-              <p className="item">{description.cta}</p>
-            </span>
-          </li>
-        </ul>
-      </div>
+      {/* <div className={`${indexStyles.body} ${indexStyles.indexContent}`}> */}
+      <ul className={indexStyles.contentGrid}>
+        <li className={indexStyles.headerImg}>
+          <Header home />
+        </li>
+        <li>
+          <h1 className={indexStyles.title}>{description.title}</h1>
+          <span className={`${indexStyles.intro} ${indexStyles.item}`}>
+            <p>{description.intro}</p>
+            <p>{description.about}</p>
+          </span>
+          <span className={`${indexStyles.item} ${indexStyles.info}`}>
+            <p>{description.info}</p>
+            <p>{description.details}</p>
+            <p>{description.cta}</p>
+          </span>
+        </li>
+      </ul>
     </div>
+    // </div>
   );
 };
 

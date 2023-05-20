@@ -34,7 +34,7 @@ const NavBar = () => (
         alt="Twitter icon"
         href="https://twitter.com/@ajenstory"
         title="Twitter profile"
-        size={22}
+        size={size}
       />
       {/* <NavItem
           icon={<SiRss />}
