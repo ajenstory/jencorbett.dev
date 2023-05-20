@@ -2,13 +2,13 @@ import indexStyles from "@styles/index.module.css";
 import Header from "@components/header.js";
 
 const description = {
-  title: "Hey, I'm Jen Corbett",
-  intro: "I'm currently working on my portfolio, please check back soon!",
-  cta: "I'm a web development graduate seeking opportunities to work in front-end development.",
-  details:
-    "To say hi or check my availability, please feel free to email me at hello[at]jencorbett.dev",
-  social:
-    "You can also connect with me on LinkedIn, Twitter, Mastodon, or GitHub.",
+  title: "Jen Corbett",
+  intro:
+    "Hey, I'm Jen. I'm a developer and strategist based in Ruakākā, Aotearoa, New Zealand",
+  about:
+    "I've recently graduated with a diploma in Web Development and Design, and I'm passionate about designing and building better experiences for people through technology.",
+  info: "I'm currently working on a few personal projects, building my personal porfolio, and a few other things which I'll be sharing here soon!",
+  cta: "To say hi or check my availability, feel free to email me at hello[at]jencorbett.dev",
 };
 
 const Home = () => {
@@ -19,10 +19,15 @@ const Home = () => {
           <li className={indexStyles.headerImg}>
             <Header home />
           </li>
-          <li className={indexStyles.intro}>
+          <li>
             <h1 className={indexStyles.title}>{description.title}</h1>
-            <p>{description.cta}</p> <p>{description.intro}</p>
-            <p>{description.social}</p>
+            <span className={indexStyles.intro}>
+              <p className="item">{description.intro}</p>
+              <p className="item">{description.about}</p>
+              <p className="item">{description.info}</p>
+              <p className="item">{description.details}</p>
+              <p className="item">{description.cta}</p>
+            </span>
           </li>
         </ul>
       </div>
