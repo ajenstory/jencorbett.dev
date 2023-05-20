@@ -5,7 +5,6 @@ import Image from "next/image";
 const profilePic = "/profile.jpg";
 
 const MainLayout = ({ home }) => {
-  const name = "Jen Corbett";
   return (
     <header>
       {home ? (

@@ -1,6 +1,6 @@
 .borderCircle img {
-  width: 100%;
-  height: auto;
+  /* width: 100%;
+  height: auto; */
   border-radius: 50%;
   border: 2px solid transparent;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
