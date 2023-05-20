@@ -1,7 +1,7 @@
 import layoutStyles from "@components/layout.module.css";
 import { Inter } from "next/font/google";
 import Meta from "@components/meta";
-import ThemeSwitch from "./themeSwitch.js";
+
 import Footer from "./footer.js";
 import NavBar from "./navbar.js";
 
@@ -12,14 +12,16 @@ const Layout = ({ children }) => (
     {`${children}` ? (
       <>
         <div className={layoutStyles.mainContainer}>
-          <Meta /> <ThemeSwitch />
+          <Meta />
           <div>
             <NavBar />
           </div>
           <div className={layoutStyles.mainContent}>
             <main page>{children}</main>
           </div>
-          <Footer />
+          <div lassName={layoutStyles.footer}>
+            <Footer />
+          </div>
         </div>
       </>
     ) : (
