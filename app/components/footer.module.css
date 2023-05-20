@@ -1,8 +1,10 @@
 .container {
   display: flex;
-  justify-content: center;
-  margin: 0;
+  justify-content: flex-start;
+  margin: 2rem 2rem auto;
   padding: 0;
+  align-items: flex-start;
+  padding: 1rem;
 }
 
 .footerlink p {
@@ -13,10 +15,6 @@
   font-weight: 400;
 }
 
-.footerContent {
-  align-items: center;
-  padding: 1rem;
-}
 
 .footerlink:hover {
   font-style: italic;
