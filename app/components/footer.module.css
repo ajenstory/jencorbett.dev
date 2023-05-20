@@ -9,14 +9,13 @@
   text-decoration: underline;
   font-weight: 400;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 
 .footerContent {
   align-items: center;
   padding: 1rem;
-  font-size: calc(0.55rem + 1vmin);
 }
 
 .footerlink:hover {
