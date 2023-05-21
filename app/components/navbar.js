@@ -4,7 +4,7 @@ import Link from "next/link";
 import navStyles from "./navbar.module.css";
 import ThemeSwitch from "./themeSwitch.js";
 
-const size = 24;
+const size = 21;
 
 const NavBar = () => (
   <div className={navStyles.navContainer}>
@@ -50,7 +50,11 @@ const NavBar = () => (
 
 const NavItem = ({ icon, alt, href, title, size }) => (
   <li className={navStyles.item}>
-    <IconWrapper href={href} title={title} size={size}>
+    <IconWrapper
+      href={href}
+      title={title}
+      size={size}
+    >
       {icon}
     </IconWrapper>
   </li>
@@ -58,7 +62,11 @@ const NavItem = ({ icon, alt, href, title, size }) => (
 
 const IconWrapper = ({ children, href, title, size }) => (
   <div>
-    <Link target="_blank" title={title} href={href}>
+    <Link
+      target="_blank"
+      title={title}
+      href={href}
+    >
       <span>
         <Icon size={size}>{children}</Icon>
       </span>
@@ -67,7 +75,10 @@ const IconWrapper = ({ children, href, title, size }) => (
 );
 
 const Icon = ({ children, size }) => (
-  <div size={size} style={{ fontSize: size }}>
+  <div
+    size={size}
+    style={{ fontSize: size }}
+  >
     {children}
   </div>
 );

@@ -17,11 +17,9 @@ const Layout = ({ children }) => (
             <NavBar />
           </div>
           <div className={layoutStyles.mainContent}>
-            <main page>{children}</main>
-          </div>
-          <div lassName={layoutStyles.footer}>
-            <Footer />
-          </div>
+            <main page>{children}</main>{" "}
+          </div>{" "}
+          <Footer />
         </div>
       </>
     ) : (

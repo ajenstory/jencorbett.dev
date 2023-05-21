@@ -1,14 +1,16 @@
 import Link from "next/link";
 import footerStyles from "./footer.module.css";
-
+import Player from "./player";
 const Footer = () => (
   <>
     <div className={footerStyles.container}>
-      <div className={footerStyles.footerContent}>
-        <p>© 2023 Jen Corbett. </p>
+      <span className={footerStyles.playerContent}>
+        <Player />
+      </span>{" "}
+      <div className={footerStyles.footerLink}>
         <p>
+          © 2023 Jen Corbett.{" "}
           <Link
-            className={footerStyles.footerLink}
             target="_blank"
             href="https://github.com/ajenstory/jencorbett.dev"
             title="view this project on github"
@@ -17,7 +19,7 @@ const Footer = () => (
           </Link>
         </p>
       </div>
-    </div>
+    </div>{" "}
   </>
 );
 
