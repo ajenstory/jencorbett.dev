@@ -16,7 +16,7 @@ I'm building this and my knowledge of:
 
 I'm using this as a playground for some of the following:
 
-- **MDX**[Markdown for the
+- **MDX**: [Markdown for the
 component era](https://mdxjs.com/)
 - **Spotify Web Api**: [Spotify](https://developer.spotify.com/documentation/web-api)
 - **UI Theme**: [Next Themes](https://github.com/pacocoursey/next-themes)
