@@ -2,6 +2,7 @@
   grid-template-columns: 5fr;
   justify-content: center;
   width: 100%;
+  min-width: 40rem;
 }
 
 .sectionContainer {
@@ -19,13 +20,18 @@
   grid-template-rows: 1fr auto;
   align-items: center;
   width: 100%;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+
+  ;
 }
 
 .item {
   font-size: 1rem;
   line-height: 1.75rem;
-  max-width: 60vmin;
+  /* max-width: 60vmin; */
   margin-bottom: 1rem;
+  max-width: 28rem;
 }
 
 .intro,
@@ -44,11 +50,13 @@
 
 @media (min-width: 48rem) {
   .sectionContainer {
-    max-width: 58rem;
+    width: 100%;
+    max-width: 68rem;
     grid-template-columns: 1fr;
   }
 
   .contentGrid {
+    margin-top: 4rem;
     grid-template-columns: 0.5fr 4.5fr;
     gap: 1rem;
     align-items: flex-start;

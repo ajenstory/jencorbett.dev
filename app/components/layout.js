@@ -17,7 +17,7 @@ const Layout = ({ children }) => (
             <NavBar />
           </div>
           <div className={layoutStyles.mainContent}>
-            <main page>{children}</main>{" "}
+            <main>{children}</main>{" "}
           </div>{" "}
           <Footer />
         </div>

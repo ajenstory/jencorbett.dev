@@ -11,7 +11,7 @@
   align-items: center;
   align-content: flex-end;
   justify-content: space-evenly;
-  gap: 4rem;
+  gap: 2rem;
   /* Adds spacing between elements */
 }
 
@@ -22,7 +22,7 @@
   align-items: center;
   justify-content: space-evenly;
   align-content: center;
-  gap: 0.75rem;
+  gap: 1.2rem;
   /* Adds spacing between items */
   margin-top: 3rem;
   /* Adds top margin to the grid */
@@ -40,7 +40,6 @@
 
 /* Player items styles */
 .playerItems {
-  margin-right: 0.75rem;
   flex-wrap: wrap;
   text-align: center;
 }
@@ -51,6 +50,7 @@
   height: 2rem;
   max-width: 16rem;
   min-width: 100%;
+  margin: 0.75rem 0 0.75rem 0;
 }
 
 /* Controls styles */
@@ -63,13 +63,13 @@
 
 /* Track item styles */
 .itemTrack {
-  margin: 0;
   padding: 0;
   width: 100%;
   font-size: calc(0.75rem + 0.2vmin);
   line-height: 1.2rem;
   text-align: center;
   align-items: center;
+  max-width: 48rem;
 }
 
 /* Image wrapper styles */
@@ -122,8 +122,8 @@
     justify-content: space-around;
     gap: 0.75rem;
     align-items: flex-end;
-    margin-left: 2rem;
-    margin-bottom: 2rem;
+    justify-content: center;
+    align-self: flex-end;
   }
 
   .grid {
@@ -132,10 +132,14 @@
     justify-content: flex-start;
     align-content: flex-start;
     flex-grow: 1;
+    gap: 1.2rem;
   }
 
-  .playerItems {
+  .playerItems,
+  .itemTrack p {
     text-align: left;
+    margin-left: 4rem;
+
   }
 
   .audioPlayer {
@@ -152,12 +156,16 @@
     flex-direction: column;
     gap: 0.75rem;
     justify-content: center;
+    align-items: flex-end;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1.2rem;
   }
 
   .audioPlayer {
     display: block;
     height: 2rem;
-    max-width: 25rem;
+    max-width: 16rem;
     min-width: 100%;
   }
 
@@ -166,6 +174,11 @@
     justify-content: flex-start;
     align-content: flex-start;
     flex-grow: 1;
+  }
+
+  .playerItems p {
+    text-align: left;
+    align-items: flex-end;
   }
 
   .coverImage {

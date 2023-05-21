@@ -132,11 +132,11 @@ const Player = () => {
               artist={artist}
               artistUrl={artistUrl}
             />{" "}
+            <AudioPreview
+              className={playerStyles.itemAudio}
+              audioUrl={audioUrl}
+            />
           </li>
-          <AudioPreview
-            className={playerStyles.itemAudio}
-            audioUrl={audioUrl}
-          />
         </ul>{" "}
       </div>
     </>
