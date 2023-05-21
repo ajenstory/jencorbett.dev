@@ -37,6 +37,7 @@
   min-width: 100%;
   height: auto;
   align-items: center;
+  margin-bottom: 0.75rem;
 }
 
 /* Player items styles */
@@ -48,6 +49,7 @@
 
 /* Audio player styles */
 .audioPlayer {
+  margin-top: 0.75rem;
   display: block;
   height: 2rem;
   max-width: 16rem;
@@ -89,6 +91,8 @@
   width: 100%;
   height: auto;
   max-width: 4rem;
+  height: auto;
+  align-items: center;
 }
 
 /* Item URL styles */
@@ -140,6 +144,7 @@
 
   .playerItems,
   .itemTrack p {
+
     text-align: left;
     margin-left: 4rem;
 
@@ -170,6 +175,7 @@
     height: 2rem;
     max-width: 16rem;
     min-width: 100%;
+
   }
 
   .grid {
@@ -177,6 +183,7 @@
     justify-content: flex-start;
     align-content: flex-start;
     flex-grow: 1;
+    gap: 2rem;
   }
 
   .playerItems p {
