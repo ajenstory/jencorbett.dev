@@ -1,39 +1,45 @@
 import indexStyles from "@styles/index.module.css";
 import Header from "@components/header.js";
-
+// import Player from "@components/player";
 const description = {
-  title: "Jen Corbett",
+  title: "Hey, I'm Jen.",
   intro:
-    "Hey, I'm Jen. I'm a developer and strategist based in Ruakākā, Aotearoa, New Zealand",
+    "I'm passionate about designing and building better experiences for people through technology.",
   about:
-    "I've recently graduated with a diploma in Web Development and Design, and I'm passionate about designing and building better experiences for people through technology.",
-  info: "I'm currently working on a few personal projects, building my personal porfolio, and a few other things which I'll be sharing here soon!",
+    "I recently graduated from a web development and design programme, and my background spans 15 years digital marketing and communications.",
+  info: "I have several projects on the go, including this web portfolio! It's currently in progress, so check back soon.",
+  more: "I'm currently seeking a full-time, remote-first role in software development, and also open to freelance opportunities.",
   cta: "To say hi or check my availability, feel free to email me at hello[at]jencorbett.dev",
 };
 
 const Home = () => {
   return (
     <div className={indexStyles.sectionContainer}>
-      {/* <div className={`${indexStyles.body} ${indexStyles.indexContent}`}> */}
       <ul className={indexStyles.contentGrid}>
         <li className={indexStyles.headerImg}>
           <Header home />
         </li>
-        <li>
+        <li className={indexStyles.intro}>
           <h1 className={indexStyles.title}>{description.title}</h1>
-          <span className={`${indexStyles.intro} ${indexStyles.item}`}>
+          <li className={`${indexStyles.item}`}>
             <p>{description.intro}</p>
+          </li>{" "}
+          <li className={`${indexStyles.item}`}>
             <p>{description.about}</p>
-          </span>
-          <span className={`${indexStyles.item} ${indexStyles.info}`}>
+          </li>{" "}
+          <li className={`${indexStyles.item}`}>
             <p>{description.info}</p>
+          </li>
+          <li className={`${indexStyles.item} ${indexStyles.info}`}>
+            <p>{description.more}</p>
+          </li>
+          <li className={`${indexStyles.item} ${indexStyles.info}`}>
             <p>{description.details}</p>
             <p>{description.cta}</p>
-          </span>
+          </li>
         </li>
       </ul>
     </div>
-    // </div>
   );
 };
 
