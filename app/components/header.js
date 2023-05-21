@@ -5,14 +5,14 @@ import Image from "next/image";
 const profilePic = "/profile.jpg";
 
 const MainLayout = ({ home }) => {
-  const name = "Jen Corbett";
   return (
     <header>
       {home ? (
         <>
-          <div className={`${headerStyles.borderCircle}  `}>
+          <div className={`${headerStyles.headerWrapper}`}>
             <Link href="https://github.com/ajenstory/jencorbett.dev">
               <Image
+                className={`${headerStyles.borderCircle}`}
                 priority
                 src={profilePic}
                 height={108}
@@ -24,7 +24,10 @@ const MainLayout = ({ home }) => {
         </>
       ) : (
         <>
-          <Link href="/" className={headerStyles.colorInherit}>
+          <Link
+            href="/"
+            className={headerStyles.colorInherit}
+          >
             {" "}
             <Image
               src={profilePic}

@@ -1,7 +1,15 @@
-.borderCircle img {
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.borderCircle {
   width: 100%;
   height: auto;
   border-radius: 50%;
+  max-width: 6rem;
   border: 2px solid transparent;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease 0s;
