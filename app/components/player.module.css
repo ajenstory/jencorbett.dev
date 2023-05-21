@@ -42,6 +42,7 @@
 .playerItems {
   flex-wrap: wrap;
   text-align: center;
+  margin: 0.75rem 0 0.75rem 0;
 }
 
 /* Audio player styles */
@@ -70,6 +71,7 @@
   text-align: center;
   align-items: center;
   max-width: 48rem;
+  margin: 0.75rem 0 0.75rem 0;
 }
 
 /* Image wrapper styles */
@@ -85,7 +87,7 @@
   padding: 0;
   width: 100%;
   height: auto;
-  max-width: 6rem;
+  max-width: 4rem;
 }
 
 /* Item URL styles */
@@ -183,6 +185,7 @@
 
   .coverImage {
     max-width: 4rem;
+
   }
 
   .heading {
