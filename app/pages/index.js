@@ -1,10 +1,10 @@
 import indexStyles from "@styles/index.module.css";
 import Header from "@components/header.js";
-// import Player from "@components/player";
+
 const description = {
   title: "Hey, I'm Jen.",
   intro:
-    "I'm passionate about designing and building better experiences for people through technology.",
+    "I'm passionate about designing and building better digital experiences for people through technology.",
   about:
     "I recently graduated from a web development and design programme, and my background spans 15 years digital marketing and communications.",
   info: "I have several projects on the go, including this web portfolio! It's currently in progress, so check back soon.",
@@ -15,13 +15,15 @@ const description = {
 const Home = () => {
   return (
     <div className={indexStyles.sectionContainer}>
+      {" "}
       <ul className={indexStyles.contentGrid}>
         <li className={indexStyles.headerImg}>
           <Header home />
         </li>
-        <li className={indexStyles.intro}>
-          <h1 className={indexStyles.title}>{description.title}</h1>
+        <span className={indexStyles.intro}>
+          {" "}
           <li className={`${indexStyles.item}`}>
+            <h1 className={indexStyles.title}>{description.title}</h1>
             <p>{description.intro}</p>
           </li>{" "}
           <li className={`${indexStyles.item}`}>
@@ -37,7 +39,7 @@ const Home = () => {
             <p>{description.details}</p>
             <p>{description.cta}</p>
           </li>
-        </li>
+        </span>
       </ul>
     </div>
   );

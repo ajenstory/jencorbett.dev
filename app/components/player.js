@@ -6,7 +6,7 @@ import { SiSpotify } from "react-icons/si";
 const fetcher = (...args) => fetch(...args).then((response) => response.json());
 
 const CoverImage = ({ albumUrl, albumImageUrl, albumName, artist }) => (
-  <li className={playerStyles.imgWrapper}>
+  <span className={playerStyles.imgWrapper}>
     <Link
       target="_blank"
       href={albumUrl}
@@ -20,7 +20,7 @@ const CoverImage = ({ albumUrl, albumImageUrl, albumName, artist }) => (
         alt={`Cover of Spotify album ${albumName} by ${artist}`}
       />
     </Link>{" "}
-  </li>
+  </span>
 );
 
 const TrackInfo = ({
@@ -30,15 +30,11 @@ const TrackInfo = ({
   albumUrl,
   artist,
   artistUrl,
-  heading,
+  x,
 }) => (
-  <div>
+  <ul>
     {" "}
-    <p className={playerStyles.heading}>
-      <SiSpotify /> {heading}{" "}
-    </p>
-    <p>
-      {" "}
+    <li className={playerStyles.heading}>
       <Link
         target="_blank"
         className={playerStyles.itemUrl}
@@ -62,15 +58,14 @@ const TrackInfo = ({
       >
         {artist}
       </Link>{" "}
-    </p>
-  </div>
+    </li>
+  </ul>
 );
 
 const AudioPreview = ({ audioUrl }) => (
   <li
     id="audio-controls"
     className={playerStyles.controls}
-    data-state="hidden"
   >
     <figure
       className={playerStyles.figure}
@@ -80,6 +75,7 @@ const AudioPreview = ({ audioUrl }) => (
         src={audioUrl}
         preload="metadata"
         controls
+        className={playerStyles.audioPlayer}
       >
         <p>Play audio preview</p>
       </audio>
@@ -111,34 +107,39 @@ const Player = () => {
   } = data;
 
   return (
-    <div className={`${playerStyles.container}`}>
-      <ul className={`${playerStyles.grid}`}>
-        <li>
-          <CoverImage
-            albumUrl={albumUrl}
-            albumImageUrl={albumImageUrl}
-            albumName={albumName}
-            artist={artist}
+    <>
+      <div className={playerStyles.container}>
+        <ul className={`${playerStyles.grid} ${playerStyles.playerItems}`}>
+          <li>
+            {" "}
+            <CoverImage
+              albumUrl={albumUrl}
+              albumImageUrl={albumImageUrl}
+              albumName={albumName}
+              artist={artist}
+            />
+          </li>{" "}
+          <li>
+            {" "}
+            <SiSpotify /> {heading}{" "}
+            <TrackInfo
+              className={` ${playerStyles.itemTrack} ${playerStyles.trackInfo}`}
+              heading={heading}
+              songName={songName}
+              songUrl={songUrl}
+              albumName={albumName}
+              albumUrl={albumUrl}
+              artist={artist}
+              artistUrl={artistUrl}
+            />{" "}
+          </li>
+          <AudioPreview
+            className={playerStyles.itemAudio}
+            audioUrl={audioUrl}
           />
-        </li>
-        <TrackInfo
-          className={` ${playerStyles.itemTrack} ${playerStyles.trackInfo}`}
-          heading={heading}
-          songName={songName}
-          songUrl={songUrl}
-          albumName={albumName}
-          albumUrl={albumUrl}
-          artist={artist}
-          artistUrl={artistUrl}
-        />
-      </ul>
-      <span>
-        <AudioPreview
-          className={playerStyles.itemAudio}
-          audioUrl={audioUrl}
-        />
-      </span>
-    </div>
+        </ul>{" "}
+      </div>
+    </>
   );
 };
 

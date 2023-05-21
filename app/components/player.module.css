@@ -1,113 +1,178 @@
 /* Mobile responsive player */
 
+/* Container styles */
 .container {
   padding: 0;
   margin: 0 auto;
   width: 100%;
   height: auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  flex-direction: column;
-  justify-content: space-around;
-
+  align-content: flex-end;
+  justify-content: space-evenly;
+  gap: 4rem;
+  /* Adds spacing between elements */
 }
 
+/* Grid styles */
 .grid {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  align-content: flex-start;
+  align-content: center;
+  gap: 0.75rem;
+  /* Adds spacing between items */
+  margin-top: 3rem;
+  /* Adds top margin to the grid */
 }
 
+/* Cover item styles */
 .itemCover {
-  align-self: end;
-  align-items: baseline;
+  align-self: center;
+  margin: 0;
+  padding: 0;
+  min-width: 100%;
+  height: auto;
+  align-items: center;
 }
 
-.itemTrack,
-.trackInfo {
+/* Player items styles */
+.playerItems {
+  margin-right: 0.75rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+/* Audio player styles */
+.audioPlayer {
+  display: block;
+  height: 2rem;
+  max-width: 16rem;
+  min-width: 100%;
+}
+
+/* Controls styles */
+.controls {
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+/* Track item styles */
+.itemTrack {
   margin: 0;
   padding: 0;
   width: 100%;
+  font-size: calc(0.75rem + 0.2vmin);
+  line-height: 1.2rem;
+  text-align: center;
+  align-items: center;
 }
 
+/* Image wrapper styles */
 .imgWrapper {
-  display: block;
   width: 100%;
   height: auto;
 }
 
+/* Cover image styles */
 .coverImage {
   align-self: flex-start;
+  margin: 0;
+  padding: 0;
+  width: 100%;
   height: auto;
-  max-width: 5rem;
+  max-width: 6rem;
 }
 
-
+/* Item URL styles */
 .itemUrl {
   font-weight: 400;
   font-style: normal;
   text-decoration: underline;
+  text-align: center;
+  font-size: calc(0.85rem + 0.2vmin);
 }
 
+/* Hovered Item URL styles */
 .itemUrl:hover {
   font-weight: 600;
   font-style: italic;
   text-decoration: underline;
   cursor: pointer;
+  font-size: calc(0.85rem + 0.2vmin);
 }
 
+/* Heading styles */
 .heading {
-  font-size: 1rem;
+  font-size: calc(0.85rem + 0.4vmin);
   font-weight: 600;
   font-style: italic;
   text-align: center;
+  margin-bottom: 0.25rem;
 }
 
 @media (min-width: 48rem) {
+  /* Larger screen styles */
+
   .container {
-    justify-content: space-evenly;
-    justify-content: flex-start;
-    flex-direction: column;
+    justify-content: space-around;
+    gap: 0.75rem;
+    align-items: flex-end;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
   }
 
   .grid {
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-grow: 1;
+  }
+
+  .playerItems {
+    text-align: left;
+  }
+
+  .audioPlayer {
+    width: 28rem;
+  }
+
+
+}
+
+@media (min-width: 58rem) {
+  /* Extra large screen styles */
+
+  .container {
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .audioPlayer {
+    display: block;
+    height: 2rem;
+    max-width: 25rem;
+    min-width: 100%;
+  }
+
+  .grid {
     flex-direction: row;
     justify-content: flex-start;
-    flex-grow: 1
+    align-content: flex-start;
+    flex-grow: 1;
   }
 
   .coverImage {
     max-width: 4rem;
-    padding: 0;
-    margin: 1rem;
   }
 
   .heading {
     text-align: left;
   }
-
-
-}
-
-@media (min-width: 68rem) {
-  .container {
-    justify-content: flex-start;
-    width: 100%;
-    flex-direction: row;
-  }
-
-  .grid {
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  /* .itemAudio {
-
-    width: 100%;
- 
-  } */
 }
