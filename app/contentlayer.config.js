@@ -1,24 +1,5 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 
-// export const Tag = defineDocumentType(() => ({
-//   name: "tag",
-//   filePathPattern: `/posts/**.json`,
-//   contentType: "data",
-//   fields: {
-//     title: {
-//       type: "string",
-//       description: "The title of the post",
-//       required: true,
-//     },
-//   },
-//   computedFields: {
-//     tag: {
-//       type: data,
-//       resolve: (tag) => `/${tag._raw.flattenedPath}`,
-//     },
-//   },
-// }));
-
 export const Post = defineDocumentType(() => ({
   name: "Post",
   filePathPattern: `**/*.mdx`,

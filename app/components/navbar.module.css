@@ -2,7 +2,6 @@
   display: grid;
   justify-content: start;
   width: 40%;
-  margin: 4rem;
   padding: 0rem;
 }
 
@@ -11,6 +10,14 @@
   padding: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+.icon {
+  list-style: none;
+  cursor: pointer;
 }
 
 @media (min-width: 48rem) {
@@ -18,6 +25,8 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1rem;
+    gap: 5rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
   }
 }
