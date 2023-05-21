@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import playerStyles from "@components/player.module.css";
 import useSWR from "swr";
+import Error from "next/error.js";
 import { SiSpotify } from "react-icons/si";
 const fetcher = (...args) => fetch(...args).then((response) => response.json());
 
@@ -11,6 +12,7 @@ const CoverImage = ({ albumUrl, albumImageUrl, albumName, artist }) => (
       target="_blank"
       href={albumUrl}
     >
+      {" "}
       <Image
         className={playerStyles.coverImage}
         width={240}
@@ -34,7 +36,7 @@ const TrackInfo = ({
 }) => (
   <ul>
     {" "}
-    <li className={playerStyles.heading}>
+    <li>
       <Link
         target="_blank"
         className={playerStyles.itemUrl}
@@ -71,6 +73,7 @@ const AudioPreview = ({ audioUrl }) => (
       className={playerStyles.figure}
       title="Play audio track preview from Spotify"
     >
+      {" "}
       <audio
         src={audioUrl}
         preload="metadata"
@@ -87,7 +90,11 @@ const Player = () => {
   const { data, error } = useSWR("/api/spotify/track", fetcher);
 
   if (error) {
-    return <div>Something went wrong</div>;
+    return (
+      <div>
+        <Error />
+      </div>
+    );
   }
 
   if (!data) {
@@ -121,7 +128,7 @@ const Player = () => {
           </li>{" "}
           <li>
             {" "}
-            <SiSpotify /> {heading}{" "}
+            <SiSpotify className={playerStyles.button} /> {heading}{" "}
             <TrackInfo
               className={` ${playerStyles.itemTrack} ${playerStyles.trackInfo}`}
               heading={heading}

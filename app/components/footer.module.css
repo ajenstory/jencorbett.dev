@@ -2,22 +2,27 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  align-self: center;
-  align-items: center;
-  flex-direction: column;
   justify-content: center;
-  justify-content: space-between;
   width: 100%;
   height: auto;
   margin: 0;
   padding: 0;
   gap: 1rem;
+
+}
+
+.player {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 .footerLink {
   font-weight: 400;
-  margin: 0rem 0rem 2rem 0rem;
-  text-align: left;
+  width: 100%;
+  text-align: center;
+  margin: 0.5rem;
 }
 
 .footerLink:hover {
@@ -26,22 +31,27 @@
   font-weight: 500;
   cursor: pointer;
   transition-delay: 2ms;
+
 }
 
 @media (min-width: 48rem) {
   .container {
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
     flex-wrap: nowrap;
+    justify-content: space-between;
+
+  }
+
+  .player {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    align-self: flex-end;
   }
 
   .footerLink {
-    margin: 0rem 2rem 2rem 0rem;
-    width: 100%;
-    text-align: center;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
+    text-align: right;
+    align-self: flex-end;
   }
 
 

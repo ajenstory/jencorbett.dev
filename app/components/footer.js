@@ -4,9 +4,8 @@ import Player from "./player";
 const Footer = () => (
   <>
     <div className={footerStyles.container}>
-      <Player className={footerStyles.playerContent} />
-
-      <div className={footerStyles.footerLink}>
+      <Player className={footerStyles.player} />
+      <span className={footerStyles.footerLink}>
         <p>
           © 2023 Jen Corbett.{" "}
           <Link
@@ -17,7 +16,7 @@ const Footer = () => (
             View this project on github
           </Link>
         </p>
-      </div>
+      </span>
     </div>
   </>
 );

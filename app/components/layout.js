@@ -1,7 +1,7 @@
 import layoutStyles from "@components/layout.module.css";
 import { Inter } from "next/font/google";
 import Meta from "@components/meta";
-
+import Error from "next/error.js";
 import Footer from "./footer.js";
 import NavBar from "./navbar.js";
 
@@ -23,7 +23,9 @@ const Layout = ({ children }) => (
         </div>
       </>
     ) : (
-      <> </>
+      <>
+        <Error />
+      </>
     )}
   </div>
 );
