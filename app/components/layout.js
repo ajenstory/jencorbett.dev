@@ -1,32 +1,27 @@
 import layoutStyles from "@components/layout.module.css";
 import { Inter } from "next/font/google";
 import Meta from "@components/meta";
-import Error from "next/error.js";
 import Footer from "./footer.js";
 import NavBar from "./navbar.js";
 
 const inter = Inter({ subsets: ["latin"] });
 
 const Layout = ({ children }) => (
-  <div className={`${inter.className}`}>
-    {`${children}` ? (
-      <>
-        <div className={layoutStyles.mainContainer}>
+  <div className={layoutStyles.container}>
+    <ul className={`${inter.className}  ${layoutStyles.grid}`}>
+      <li className={layoutStyles.nav}>
+        <NavBar />
+      </li>
+      <li>
+        <main className={`${layoutStyles.main} ${layoutStyles.center}`}>
           <Meta />
-          <div>
-            <NavBar />
-          </div>
-          <div className={layoutStyles.mainContent}>
-            <main>{children}</main>{" "}
-          </div>{" "}
-          <Footer />
-        </div>
-      </>
-    ) : (
-      <>
-        <Error />
-      </>
-    )}
+          {children}
+        </main>
+      </li>
+      <li className={layoutStyles.footer}>
+        <Footer />
+      </li>
+    </ul>
   </div>
 );
 export default Layout;

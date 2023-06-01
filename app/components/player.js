@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import playerStyles from "@components/player.module.css";
-import useSWR from "swr";
 import Error from "next/error.js";
-import { SiSpotify } from "react-icons/si";
+
+import useSWR from "swr";
 const fetcher = (...args) => fetch(...args).then((response) => response.json());
 
 const CoverImage = ({ albumUrl, albumImageUrl, albumName, artist }) => (
@@ -32,36 +32,29 @@ const TrackInfo = ({
   albumUrl,
   artist,
   artistUrl,
-  x,
+  audioUrl,
 }) => (
-  <ul>
-    {" "}
-    <li>
-      <Link
-        target="_blank"
-        className={playerStyles.itemUrl}
-        href={songUrl}
-      >
-        {songName}
-      </Link>{" "}
-      &#183;{" "}
-      <Link
-        target="_blank"
-        className={playerStyles.itemUrl}
-        href={albumUrl}
-      >
-        {albumName}
-      </Link>{" "}
-      &#183;{" "}
-      <Link
-        target="_blank"
-        className={playerStyles.itemUrl}
-        href={artistUrl}
-      >
-        {artist}
-      </Link>{" "}
-    </li>
-  </ul>
+  <span className={playerStyles.item}>
+    <Link
+      target="_blank"
+      href={songUrl}
+    >
+      {songName}
+    </Link>{" "}
+    <Link
+      target="_blank"
+      href={albumUrl}
+    >
+      &#183; {albumName}
+    </Link>{" "}
+    <Link
+      target="_blank"
+      href={artistUrl}
+    >
+      &#183; {artist}
+    </Link>{" "}
+    <AudioPreview audioUrl={audioUrl} />
+  </span>
 );
 
 const AudioPreview = ({ audioUrl }) => (
@@ -107,7 +100,6 @@ const Player = () => {
     albumName,
     artist,
     artistUrl,
-    audioUrl,
     heading,
     songName,
     songUrl,
@@ -115,22 +107,18 @@ const Player = () => {
 
   return (
     <>
-      <div className={playerStyles.container}>
-        <ul className={`${playerStyles.grid} ${playerStyles.playerItems}`}>
-          <li>
-            {" "}
+      <div className={`${playerStyles.container} `}>
+        <ul className={`${playerStyles.flexWrap}  `}>
+          <li className={playerStyles.flexItem}>
             <CoverImage
               albumUrl={albumUrl}
               albumImageUrl={albumImageUrl}
               albumName={albumName}
               artist={artist}
-            />
-          </li>{" "}
-          <li>
-            {" "}
-            <SiSpotify className={playerStyles.button} /> {heading}{" "}
+            />{" "}
+          </li>
+          <li className={`${playerStyles.trackItem} ${playerStyles.flexItem}`}>
             <TrackInfo
-              className={` ${playerStyles.itemTrack} ${playerStyles.trackInfo}`}
               heading={heading}
               songName={songName}
               songUrl={songUrl}
@@ -139,10 +127,6 @@ const Player = () => {
               artist={artist}
               artistUrl={artistUrl}
             />{" "}
-            <AudioPreview
-              className={playerStyles.itemAudio}
-              audioUrl={audioUrl}
-            />
           </li>
         </ul>{" "}
       </div>
