@@ -1,31 +1,68 @@
-.mainContainer {
-  padding: 0;
+.container {
+  display: grid;
   margin: 0 auto;
-  width: 100%;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
-.mainContent {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+ul.grid {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
   align-items: center;
-  justify-content: center;
-  margin: 0rem 4rem;
 }
 
-@media (min-width: 48rem) {
-  .mainContainer {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+.main {
+  display: block;
+  width: 100%;
+  align-self: center;
+  align-items: center;
+  padding: 4rem 6rem;
+}
+
+
+.nav {
+  align-self: start;
+}
+
+.footer {
+  align-self: end;
+}
+
+.icon {
+  list-style: none;
+  cursor: pointer;
+}
+
+.navContainer {
+  display: grid;
+  justify-content: start;
+  width: 40%;
+  padding: 0rem;
+}
+
+@media screen and (min-width: 48rem) {
+
+  .main {
+    display: block;
+    width: 100%;
+    align-self: center;
+    align-items: center;
+    padding: 0rem 8rem;
+    max-width: 40rem;
   }
 
-  .mainContent {
-    justify-content: center;
+  .grid {
+    margin: 0 auto;
+    gap: 4rem;
+    margin-top: 3rem;
+    margin-left: 2rem;
     align-items: center;
+  }
+
+  .center {
+    align-self: center;
+    justify-self: center;
   }
 }

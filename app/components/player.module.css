@@ -1,136 +1,63 @@
-/* Mobile responsive player */
-
-/* Container styles */
 .container {
-  padding: 0;
-  margin: 0 auto;
-  width: 100%;
-  height: auto;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: center;
-  justify-content: space-evenly;
   gap: 2rem;
-  /* Adds spacing between elements */
+  margin: 0 auto;
 }
 
-/* Grid styles */
-.grid {
-  margin: 0.75rem 0 1rem 0;
+.flexWrap {
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
   align-items: center;
-  justify-content: space-evenly;
   align-content: center;
-  gap: 1.2rem;
-  /* Adds spacing between items */
-  margin-top: 3rem;
-  /* Adds top margin to the grid */
+  justify-content: center;
 }
 
-/* Cover item styles */
+
 .itemCover {
-  align-self: center;
   margin: 0;
   padding: 0;
   min-width: 100%;
   height: auto;
-  align-items: center;
-  margin-bottom: 0.75rem;
 }
 
-/* Player items styles */
-
-/* @media (prefers=data-theme="dark") {
-  .playerItems {
-    border: 1px solid #ffffff;
-  }
-}
-
-@media (prefers=data-theme="light") {
-  .playerItems {
-    border: 1px solid #000000;
-    background-color: black;
-  }
-} */
-
-.playerItems {
-  flex-wrap: wrap;
-  text-align: center;
-  /* border: 1px solid #000000;
-  padding: 2rem; */
-  border-radius: 8px;
-}
-
-/* Audio player styles */
 .audioPlayer {
   margin-top: 0.75rem;
   display: block;
-  height: 2rem;
-  max-width: 20rem;
-  min-width: 100%;
-
+  height: 1.8rem;
 }
 
-/* 
-.button {
-  z-index: 1;
-  width: 1rem;
-  height: 1rem;
-  margin: 0;
-  padding: 0;
-  position: fixed;
-  bottom: 15rem;
-  left: 10rem;
-  right: auto;
-  top: auto;
-  color: ffffff;
-} */
-
-
-
-/* Controls styles */
 .controls {
-  max-width: 20%;
-  height: auto;
+  height: 2rem;
   margin: 0;
   padding: 0;
-}
-
-/* Track item styles */
-.itemTrack {
-  padding: 0;
-  width: 100%;
-  max-width: 16rem;
-  font-size: calc(0.75rem + 0.2vmin);
-  line-height: 1.2rem;
-  text-align: center;
-  align-items: center;
+  min-width: 100%;
   max-width: 20rem;
-  margin: 0.75rem 0 0.75rem 0;
 }
 
-/* Image wrapper styles */
+
+.trackItem {
+  width: 100%;
+  max-width: 20rem;
+  overflow: hidden;
+  line-height: 1rem;
+  text-align: center;
+}
+
+
 .imgWrapper {
   width: 100%;
   height: auto;
 }
 
-/* Cover image styles */
 .coverImage {
   align-self: flex-start;
-  margin: 0;
-  padding: 0;
   width: 100%;
-  height: auto;
   max-width: 4rem;
   height: auto;
-  align-items: center;
 }
 
-/* Item URL styles */
-.itemUrl {
+
+.item {
   font-weight: 400;
   font-style: normal;
   text-decoration: underline;
@@ -138,7 +65,7 @@
   font-size: calc(0.85rem + 0.2vmin);
 }
 
-/* Hovered Item URL styles */
+
 .itemUrl:hover {
   font-weight: 600;
   font-style: italic;
@@ -147,7 +74,7 @@
   font-size: calc(0.85rem + 0.2vmin);
 }
 
-/* Heading styles */
+
 .heading {
   font-size: calc(0.85rem + 0.4vmin);
   font-weight: 600;
@@ -156,81 +83,19 @@
   margin-bottom: 0.25rem;
 }
 
-@media (min-width: 48rem) {
-  /* Larger screen styles */
+
+@media (min-width: 30rem) {
 
   .container {
-    justify-content: space-around;
-    gap: 0.75rem;
-    align-items: flex-end;
-    justify-content: center;
-    align-self: flex-end;
-  }
-
-  .grid {
-    flex-direction: row;
-    align-items: flex-end;
     justify-content: flex-start;
-    align-content: flex-start;
-    flex-grow: 1;
-    gap: 1.2rem;
+    align-items: flex-start;
   }
 
-  .playerItems,
-  .itemTrack p {
-    text-align: left;
-    margin-left: 2rem;
-  }
-
-}
-
-@media (min-width: 58rem) {
-  /* Extra large screen styles */
-
-  .container {
-    flex-direction: column;
-    gap: 0.75rem;
-    justify-content: center;
-    align-items: flex-end;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-  }
-
-  .audioPlayer {
-    display: block;
-    height: 2rem;
-    max-width: 16rem;
-    min-width: 100%;
-
-  }
-
-  /* Track item styles */
-  .itemTrack {
-    font-size: calc(0.75rem + 0.2vmin);
-    line-height: 1.2rem;
-    text-align: left;
-  }
-
-  .grid {
-    flex-direction: row;
+  .flexWrap {
+    display: flex;
     justify-content: flex-start;
-    align-content: flex-start;
-    flex-grow: 1;
-    gap: 2rem;
+    align-items: flex-start;
+    flex-flow: row wrap;
   }
 
-  .playerItems p {
-    text-align: left;
-    align-items: flex-end;
-  }
-
-  .coverImage {
-    max-width: 4rem;
-
-  }
-
-  .heading {
-    text-align: left;
-  }
 }

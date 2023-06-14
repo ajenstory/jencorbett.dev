@@ -1,54 +1,59 @@
-.grid {
-  grid-template-columns: 5fr;
-  justify-content: center;
-  width: 100%;
-  min-width: 40rem;
-}
-
-.sectionContainer {
+.gridContainer div {
   display: grid;
-  grid-template-rows: 1fr auto;
-  justify-content: space-evenly;
-  height: auto;
   margin: 0 auto;
-  padding: 0;
-  width: 100%;
+  grid-template-columns: 1fr;
 }
 
-.contentGrid {
+.grid {
   display: grid;
-  grid-template-rows: 1fr auto;
-  align-items: center;
-  width: 100%;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-
-  ;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  min-width: 100%;
 }
 
-.item {
-  font-size: 1rem;
-  line-height: 1.75rem;
-  /* max-width: 60vmin; */
-  margin-bottom: 1rem;
-  max-width: 28rem;
-}
 
-.intro,
-.info {
+
+div.gridItem {
+  display: block;
   text-align: left;
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  align-self: center;
 }
 
 .title {
   font-size: 1.8rem;
-  text-align: center;
-  margin-top: 0.75rem;
+  text-align: left;
+  margin-top: 0.175rem;
   margin-bottom: 1rem;
 }
 
-@media (min-width: 48rem) {
+.gridItem {
+  line-height: 1.5;
+  letter-spacing: 0.06rem;
+}
+
+@media screen and (min-width: 30rem) {
+  /* .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    min-width: 100%;
+    max-width: 30rem;
+    padding: 0;
+    text-align: left;
+  } */
+}
+
+/* @media (min-width: 48rem) {
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-width: 100%;
+    max-width: 30rem;
+  }
+
+
   .sectionContainer {
     width: 100%;
     max-width: 68rem;
@@ -68,4 +73,4 @@
     text-align: left;
     margin-top: 1rem;
   }
-}
+} */
