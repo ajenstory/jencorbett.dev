@@ -4,22 +4,16 @@
   grid-template-columns: 1fr;
 }
 
-.grid ul {
+.grid {
   display: grid;
   grid-template-columns: 1fr;
   justify-content: center;
   min-width: 100%;
 }
 
-.intro {
-  text-align: left;
-  margin: 8rem;
-  font-size: 1rem;
-  line-height: 1.75rem;
-  max-width: 28rem;
-}
 
-li.gridItem {
+
+div.gridItem {
   display: block;
   text-align: left;
   width: 100%;
@@ -29,12 +23,17 @@ li.gridItem {
 .title {
   font-size: 1.8rem;
   text-align: left;
-  margin-top: 0.75rem;
+  margin-top: 0.175rem;
   margin-bottom: 1rem;
 }
 
-@media (min-width: 30rem) {
-  .grid ul {
+.gridItem {
+  line-height: 1.5;
+  letter-spacing: 0.06rem;
+}
+
+@media screen and (min-width: 30rem) {
+  /* .grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     justify-content: center;
@@ -42,7 +41,7 @@ li.gridItem {
     max-width: 30rem;
     padding: 0;
     text-align: left;
-  }
+  } */
 }
 
 /* @media (min-width: 48rem) {

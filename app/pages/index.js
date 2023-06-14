@@ -1,27 +1,23 @@
 import indexStyles from "@styles/index.module.css";
 
 const description = {
-  title: "My story starts in 1992...",
-  intro: "To be continued... please check back soon!",
-  cta: "If you'd like to learn more or check my availability, email me at hello[at]jencorbett.dev",
+  title: "Hey, I'm Jen.",
+  intro: "I'm a digital specialist turned developer.",
+  body: "This portfolio project is in developmet, please check out my github to follow my progress!",
+  cta: "If you'd like to say hello, learn more about me or find out my availability, please connect with me via my socials or email: hello[at]jencorbett.dev. Look forward to hearing from you!",
 };
 
 const Home = () => {
   return (
-    <div className={indexStyles.gridContainer}>
-      <ul className={indexStyles.grid}>
-        <li className={indexStyles.gridItem}>
-          <span className={`${indexStyles.item} ${indexStyles.intro}`}>
-            <h1 className={indexStyles.title}> {description.title}</h1>
-          </span>{" "}
+    <section className={indexStyles.gridContainer}>
+      <div className={indexStyles.grid}>
+        <h1 className={indexStyles.title}> {description.title}</h1>
+        <div className={indexStyles.gridItem}>
           <p>{description.intro}</p>
-        </li>
-        <li>
-          {" "}
-          <p>{description.cta}</p>
-        </li>
-      </ul>
-    </div>
+          <p> {description.cta}</p>
+        </div>
+      </div>
+    </section>
   );
 };
 
