@@ -1,76 +1,95 @@
-.gridContainer div {
+.gridContainer {
   display: grid;
-  margin: 0 auto;
+
   grid-template-columns: 1fr;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
-  justify-content: center;
-  min-width: 100%;
-}
-
-
-
-div.gridItem {
-  display: block;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  padding: 0;
   text-align: left;
-  width: 100%;
-  align-self: center;
-}
-
-.title {
-  font-size: 1.8rem;
-  text-align: left;
-  margin-top: 0.175rem;
-  margin-bottom: 1rem;
+  gap: 1rem;
+  max-width: 48rem;
 }
 
 .gridItem {
-  line-height: 1.5;
-  letter-spacing: 0.06rem;
+  display: block;
+  text-align: left;
+  width: 100%;
+  max-width: 48rem;
+  align-self: center;
+  letter-spacing: 0.08rem;
+  line-height: 1.6rem;
+  font-size: 1.5rem;
 }
 
-@media screen and (min-width: 30rem) {
-  /* .grid {
+.gridItem p {
+  font-size: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: left;
+  margin-top: 0.175rem;
+  margin-bottom: 1rem;
+  line-height: 1.5rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    justify-content: center;
-    min-width: 100%;
-    max-width: 30rem;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
     padding: 0;
     text-align: left;
-  } */
+    gap: 1rem;
+    width: 100%;
+    max-width: 60rem;
+  }
+
+  .title {
+    font-size: 3rem;
+    text-align: left;
+    margin-top: 0.175rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .gridItem {
+    display: block;
+    text-align: left;
+    width: 100%;
+    max-width: 60rem;
+    align-self: center;
+    letter-spacing: 0.05rem;
+  }
+
+  .gridItem p {
+    font-size: 1.1rem;
+  }
 }
 
-/* @media (min-width: 48rem) {
-
-.grid {
+@media screen and (min-width: 60rem) {
+  .grid {
     display: grid;
-    grid-template-columns: 1fr;
-    min-width: 100%;
-    max-width: 30rem;
-  }
-
-
-  .sectionContainer {
-    width: 100%;
-    max-width: 68rem;
-    grid-template-columns: 1fr;
-  }
-
-  .contentGrid {
-    margin-top: 4rem;
-    grid-template-columns: 0.5fr 4.5fr;
-    gap: 1rem;
-    align-items: flex-start;
-  }
-
-  .title,
-  .intro,
-  .item {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding: 0;
     text-align: left;
-    margin-top: 1rem;
+    width: 100%;
+    gap: 6rem;
+    max-width: 80rem;
   }
-} */
+
+  .title {
+    font-size: 3rem;
+    text-align: left;
+    margin-top: 0.175rem;
+    margin-bottom: 2rem;
+  }
+
+  .gridItem p {
+    font-size: 1.2rem;
+  }
+}

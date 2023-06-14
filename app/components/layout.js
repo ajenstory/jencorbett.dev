@@ -20,7 +20,6 @@ const Layout = ({ children }) => (
       </li>
       <li className={layoutStyles.footer}>
         <Footer />
-
       </li>
     </ul>
   </div>

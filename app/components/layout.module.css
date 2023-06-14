@@ -9,18 +9,19 @@ ul.grid {
   padding: 0;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
   align-items: center;
 }
 
 .main {
-  display: block;
+  display: flex;
   width: 100%;
-  align-self: center;
+  max-width: 48rem;
+  padding: 4rem 6rem 4rem 6rem;
+  justify-content: center;
+  align-content: center;
   align-items: center;
-  padding: 4rem 6rem;
+  flex: 1 auto;
 }
-
 
 .nav {
   align-self: start;
@@ -43,21 +44,17 @@ ul.grid {
 }
 
 @media screen and (min-width: 48rem) {
-
   .main {
-    display: block;
     width: 100%;
-    align-self: center;
+    padding: 4rem 12rem 4rem 12rem;
     align-items: center;
-    padding: 0rem 8rem;
-    max-width: 40rem;
+    max-width: 100%;
   }
 
   .grid {
     margin: 0 auto;
-    gap: 4rem;
-    margin-top: 3rem;
-    margin-left: 2rem;
+    /* margin-top: 3rem;
+    margin-left: 8rem; */
     align-items: center;
   }
 
