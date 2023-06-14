@@ -108,15 +108,13 @@ const Player = () => {
   return (
     <>
       <div className={`${playerStyles.container} `}>
+        <CoverImage
+          albumUrl={albumUrl}
+          albumImageUrl={albumImageUrl}
+          albumName={albumName}
+          artist={artist}
+        />{" "}
         <ul className={`${playerStyles.flexWrap}  `}>
-          <li className={playerStyles.flexItem}>
-            <CoverImage
-              albumUrl={albumUrl}
-              albumImageUrl={albumImageUrl}
-              albumName={albumName}
-              artist={artist}
-            />{" "}
-          </li>
           <li className={`${playerStyles.trackItem} ${playerStyles.flexItem}`}>
             <TrackInfo
               heading={heading}
