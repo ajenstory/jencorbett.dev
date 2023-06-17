@@ -19,9 +19,8 @@ const Date = ({ dateString }) => {
 export default function PostPage({ posts }) {
   return (
     <>
-      {" "}
-      <Header />
       <section className={`${indexStyles.wrapper} ${indexStyles.headingMd}`}>
+        <Header />
         <h2 className={indexStyles.headingLg}>Blog</h2>
         {posts.map(({ date, title, postUrl, summary, idx }) => (
           <ul

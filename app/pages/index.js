@@ -3,7 +3,7 @@ import Header from "@components/header";
 
 const description = {
   title: "Digital specialist turned developer",
-  body: "I'm currently developing this portfolio project, please check out my github to follow my progress!",
+  body: "I'm currently developing this web app as a personal portfolio project, please check out my github to follow my progress!",
   cta: "If you'd like to say hello, learn more about me or find out my availability, please connect with me via my socials or email: hello[at]jencorbett.dev. Look forward to hearing from you!",
 };
 
@@ -13,9 +13,10 @@ const Home = () => {
       {" "}
       <Header home />
       <section>
-        <ul className={`${indexStyles.grid} ${indexStyles.list}`}>
+        {" "}
+        <h1 className={indexStyles.title}> {description.title}</h1>
+        <ul className={`${indexStyles.grid} `}>
           <li className={`${indexStyles.gridItem} `}>
-            <h2 className={indexStyles.headingXL}> {description.title}</h2>
             <p>{description.intro}</p>
             <p> {description.body}</p>
           </li>

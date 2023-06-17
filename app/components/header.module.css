@@ -3,7 +3,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  margin: 0 auto;
+  margin-right: 0;
 }
 
 .header {
@@ -45,8 +45,7 @@
   }
 
   .header {
-
-    align-self: start;
+    align-self: flex-end;
   }
 
   .backToHome {
