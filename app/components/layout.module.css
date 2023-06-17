@@ -1,34 +1,30 @@
 .container {
   display: grid;
-  margin: 0 auto;
-  height: 100vh;
-}
-
-ul.grid {
-  margin: 0;
-  padding: 0;
-  display: grid;
   grid-template-columns: 1fr;
-  align-items: center;
+  margin: 0 auto;
+  max-width: 100%;
+  height: 100vh;
 }
 
 .main {
   display: flex;
-  width: 100%;
-  max-width: 48rem;
-  padding: 4rem 6rem 4rem 6rem;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
   flex: 1 auto;
+  padding: 1rem 4rem 1rem 4rem;
+}
+
+ul.grid {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .nav {
   align-self: start;
+  margin: 1rem;
 }
 
 .footer {
   align-self: end;
+  margin-bottom: 0;
 }
 
 .icon {
@@ -39,11 +35,21 @@ ul.grid {
 .navContainer {
   display: grid;
   justify-content: start;
-  width: 40%;
   padding: 0rem;
 }
 
-@media screen and (min-width: 48rem) {
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  margin: 0 0 0.15rem;
+}
+
+
+@media screen and (min-width: 40rem) {
   .main {
     width: 100%;
     padding: 4rem 12rem 4rem 12rem;

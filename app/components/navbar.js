@@ -4,7 +4,7 @@ import Link from "next/link";
 import navStyles from "./navbar.module.css";
 import ThemeSwitch from "./themeSwitch.js";
 
-const size = 21;
+const size = 25;
 
 const NavBar = () => (
   <div className={navStyles.navContainer}>
@@ -36,13 +36,13 @@ const NavBar = () => (
         title="Twitter profile"
         size={size}
       />
-      {/* <NavItem
-          icon={<SiRss />}
-          alt="Rss icon"
-          href="/posts"
-          title="Blog posts"
-          size={22}
-        /> */}
+      <NavItem
+        icon={<SiRss />}
+        alt="Rss icon"
+        href="/posts"
+        title="Blog posts"
+        size={22}
+      />
     </ul>
     <ThemeSwitch />
   </div>
@@ -54,6 +54,7 @@ const NavItem = ({ icon, alt, href, title, size }) => (
       href={href}
       title={title}
       size={size}
+      alt={alt}
     >
       {icon}
     </IconWrapper>
@@ -61,7 +62,7 @@ const NavItem = ({ icon, alt, href, title, size }) => (
 );
 
 const IconWrapper = ({ children, href, title, size }) => (
-  <div>
+  <div className={navStyles.flex}>
     <Link
       target="_blank"
       title={title}
