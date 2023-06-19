@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 
 import Link from "next/link.js";
 import MainContent from "./mainContent.js";
-import Footer from "./footer.js";
+// import Footer from "./footer.js";
 import NavBar from "./navbar.js";
 import Header from "./header";
 
@@ -43,7 +43,6 @@ const Layout = ({ children, page, home }) => (
         {/* {home && <Link href="/posts">Go to blog</Link>} */}
         {page && <Link href="/">← Back to home</Link>}
       </nav>
-      <Footer />
     </div>
   </div>
 );
