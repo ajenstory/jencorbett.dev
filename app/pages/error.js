@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 
-import TextBlock from "@components/text";
 import Link from "next/link";
 import indexStyles from "@styles/index.module.css";
 export default function ErrorPage({ error }) {

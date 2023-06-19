@@ -1,41 +1,35 @@
 import { allPosts } from "contentlayer/generated";
 import indexStyles from "@styles/index.module.css";
-import { parseISO, format } from "date-fns";
 import Head from "next/head";
+
+import Date from "@components/date";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Layout from "@components/layout";
-
-const Date = ({ dateString }) => {
-  const date = parseISO(dateString);
-
-  return (
-    <time dateTime={dateString}>
-      {format(date, "'on' EEE LLLL, dd, yyyy 'at' p")}
-    </time>
-  );
-};
-
-
-const Post = ({ post }) =>
-{
-  
+const Post = ({ post }) => {
   const Body = useMDXComponent(post.body.code);
-  
-  return (
-<div> 
-          <Head>
-          <title>{ post.title }</title> 
-      </Head>
-        <article >
-          <h1 className={ indexStyles.headingXl }>{ post.title }</h1>
-           <div className={indexStyles.lightText}>  <Date dateString={post.date} /></div> 
-        <Body
-          className={indexStyles.padding1px}
-          post={ ...post }
-          />
-          </article>
-    </div>
 
+  return (
+    <>
+      <Layout page>
+        <Head>
+          <title>{post.title}</title>
+        </Head>
+
+        <div className={indexStyles.gridContainer}>
+          <article className={indexStyles.wrapper}>
+            <h2 className={indexStyles.title}>{post.title}</h2>
+            <div className={indexStyles.lightText}>
+              <Date dateString={post.date} />
+            </div>
+            <ul className={`${indexStyles.grid}  ${indexStyles.list}`}>
+              <li className={`${indexStyles.gridItem} `}>
+                <Body className={indexStyles.padding1px} post={post} />
+              </li>
+            </ul>
+          </article>
+        </div>
+      </Layout>
+    </>
   );
 };
 export async function getStaticPaths() {
@@ -47,13 +41,12 @@ export async function getStaticPaths() {
   };
 }
 export const getStaticProps = ({ params }) => {
-
   const post = allPosts.find(
     (doc) =>
       doc._raw.flattenedPath === params.doc ||
       `/posts/${params.tag}/${params.doc}`
   );
 
-  return { props: { post,  } };
+  return { props: { post } };
 };
 export default Post;

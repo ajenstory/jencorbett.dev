@@ -1,5 +1,8 @@
 import indexStyles from "@styles/index.module.css";
-import Header from "@components/header";
+
+import Layout from "../components/layout.js";
+
+// import Card from "../components/card.js";
 
 const description = {
   title: "Digital specialist turned developer",
@@ -9,23 +12,26 @@ const description = {
 
 const Home = () => {
   return (
-    <div className={indexStyles.gridContainer}>
-      {" "}
-      <Header home />
-      <section>
-        {" "}
-        <h1 className={indexStyles.title}> {description.title}</h1>
-        <ul className={`${indexStyles.grid} `}>
-          <li className={`${indexStyles.gridItem} `}>
-            <p>{description.intro}</p>
-            <p> {description.body}</p>
-          </li>
-          <li className={indexStyles.gridItem}>
-            <p> {description.cta}</p>
-          </li>
-        </ul>
-      </section>
-    </div>
+    <Layout home>
+      <div className={indexStyles.gridContainer}>
+        {/* <Card /> */}
+        <section>
+          {" "}
+          <h1 className={indexStyles.title}> {description.title}</h1>
+          <div className={indexStyles.headingMd}>
+            <ul className={`${indexStyles.grid}  ${indexStyles.list}`}>
+              <li
+                className={`${indexStyles.gridItem} ${indexStyles.headingMd}`}
+              >
+                {description.intro}
+                {description.body}
+              </li>
+              <li className={indexStyles.gridItem}>{description.cta}</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </Layout>
   );
 };
 

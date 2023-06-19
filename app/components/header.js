@@ -1,11 +1,11 @@
-import Link from "next/link";
+// import Link from "next/link";
 import headerStyles from "@components/header.module.css";
-import Image from "next/image";
+// import Image from "next/image";
 import Head from "next/head";
-const profilePic = "/profile.jpg";
-const name = "Jen Corbett";
 
-const MainLayout = ({ home }) => {
+// const name = "Jen Corbett";
+
+const Header = ({ home, page }) => {
   return (
     <div>
       <Head>
@@ -15,40 +15,19 @@ const MainLayout = ({ home }) => {
       <header className={headerStyles.header}>
         {home ? (
           <>
-            <div className={`${headerStyles.headerWrapper}`}>
-              <Link href="https://github.com/ajenstory/jencorbett.dev">
-                <Image
-                  className={`${headerStyles.borderCircle}`}
-                  priority
-                  src={profilePic}
-                  height={108}
-                  width={108}
-                  alt="Profile picture of Jen deep in thought"
-                />{" "}
-              </Link>{" "}
-            </div>{" "}
-            <h1 className={headerStyles.heading2Xl}>{name}</h1>
+            <div className={`${headerStyles.headerWrapper}`}></div>{" "}
+            <h1 className={headerStyles.heading2Xl}></h1>
           </>
         ) : (
-          <>
-            <Link
-              href="/"
-              className={headerStyles.colorInherit}
-            >
-              {" "}
-              <Image
-                src={profilePic}
-                className={headerStyles.borderCircle}
-                height={80}
-                width={80}
-                alt="Profile picture of Jen deep in thought"
-              />
-            </Link>
-          </>
+          page && (
+            <div>
+              <h1 className={headerStyles.heading2Xl}></h1>
+            </div>
+          )
         )}
       </header>
     </div>
   );
 };
 
-export default MainLayout;
+export default Header;
