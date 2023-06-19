@@ -1,15 +1,11 @@
 import footerStyles from "./footer.module.css";
-import Player from "./player.js";
+
 const Footer = () => (
-  <footer className={footerStyles.footerContainer}>
-    {" "}
-    <div className={footerStyles.footerPlayer}>
-      <Player />
+  <>
+    <div className={footerStyles.footerContainer}>
+      <p className={footerStyles.footerItem}> © 2023 Jen Corbett</p>
     </div>
-    <div className={footerStyles.footerItem}>
-      <p> © 2023 Jen Corbett</p>
-    </div>
-  </footer>
+  </>
 );
 
 export default Footer;

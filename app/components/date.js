@@ -10,14 +10,4 @@ const Date = ({ dateString }) => {
   );
 };
 
-const TimeStamp = ({ data }) => {
-  const timestamp = JSON.parse(JSON.stringify(data));
-
-  return (
-    <>
-      <Date dateString={JSON.parse(JSON.stringify(timestamp))} />{" "}
-    </>
-  );
-};
-
-export default { Date, TimeStamp };
+export default Date;

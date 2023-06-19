@@ -1,27 +1,51 @@
 import layoutStyles from "@components/layout.module.css";
 import { Inter } from "next/font/google";
-import Meta from "@components/meta";
+
+import Link from "next/link.js";
+import MainContent from "./mainContent.js";
 import Footer from "./footer.js";
 import NavBar from "./navbar.js";
+import Header from "./header";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const Layout = ({ children }) => (
-  <div className={layoutStyles.container}>
-    <ul className={`${inter.className}  ${layoutStyles.grid}`}>
-      <li className={layoutStyles.nav}>
-        <NavBar />
-      </li>
-      <li>
-        <main className={`${layoutStyles.main} ${layoutStyles.center}`}>
-          <Meta />
-          {children}
-        </main>
-      </li>
-      <li className={layoutStyles.footer}>
-        <Footer />
-      </li>
-    </ul>
+const Layout = ({ children, page, home }) => (
+  <div className={`${layoutStyles.container}  ${inter.className} `}>
+    <div>
+      <div className={layoutStyles.nav}>
+        <NavBar home />
+      </div>
+      <div>
+        {home ? (
+          <div>
+            <Header home />
+
+            <MainContent
+              home
+              children={children}
+            />
+          </div>
+        ) : (
+          page && (
+            <div>
+              <Header page />
+              <MainContent
+                page
+                children={children}
+              />
+            </div>
+          )
+        )}
+      </div>
+    </div>
+    <div className={layoutStyles.footer}>
+      <nav className={layoutStyles.footerNav}>
+        {/* {home && <Link href="/posts">Go to blog</Link>} */}
+        {page && <Link href="/">← Back to home</Link>}
+      </nav>
+      <Footer />
+    </div>
   </div>
 );
+
 export default Layout;

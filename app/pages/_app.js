@@ -1,7 +1,6 @@
 import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
 import { Provider } from "react-wrap-balancer";
-import Layout from "../components/layout.js";
 
 const App = ({ Component, pageProps }) => (
   <ThemeProvider
@@ -10,9 +9,7 @@ const App = ({ Component, pageProps }) => (
     disableTransitionOnChange
   >
     <Provider>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Component {...pageProps} />
     </Provider>
   </ThemeProvider>
 );

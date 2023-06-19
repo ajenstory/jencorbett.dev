@@ -1,10 +1,10 @@
-import { SiLinkedin, SiMastodon, SiRss } from "react-icons/si";
+import { SiLinkedin, SiMastodon } from "react-icons/si";
 import { FiTwitter, FiGithub } from "react-icons/fi";
 import Link from "next/link";
 import navStyles from "./navbar.module.css";
 import ThemeSwitch from "./themeSwitch.js";
 
-const size = 21;
+const size = 25;
 
 const NavBar = () => (
   <div className={navStyles.navContainer}>
@@ -36,13 +36,6 @@ const NavBar = () => (
         title="Twitter profile"
         size={size}
       />
-      {/* <NavItem
-          icon={<SiRss />}
-          alt="Rss icon"
-          href="/posts"
-          title="Blog posts"
-          size={22}
-        /> */}
     </ul>
     <ThemeSwitch />
   </div>
@@ -50,23 +43,15 @@ const NavBar = () => (
 
 const NavItem = ({ icon, alt, href, title, size }) => (
   <li className={navStyles.item}>
-    <IconWrapper
-      href={href}
-      title={title}
-      size={size}
-    >
+    <IconWrapper href={href} title={title} size={size} alt={alt}>
       {icon}
     </IconWrapper>
   </li>
 );
 
 const IconWrapper = ({ children, href, title, size }) => (
-  <div>
-    <Link
-      target="_blank"
-      title={title}
-      href={href}
-    >
+  <div className={navStyles.flex}>
+    <Link target="_blank" title={title} href={href}>
       <span>
         <Icon size={size}>{children}</Icon>
       </span>
@@ -75,10 +60,7 @@ const IconWrapper = ({ children, href, title, size }) => (
 );
 
 const Icon = ({ children, size }) => (
-  <div
-    size={size}
-    style={{ fontSize: size }}
-  >
+  <div size={size} style={{ fontSize: size }}>
     {children}
   </div>
 );

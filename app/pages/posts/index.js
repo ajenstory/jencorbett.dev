@@ -1,36 +1,46 @@
 import { compareDesc } from "date-fns";
 import Link from "next/link";
+import Layout from "@components/layout";
+// import Card from "@components/card";
 import indexStyles from "@styles/index.module.css";
 import { allPosts } from "contentlayer/generated";
+import Date from "@components/date";
 
+export default function PostPage({ posts }) {
+  return (
+    <Layout page>
+      <div className={indexStyles.gridContainer}>
+        {" "}
+        {/* <Card /> */}
+        <section>
+          {" "}
+          <h1 className={indexStyles.title}>Blog</h1>
+          {posts.map(({ date, title, postUrl, summary, idx }) => (
+            <div className={indexStyles.headingMd}>
+              <ul
+                className={`${indexStyles.list} ${indexStyles.grid}`}
+                role="presentation"
+                key={idx}
+              >
+                <Link href={`${postUrl}`}>
+                  <li key={idx}>{title}</li>{" "}
+                </Link>
+                <li className={indexStyles.gridItem}>{summary}</li>
+                <li className={indexStyles.gridItem}>
+                  <Date dateString={date} />
+                </li>
+              </ul>
+            </div>
+          ))}
+        </section>
+      </div>
+    </Layout>
+  );
+}
 export async function getStaticProps() {
   const posts = allPosts.sort((a, b) => {
     return compareDesc(new Date(a.date), new Date(b.date));
   });
 
   return { props: { posts } };
-}
-
-export default function PostPage({ posts }) {
-  return (
-    <>
-      <section className={`${indexStyles.wrapper}`}>
-        {posts.map((post, idx) => (
-          <ul key={idx}>
-            {" "}
-            <li>{post.date}</li>
-            <Link href={`${post.postUrl}`}>
-              <li
-                key={idx}
-                className={``}
-              >
-                {post.title}
-              </li>
-            </Link>
-            <li> {post.summary}</li>
-          </ul>
-        ))}
-      </section>
-    </>
-  );
 }
