@@ -22,13 +22,19 @@ const Layout = ({ children, page, home }) => (
           <div>
             <Header home />
 
-            <MainContent home children={children} />
+            <MainContent
+              home
+              children={children}
+            />
           </div>
         ) : (
           page && (
             <div>
               <Header page />
-              <MainContent page children={children} />
+              <MainContent
+                page
+                children={children}
+              />
             </div>
           )
         )}
@@ -36,7 +42,7 @@ const Layout = ({ children, page, home }) => (
     </div>
     <div className={layoutStyles.footer}>
       <nav className={layoutStyles.footerNav}>
-        {home && <Link href="/posts">Go to blog</Link>}
+        {/* {home && <Link href="/posts">Go to blog</Link>} */}
         {page && <Link href="/">← Back to home</Link>}
       </nav>
       <Footer />
