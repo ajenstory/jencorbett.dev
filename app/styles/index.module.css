@@ -3,6 +3,8 @@
   grid-template-rows: 1fr;
   max-width: 100%;
   gap: 0;
+  margin-top: 8rem;
+  margin-left: 2rem;
 }
 
 .grid {
@@ -28,8 +30,11 @@
 }
 
 .headingMd {
-  font-size: 1.2rem;
+  font-size: 1.175rem;
   line-height: 1.5;
+  letter-spacing: 0.04rem;
+  max-width: 100%;
+
 }
 
 .padding1px {
@@ -54,10 +59,6 @@
 
 .gridItem {
   margin-bottom: 0.75rem;
-  font-size: 1.2rem;
-  line-height: 1.5;
-  letter-spacing: 0.04rem;
-  max-width: 100%;
   margin-right: 1rem;
 }
 
@@ -80,6 +81,9 @@
     font-size: 1.5rem;
     line-height: 1;
   }
+
+
+
 }
 
 @media screen and (min-width: 80rem) {
@@ -89,21 +93,36 @@
     max-width: 100%;
     gap: 0;
     margin: 0 auto;
+    margin-top: 8rem;
+    margin-left: 10rem;
   }
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2;
+    grid-template-rows: repeat(2, 1fr);
     align-items: center;
     justify-content: center;
-    ;
+
+
+  }
+
+  .gridItem {
+    margin-bottom: 0.75rem;
+    margin-right: 3rem;
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     line-height: 1;
-    margin-top: 8rem;
-    margin-bottom: 1rem;
   }
+
+
+  .headingMd {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    letter-spacing: 0.04rem;
+    max-width: 100%;
+
+  }
+
 }
