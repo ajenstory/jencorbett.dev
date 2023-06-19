@@ -3,26 +3,15 @@ import Link from "next/link";
 import Header from "@components/header";
 import indexStyles from "@styles/index.module.css";
 import { allPosts } from "contentlayer/generated";
-
-import { parseISO, format } from "date-fns";
-
-const Date = ({ dateString }) => {
-  const date = parseISO(dateString);
-
-  return (
-    <time dateTime={dateString}>
-      {format(date, "'on' EEE LLLL, dd, yyyy 'at' p")}
-    </time>
-  );
-};
+import Date from "@components/date";
 
 export default function PostPage({ posts }) {
   return (
-    <>
-      <section className={`${indexStyles.wrapper} ${indexStyles.headingMd}`}>
-        <Header />
-        <h2 className={indexStyles.headingLg}>Blog</h2>
-        {posts.map(({ date, title, postUrl, summary, idx }) => (
+    <section className={indexStyles.wrapper}>
+      <Header />
+      <h2 className={indexStyles.headingLg}>Blog</h2>
+      {posts.map(({ date, title, postUrl, summary, idx }) => (
+        <div className={indexStyles.headingMd}>
           <ul
             className={indexStyles.list}
             role="presentation"
@@ -36,9 +25,9 @@ export default function PostPage({ posts }) {
               <Date dateString={date} />
             </li>
           </ul>
-        ))}
-      </section>
-    </>
+        </div>
+      ))}
+    </section>
   );
 }
 export async function getStaticProps() {
