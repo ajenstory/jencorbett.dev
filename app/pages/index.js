@@ -6,8 +6,8 @@ import Layout from "../components/layout.js";
 
 const description = {
   title: "Hey! It's Jen.",
-  body: "I'm currently developing this web app as a personal portfolio project",
-  cta: "If you'd like to say hello, learn more about me or find out my availability, email: hello[at]jencorbett.dev.",
+  body: "I'm currently developing this site as a personal portfolio project.",
+  cta: "If you'd like to say hello, learn more about me or find out my availability for work, email: hello[at]jencorbett.dev.",
 };
 
 const Home = () => {
