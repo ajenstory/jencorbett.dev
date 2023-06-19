@@ -1,13 +1,11 @@
 import layoutStyles from "@components/layout.module.css";
 import { Inter } from "next/font/google";
-// import Head from "next/head.js";
+
 import Link from "next/link.js";
 import MainContent from "./mainContent.js";
 import Footer from "./footer.js";
 import NavBar from "./navbar.js";
 import Header from "./header";
-const profilePic = "/profile.jpg";
-import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
