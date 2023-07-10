@@ -2,13 +2,11 @@ import indexStyles from "@styles/index.module.css";
 import Layout from "../components/layout/layout.js";
 
 const description = {
-  h2: "I'm a web, developer, designer and content specialist",
-  intro:
-    "My background spans over a decade in social media, digital marketing and communications",
+  h2: "I'm a developer, designer and digital specialist.",
   aboutMe:
-    "I like to design and build digital experiences that are accessible, inclusive and sustainable.",
+    "I bring together the best of my creative, technical and content development skills to produce engaging digital experiences.",
   status:
-    "I recently completed a full-stack course at Developers Institute, and I'm currently building my portfolio while continuing to learn, and work on a few projects.",
+    "I'm currently building my portfolio, furthering my training in software engineering, UX and UI design, while working on a few different projects.",
   cta: "To get in touch, please contact me on hello[at]jencorbett.dev.",
 };
 
@@ -25,11 +23,12 @@ const Home = () => {
                 <h2 className={indexStyles.title}>{description.h2}</h2>
               </li>
               <li className={indexStyles.gridItem}>
-                {" "}
-                {description.aboutMe} <span className={indexStyles.br} />
                 <span className={indexStyles.br} />
-                {description.status} <span className={indexStyles.br} />
-                {description.cta}
+                {description.aboutMe}
+                <span className={indexStyles.br} /> {description.status}
+                <span className={indexStyles.br} />
+                <span className={indexStyles.br} /> {description.cta}
+                <span className={indexStyles.br} />
               </li>
             </ul>{" "}
           </div>

@@ -10,7 +10,7 @@ const Header = ({ home, page }) => {
       <header className={headerStyles.header}>
         {home ? (
           <>
-            <h1 className={headerStyles.heading2Xl}>Hey, it's Jen</h1>
+            <h1 className={headerStyles.heading2Xl}>Hey, it's Jen :)</h1>
           </>
         ) : (
           page && (

@@ -12,7 +12,6 @@ const Layout = ({ children, page, home }) => (
   >
     <div>
       <div className={layoutStyles.header}>
-    
         {home && <Header home />}
         {page && <Header page />}
       </div>
