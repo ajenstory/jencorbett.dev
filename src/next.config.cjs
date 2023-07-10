@@ -4,7 +4,7 @@ const { withContentlayer } = require("next-contentlayer");
 
 const nextConfig = {
   // Configure pageExtensions to include md and mdx
-  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx", "mjs, cjs"],
+  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx", "mjs, cjs, json"],
   // Other Next.js config below
   experimental: {
     appDir: true,
