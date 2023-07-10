@@ -1,4 +1,4 @@
-import themeStyles from "components/theme.module.css";
+import themeStyles from "@utils/theme.module.css";
 import { FaMoon, FaRegMoon } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";

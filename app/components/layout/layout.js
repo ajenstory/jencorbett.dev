@@ -1,10 +1,7 @@
-import layoutStyles from "@components/layout.module.css";
+import layoutStyles from "@layout/layout.module.css";
 import { Inter } from "next/font/google";
-
 import Link from "next/link.js";
-import MainContent from "./mainContent.js";
-// import Footer from "./footer.js";
-import NavBar from "./navbar.js";
+import Main from "./main.js";
 import Header from "./header";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -13,14 +10,13 @@ const Layout = ({ children, page, home }) => (
   <div className={`${layoutStyles.container}  ${inter.className} `}>
     <div>
       <div className={layoutStyles.nav}>
-        <NavBar home />
+        {home && <Header home />}
+        {page && <Header page />}
       </div>
       <div>
         {home ? (
           <div>
-            <Header home />
-
-            <MainContent
+            <Main
               home
               children={children}
             />
@@ -28,8 +24,7 @@ const Layout = ({ children, page, home }) => (
         ) : (
           page && (
             <div>
-              <Header page />
-              <MainContent
+              <Main
                 page
                 children={children}
               />
@@ -40,11 +35,21 @@ const Layout = ({ children, page, home }) => (
     </div>
     <div className={layoutStyles.footer}>
       <nav className={layoutStyles.footerNav}>
-        {/* {home && <Link href="/posts">Go to blog</Link>} */}
+        {home && <Link href="/posts">Go to blog</Link>}
         {page && <Link href="/">← Back to home</Link>}
       </nav>
     </div>
   </div>
 );
+
+import footerStyles from "./footer.module.css";
+
+const Footer = () => {
+  return (
+    <div className={footerStyles.footerContainer}>
+      <p className={footerStyles.footerItem}> © 2023 Jen Corbett</p>
+    </div>
+  );
+};
 
 export default Layout;

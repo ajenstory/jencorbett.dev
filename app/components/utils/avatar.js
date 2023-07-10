@@ -3,9 +3,7 @@ import Image from "next/image";
 import layoutStyles from "@components/layout.module.css";
 const profilePic = "/profile.jpg";
 
-const title = "Jen Corbett";
-
-const Card = ({ title, children }) => (
+const Avatar = ({ title }) => (
   <div>
     <Link href="https://github.com/ajenstory/jencorbett.dev">
       <Image
@@ -14,11 +12,11 @@ const Card = ({ title, children }) => (
         src={profilePic}
         height={108}
         width={108}
-        alt="Profile picture of Jen deep in thought"
+        alt=""
       />
       {title}
     </Link>{" "}
   </div>
 );
 
-export default Card;
+export default Avatar;

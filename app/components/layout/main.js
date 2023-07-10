@@ -1,5 +1,4 @@
-import layoutStyles from "@components/layout.module.css";
-import Link from "next/link";
+import layoutStyles from "@layout/layout.module.css";
 
 const MainContent = ({ children, page, home }) => (
   <div className={`${layoutStyles.list} ${layoutStyles.grid}`}>

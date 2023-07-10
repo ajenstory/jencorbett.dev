@@ -1,10 +1,10 @@
 import { allPosts } from "contentlayer/generated";
 import indexStyles from "@styles/index.module.css";
 import Head from "next/head";
-
-import Date from "@components/date";
+import Date from "@utils/date";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import Layout from "@components/layout";
+import Layout from "@layout/layout";
+
 const Post = ({ post }) => {
   const Body = useMDXComponent(post.body.code);
 
@@ -23,7 +23,10 @@ const Post = ({ post }) => {
             </div>
             <ul className={`${indexStyles.grid}  ${indexStyles.list}`}>
               <li className={`${indexStyles.gridItem} `}>
-                <Body className={indexStyles.padding1px} post={post} />
+                <Body
+                  className={indexStyles.padding1px}
+                  post={post}
+                />
               </li>
             </ul>
           </article>

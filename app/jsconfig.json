@@ -6,7 +6,8 @@
       "@api/*": ["./api/*"],
       "@lib/*": ["./lib/*"],
       "@public/*": ["./public/*"],
-      "@components/*": ["./components/*"],
+      "@utils/*": ["./components/utils/*"],
+      "@layout/*": ["./components/layout/*"],
       "contentlayer/generated": ["./.contentlayer/generated"],
       "@styles/*": ["./styles/*"]
     }

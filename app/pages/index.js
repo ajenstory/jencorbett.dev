@@ -1,11 +1,7 @@
 import indexStyles from "@styles/index.module.css";
-
-import Layout from "../components/layout.js";
-
-// import Card from "../components/card.js";
+import Layout from "../components/layout/layout.js";
 
 const description = {
-  title: "Hey! It's Jen.",
   body: "I'm currently developing this site as a personal portfolio project.",
   cta: "If you'd like to say hello, learn more about me or find out my availability for work, email: hello[at]jencorbett.dev.",
 };
@@ -17,7 +13,6 @@ const Home = () => {
         {/* <Card /> */}
         <section>
           {" "}
-          <div className={indexStyles.title}> {description.title}</div>
           <div className={indexStyles.headingMd}>
             <ul className={`${indexStyles.grid}  ${indexStyles.list}`}>
               <li className={`${indexStyles.gridItem}`}>

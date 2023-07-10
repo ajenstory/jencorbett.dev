@@ -43,7 +43,12 @@ const NavBar = () => (
 
 const NavItem = ({ icon, alt, href, title, size }) => (
   <li className={navStyles.item}>
-    <IconWrapper href={href} title={title} size={size} alt={alt}>
+    <IconWrapper
+      href={href}
+      title={title}
+      size={size}
+      alt={alt}
+    >
       {icon}
     </IconWrapper>
   </li>
@@ -51,7 +56,11 @@ const NavItem = ({ icon, alt, href, title, size }) => (
 
 const IconWrapper = ({ children, href, title, size }) => (
   <div className={navStyles.flex}>
-    <Link target="_blank" title={title} href={href}>
+    <Link
+      target="_blank"
+      title={title}
+      href={href}
+    >
       <span>
         <Icon size={size}>{children}</Icon>
       </span>
@@ -60,7 +69,10 @@ const IconWrapper = ({ children, href, title, size }) => (
 );
 
 const Icon = ({ children, size }) => (
-  <div size={size} style={{ fontSize: size }}>
+  <div
+    size={size}
+    style={{ fontSize: size }}
+  >
     {children}
   </div>
 );

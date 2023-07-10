@@ -1,10 +1,9 @@
-import { compareDesc } from "date-fns";
 import Link from "next/link";
-import Layout from "@components/layout";
-// import Card from "@components/card";
+import Layout from "@layout/layout";
 import indexStyles from "@styles/index.module.css";
 import { allPosts } from "contentlayer/generated";
-import Date from "@components/date";
+import { compareDesc } from "date-fns";
+import Date from "@utils/date";
 
 export default function PostPage({ posts }) {
   return (
