@@ -7,20 +7,21 @@
 }
 
 .main {
-  display: flex;
-  flex: 1 auto;
   width: 100%;
   height: auto;
-  margin-top: 8rem;
-  margin-bottom: 6rem;
-  padding: 1rem 2rem;
-  align-items: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .page {
-  display: flex;
-  flex: 1 auto;
-  padding: 6rem;
+  width: 100%;
+  height: auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 
@@ -40,22 +41,13 @@
 }
 
 
-.icon {
-  list-style: none;
-  cursor: pointer;
-}
-
-
-
 .list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.listItem {
-  margin: 0 0 0.15rem;
-}
+
 
 @media screen and (min-width: 40rem) {
 
@@ -65,30 +57,32 @@
     height: 100vh;
   }
 
-  .header {
-    align-self: start;
-    margin: 2rem;
-  }
-
-  .main {
-    display: flex;
-    flex: 1 auto;
-    width: 100%;
-    min-width: 100%;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    padding: 2rem 1.5rem;
-    align-items: center;
-  }
-
   .grid {
     margin: 0 auto;
     align-items: center;
     grid-template-columns: auto;
   }
 
-  .center {
-    align-self: center;
-    justify-self: center;
+  .main {
+    width: 100%;
+    margin-top: 8rem;
+    align-items: center;
   }
+
+  .header {
+    align-self: start;
+    margin: 2rem 2rem;
+  }
+
+
+}
+
+@media screen and (min-width: 80rem) {
+
+
+  .header {
+    align-self: start;
+    margin: 2rem 0rem;
+  }
+
 }
