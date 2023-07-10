@@ -1,0 +1,109 @@
+/* CSS Reset (normalize.css or custom reset) */
+
+/* Define :root variables and global styles */
+:root,
+html {
+  --font-mono: ui-monospace, menlo, monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+}
+
+/* Light theme styles */
+[data-theme="light"] body {
+  background-color: #faf9f6;
+  color: #191414;
+}
+
+/* Dark theme styles */
+[data-theme="dark"] body {
+  color: #faf9f6;
+}
+
+/* Box-sizing and default margin */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Typographic tweaks */
+body {
+  white-space: inherit;
+
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+
+/* Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Remove default list & link styles */
+
+li,
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Button styles */
+button {
+  border: 2px inset;
+  border-radius: 85px;
+  padding: 20px 15px;
+  cursor: pointer;
+  box-shadow: 1px 2px 8px -1px #0000001a;
+}
+
+button::before {
+  border-radius: 50%;
+  width: 48rem;
+  height: 36rem;
+  margin-left: -40rem;
+}
+
+button::after {
+  width: 24rem;
+  height: 18rem;
+  z-index: -1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  button::before {
+    animation: none;
+  }
+
+  button:hover span {
+    transform: none;
+  }
+}
+
+/* Root stacking context */
+:root,
+#__next {
+  isolation: isolate;
+}

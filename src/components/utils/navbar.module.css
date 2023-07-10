@@ -1,0 +1,32 @@
+.navContainer {
+  display: grid;
+  justify-content: start;
+  padding: 0rem;
+}
+
+.grid {
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-left: 0;
+
+}
+
+.icon {
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 40rem) {
+  .grid {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+  }
+}
