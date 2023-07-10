@@ -35,28 +35,14 @@ body {
 
 }
 
+h2 {
+  margin-bottom: 1.5rem;
+}
+
 p {
   font-size: 1rem;
 }
 
-/*
-
-p+p {
-  margin-top: 0.6rem;
-} */
-
-/* Remove built-in typography styles */
-/* input,
-button,
-textarea,
-select,
-audio,
-figure,
-figcaption {
-  font: inherit;
-  margin: 0;
-  padding: 0;
-} */
 
 /* Avoid text overflows */
 p,

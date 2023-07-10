@@ -1,6 +1,6 @@
 import headerStyles from "./header.module.css";
 import Head from "next/head";
-
+import Image from "next/image";
 const Header = ({ home, page }) => {
   return (
     <div>
@@ -10,14 +10,20 @@ const Header = ({ home, page }) => {
       <header className={headerStyles.header}>
         {home ? (
           <>
-            <div className={`${headerStyles.headerWrapper}`}></div>{" "}
             <h1 className={headerStyles.heading2Xl}>Hey, it's Jen</h1>
           </>
         ) : (
           page && (
-            <div>
-              <h2 className={headerStyles.headingLg}>Hey, it's Jen</h2>
-            </div>
+            <>
+              <Image
+                src="/../public/profile.jpg"
+                className={headerStyles.borderCircle}
+                height={124}
+                width={124}
+                alt=""
+              />{" "}
+              <h1 className={headerStyles.headingLg}>Hey, it's Jen</h1>
+            </>
           )
         )}
       </header>

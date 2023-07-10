@@ -3,17 +3,20 @@ import { Inter } from "next/font/google";
 import Link from "next/link.js";
 import Main from "./main.js";
 import Header from "./header";
-
+import footerStyles from "./footer.module.css";
 const inter = Inter({ subsets: ["latin"] });
-
+import Image from "next/image.js";
 const Layout = ({ children, page, home }) => (
-  <div className={`${layoutStyles.container}  ${inter.className} `}>
+  <div
+    className={`${layoutStyles.container} ${layoutStyles.center} ${inter.className} `}
+  >
     <div>
-      <div className={layoutStyles.nav}>
+      <div className={layoutStyles.header}>
+    
         {home && <Header home />}
         {page && <Header page />}
       </div>
-      <div>
+      <div className={layoutStyles.main}>
         {home ? (
           <div>
             <Main
@@ -31,18 +34,14 @@ const Layout = ({ children, page, home }) => (
             </div>
           )
         )}
-      </div>
-    </div>
-    <div className={layoutStyles.footer}>
-      <nav className={layoutStyles.footerNav}>
-        {home && <Link href="/posts">Go to blog</Link>}
-        {page && <Link href="/">← Back to home</Link>}
-      </nav>
-    </div>
+        <div className={layoutStyles.link}>
+          {page && <Link href="/">← Back to home</Link>}
+        </div>{" "}
+      </div>{" "}
+    </div>{" "}
+    <Footer />
   </div>
 );
-
-import footerStyles from "./footer.module.css";
 
 const Footer = () => {
   return (

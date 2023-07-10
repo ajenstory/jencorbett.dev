@@ -1,8 +1,6 @@
 .footerContainer {
   display: flex;
   flex-flow: row wrap;
-  align-items: flex-end;
-  align-content: flex-end;
   justify-content: center;
   width: 100%;
 }
@@ -16,12 +14,11 @@
 
 
 @media screen and (min-width: 40rem) {
-  .footerContainer {
-    justify-content: flex-end;
-  }
 
   .footerItem {
     margin-top: 1rem;
     margin-right: 3rem;
+    margin-bottom: 1rem;
   }
+
 }
