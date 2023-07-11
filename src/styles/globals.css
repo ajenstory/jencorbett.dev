@@ -35,14 +35,6 @@ body {
 
 }
 
-h2 {
-  margin-bottom: 1.5rem;
-}
-
-p {
-  font-size: 1rem;
-}
-
 
 /* Avoid text overflows */
 p,
