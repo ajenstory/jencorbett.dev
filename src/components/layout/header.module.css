@@ -4,7 +4,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  margin: 0 auto
+  margin: 0 auto;
 }
 
 .backToHome {
@@ -53,8 +53,6 @@
     flex-flow: row wrap;
     align-items: center;
     justify-content: flex-start;
-    ;
-
   }
 
   .backToHome {
@@ -72,7 +70,6 @@
     font-weight: 800;
     letter-spacing: -0.05rem;
     text-align: left;
-
   }
 
   .heading2Xl {
@@ -86,7 +83,6 @@
   }
 
   .borderCircle {
-
     width: 100%;
     height: auto;
     border-radius: 50%;

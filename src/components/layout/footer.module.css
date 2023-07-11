@@ -13,6 +13,10 @@
   align-self: flex-end;
 }
 
+.link {
+  text-decoration: underline;
+}
+
 @media screen and (min-width: 40rem) {
   .footerItem {
     margin-top: 1rem;

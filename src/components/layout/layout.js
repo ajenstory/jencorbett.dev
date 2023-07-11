@@ -5,7 +5,7 @@ import Main from "./main.js";
 import Header from "./header";
 import footerStyles from "./footer.module.css";
 const inter = Inter({ subsets: ["latin"] });
-import Image from "next/image.js";
+
 const Layout = ({ children, page, home }) => (
   <div
     className={`${layoutStyles.container} ${layoutStyles.center} ${inter.className} `}
@@ -18,18 +18,12 @@ const Layout = ({ children, page, home }) => (
       <div className={layoutStyles.main}>
         {home ? (
           <div>
-            <Main
-              home
-              children={children}
-            />
+            <Main home children={children} />
           </div>
         ) : (
           page && (
             <div>
-              <Main
-                page
-                children={children}
-              />
+              <Main page children={children} />
             </div>
           )
         )}
@@ -45,7 +39,15 @@ const Layout = ({ children, page, home }) => (
 const Footer = () => {
   return (
     <div className={footerStyles.footerContainer}>
-      <p className={footerStyles.footerItem}> © 2023 Jen Corbett</p>
+      <p className={footerStyles.footerItem}>
+        © 2023 Jen Corbett. &nbsp;
+        <a
+          className={footerStyles.link}
+          href="https://github.com/ajenstory/jencorbett.dev"
+        >
+          View this project on github.
+        </a>
+      </p>
     </div>
   );
 };
