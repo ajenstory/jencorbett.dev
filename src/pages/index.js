@@ -1,13 +1,14 @@
 import indexStyles from "@styles/index.module.css";
 import Layout from "../components/layout/layout.js";
-
+import Link from "next/link.js";
 const description = {
-  h2: "I'm a web developer, designer and strategist based in Te Taitokerau, Aotearoa New Zealand.",
-  status2: "As you can see, this portfolio site is in progress :)",
+  h2: "I enjoy crafting beautiful, inclusive and sustainable experiences and working on forward-thinking projects.",
+  status: "This project is in also in progress.",
+  about:
+    "With over a decade in specialist  digital roles, I've become passionate about producing solutions that motivate and resonate with people.",
   aboutMe:
-    "I am currently working on personal projects, and available for freelance collaborations while continuing my training in software engineering, UX, and UI design.",
-
-  cta: "To get in touch, please email hello[at]jencorbett.dev.",
+    "Having recently finsihed up studies in web design and development, I'm now building my portfolio and looking for opportunities to get stuck into new projects while exploring software engineering, UX, and UI design training.",
+  cta: "If you're interested in collaborating, working together or exchanging ideas, please feel free to email me at hello[at]jencorbett.dev.",
 };
 
 const Home = () => {
@@ -23,10 +24,18 @@ const Home = () => {
               </li>
               <li className={indexStyles.listItem}>
                 {" "}
-                <span className={indexStyles.br} /> {description.status2}
+                <span className={indexStyles.br} /> {description.about}
                 <span className={indexStyles.br} />
-                {description.aboutMe}
-                <span className={indexStyles.br} /> {description.cta}
+                {description.aboutMe} <span className={indexStyles.br} />
+                <Link
+                  target="_blank"
+                  className={indexStyles.link}
+                  href="https://github.com/ajenstory/jencorbett.dev"
+                >
+                  {" "}
+                  {description.status}
+                </Link>{" "}
+                <span className={indexStyles.br} /> {description.cta}{" "}
                 <span className={indexStyles.br} />
               </li>
             </ul>{" "}

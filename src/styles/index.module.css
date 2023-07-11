@@ -37,10 +37,11 @@
   font-weight: 500;
   letter-spacing: 0.06rem;
   margin-right: 0.2rem;
+  align-self: start;
 }
 
 .headingMd {
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   max-width: 100%;
   letter-spacing: 0.05rem;
@@ -69,8 +70,7 @@
   }
 
   .headingMd {
-    font-size: 1.1rem;
-    line-height: 1.2;
+
     margin-right: 0.22rem;
     letter-spacing: 0.04rem;
   }
@@ -85,7 +85,7 @@
   }
 
   .title {
-    font-size: 1.42rem;
+    font-size: 1.8rem;
     line-height: 1.3;
     font-weight: 800;
     letter-spacing: 0.04rem;
@@ -93,8 +93,8 @@
   }
 
   .headingMd {
-    font-size: 1.5rem;
-    line-height: 1.1;
+    font-size: 1.4rem;
+    line-height: 1.3;
     margin-right: 0.24rem;
     letter-spacing: 0.02rem;
   }
